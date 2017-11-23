@@ -1,0 +1,14 @@
+#payment{
+    background-color: #29adfd;
+    .ion-more:before{color: #fff;line-height: 0.88rem;width: 1.1rem;font-size:0.6rem;text-align:center;}
+    .cjc_payment_content{width: 6.82rem;margin: 0.5rem auto 0;background-color: #fff;padding: 0.35rem ;box-sizing:border-box;border-radius:0.2rem 0.2rem 0 0;overflow: auto;padding-bottom: 0;
+        .cjc_payCode{width: 100%;margin: 0.3rem 0 0.4rem;}
+        .cjc_paycode1{width: 3.36rem;height: 3.36rem;margin: 0.68rem auto 1rem;}
+    }
+    .cjc_paybottom{width: 6.82rem;height: 1rem;line-height: 1rem;margin: 0 auto 0.4rem auto;border-radius:0 0 0.2rem 0.2rem;padding: 0 0.35rem;
+        .cjc_mybank{width: 1.4rem;display: inline-block;height: 0.62rem;}
+    }
+    .scan-btn {width: 20%;margin:0 auto}
+    .cjc_icon:after{content:"";background-image: url(../img/index/icon.png);background-size: 5rem;display: block;}
+    .cjc_icon4:after{width: 0.54rem;height: 0.54rem;background-position: -2rem 0;margin: 0.24rem auto 0.14rem;}
+}

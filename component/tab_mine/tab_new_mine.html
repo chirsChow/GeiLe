@@ -1,0 +1,111 @@
+<ion-view id='tab_new_mine'>
+    <div class="mine-header">
+        <div class="img-box" ui-sref="tab.my_personal">
+            <img ng-src="{{information.photo || 'img/df-u-img.png'}}" err-src="img/df-u-img.png">
+            <p ng-bind="information.mobilePhone | phoneHide"></p>
+        </div>
+        <div class="beanfun-box" ui-sref="tab.mine_beanfun">
+            <div class="bean font" ng-bind="balanceNum"></div>
+            <div class="f20">乐豆余额</div>
+        </div>
+        <div class="news"  ng-click="linkMsg()">
+            <!--  <i class="icon icon0" ui-sref="tab.my_set"></i>  -->
+            <i class="icon icon1"></i>
+            <span ng-class="{'block':nativeBroadcastMsg.unRead!=0}"></span>
+        </div>
+    </div>
+    <div class="bill-box">
+        <div class="cjc_bill_top">
+            <i class="icon icon2"></i>
+            <div class="f30 fontBold">我的帐单</div>
+            <div class="coloraa f24"><span ng-bind="year"></span>年<span ng-bind="month"></span>月01-<span ng-bind='month'></span>月<span ng-bind="lastDate"></span></div>
+            <div class="cjc_more_btn" ng-click="linkBills()">
+                更多
+            </div>
+        </div>
+        <div class="df tc">
+            <div class="df1">
+                <div class="ls4 f28 fb color66 font" ng-bind="(billData.totalMoney || billData.totalMoney == 0) ? billData.totalMoney.toFixed(2) : '--'"></div>
+                <div class="f22 color33 ls2">现金支付（元）</div>
+                <div class="circle"></div>
+            </div>
+            <div class="df1">
+                <div class="ls4 f28 fb color66 font" ng-bind="(billData.totalPayHappyCoin || billData.totalPayHappyCoin==0) ? billData.totalPayHappyCoin.toFixed(2):'--'"></div>
+                <div class="f22 color33 ls2">乐豆支付（豆）</div>
+                <div class="circle"></div>
+            </div>
+            <div class="df1">
+                <div class="ls4 f28 fb color66 font" ng-bind="(billData.totalReturnHappyCoin || billData.totalReturnHappyCoin==0) ? billData.totalReturnHappyCoin.toFixed(2) : '--'"></div>
+                <div class="f22 color33 ls2">赠送乐豆（豆）</div>
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cjc_more">
+        <div class="df">
+            <div class="df1" ui-sref="tab.comment_list">
+                <i class="icon icon3"></i>
+                <div class="f30 color33 fontBold">我的评价</div>
+                <div class="f24 coloraa ls2">我发表的评论</div>
+            </div>
+            
+            <!-- <div class="df1 ml9" ng-click="gotoBankList()"> -->
+            <div class="df1 ml9" ui-sref="tab.mine_addNewBankCard">
+                <i class="icon icon7"></i>
+                <div class="f30 color33 fontBold">银行卡<span ng-bind="bankNum" class="font"></span></div>
+                <div class="f24 coloraa ls2">我绑定的银行卡</div>
+                <i class="add-bankcard" ng-if="bankNum ==0 || bankNum ==null">去添加</i>
+            </div>
+        </div>
+        <div class="df">
+            <div class="df1" ui-sref="tab.collect_list">
+                <i class="icon icon4"></i>
+                <div class="f30 color33 fontBold">我的收藏</div>
+                <div class="f24 coloraa ls2">我收藏的商家</div>
+            </div>
+            
+            <div class="df1 hdq_set ml9" ui-sref="tab.my_set">
+                <i class="iconset icon8"></i>
+                <div class="fl ">
+                    <div class="f30 color33 fontBold">系统设置</div>
+                    <div class="f24 coloraa hdq_tst ls2">安全与帮助</div>
+                </div>
+            </div>
+        </div>
+        <div class="df">
+            <div class="df1" ng-click="showTel()">
+                <i class="icon icon5"></i>
+                <div class="f30 color33 fontBold">客服电话</div>
+                <div class="f24 coloraa ls2">24小时服务热线</div>
+            </div>  
+            <div class="df1"></div>
+        </div>
+        
+    </div>
+    <script id="my-modal.html" type="text/ng-template">
+      <ion-modal-view id="modal_header">
+            <gl-header title="实名认证" back="function" on-back="closeModal()"></gl-header>
+            <section class="scrolltop128 bj" id="my_certification">
+                <ion-content overflow-scroll="false" class="has-header">
+                    <div class="myForm bgff">
+                       <div class="pd24">
+                           <ul>
+                               <li>
+                                   <span class="f28 color66">真实姓名</span>
+                                   <input type="text" placeholder="请输入您的真实姓名" ng-model="data.userName">
+                               </li>
+                               <li>
+                                   <span class="f28 color66">身份证号码</span>
+                                   <input type="text" placeholder="请输入您的身份证号码" maxlength="18" required ng-model="data.idCard">
+                               </li>
+                           </ul>
+                       </div>
+                    </div>
+                    <div class="btn" ng-click="subimit()">
+                        <button class="xia_but f32 colorff">完成</button>
+                    </div>
+                </ion-content>
+            </section>
+      </ion-modal-view>
+    </script>
+</ion-view>

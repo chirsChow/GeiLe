@@ -1,0 +1,38 @@
+<ion-view hide-tabs="" id='no_comment_list'>
+   <!--  <header class="store-header">
+        <div class="df">
+            <a href="javascript:history.go(-1)" class="back"><i></i></a>
+            <p>选择支付订单</p>
+            <a href="javascript:void(0)" class="report" ><i></i></a>
+        </div>
+    </header> -->
+    <gl-header title="选择评价订单"></gl-header>
+    <section>
+        <ion-content overflow-scroll="false" overflow-scroll="false">
+            <!--<ion-refresher-->
+                    <!--pulling-text="下拉刷新..."-->
+                    <!--on-refresh="doRefresh()">-->
+            <!--</ion-refresher>-->
+            <div class="choose-item" >
+                <div class="lists">
+                    <div class="items bor-bot"
+                         ng-click="createComment(item.paymentNo,$index)"
+                         ng-repeat="item in chooseItems">
+                        <div class="img-box"><img err-src="./img/store_list/icon_60.png" src="{{item.imageUrl||'./img/store_list/icon_60.png'}}"  alt=""></div>
+                        <div class="info">
+                            <i class="fr"
+                            ng-class="{true:'icon_gou',false:''}[payTime == item.paymentDate]"></i>
+                            <p class="name">商家：{{item.merchantName}}</p>
+                            <p class="price">现金支付：￥{{item.money}}</p>
+                            <p class="price">交易时间：{{item.paymentDate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ion-infinite-scroll
+                    ng-if="isHasMore"
+                    on-infinite="loadMore()">
+            </ion-infinite-scroll>
+        </ion-content>
+    </section>
+</ion-view>

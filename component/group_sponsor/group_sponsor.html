@@ -1,0 +1,42 @@
+<ion-view hide-tabs='true' id='group_sponsor'>
+    <gl-header title="乐抢单记录" back="tab.index_selectShop"></gl-header>
+    <div class="sp_box">
+        <div class="sp_btn">
+            <span class="f26 sp_white" ng-click="initiator(1)" ng-class="{1:'sp_color'}[whiteColor]">我发起的</span><span
+                class="f26 sp_white" ng-click="initiator(2)" ng-class="{2:'sp_color'}[whiteColor]">我参与的</span>
+        </div>
+    </div>
+    <section class="scrolltop220" ng-if="whiteColor===1">
+        <ion-content overflow-scroll="false" lazy-scroll>
+            <ul>
+                <li class="sp_list" ng-repeat="items in numPageList" ng-click="gotoPay(items)">
+                    <span class="sp_num">{{items.orderTime}}</span>
+                    <a class="sp_img_box"><img ng-src="{{items.merchantMainImage || './img/df-u-img.png'}}" alt="" err-src="./img/df-u-img.png" class="sp_img"></a>
+                    <div class="sp_item">
+                        <p class="f22 sp_text1">{{items.merchantName}}</p>
+                        <p><img ng-src="{{{'0':'img/hdqImg/denger_12.png','1':'img/hdqImg/success_12.png','2':'img/hdqImg/denger_12.png','7':'img/hdqImg/err_sp.png','5':'img/hdqImg/err_sp1.png'}[items.orderStatus]}}" alt="" class="sp_img1"></p>
+                    </div>
+                    <span class="f30 sp_weight"><em class="f22">￥</em>{{items.totalAmount || '0' | moneyUnit}}</span>
+                </li>
+            </ul>
+            <ion-infinite-scroll ng-if="ishasMore" on-infinite="loadMore()" distance="5%"></ion-infinite-scroll>
+            <p style="text-align: center" ng-show="ishasmore">我是有底线的</p>
+        </ion-content>
+    </section>
+    <section class="scrolltop220" ng-if="whiteColor===2">
+        <ion-content overflow-scroll="false" lazy-scroll>
+            <ul>
+                <li class="sp_list" ng-repeat="items in numPageitem" ng-click="gotoPay(items)">
+                    <span class="sp_num">{{items.orderTime}}</span>
+                    <a class="sp_img_box"><img ng-src="{{items.merchantMainImage || 'img/df-u-img.png'}}" alt="" err-src="img/df-u-img.png"  class="sp_img"></a>
+                    <div class="sp_item">
+                        <p class="f22 sp_text1">{{items.merchantName}}</p>
+                        <p><img ng-src="{{{'0':'img/hdqImg/sp_payOk.png','1':'img/hdqImg/sp_pay2.png','2':'img/hdqImg/denger_12.png','7':'img/hdqImg/err_sp.png'}[items.orderStatus]}}" alt="" class="sp_img1"></p>
+                    </div>
+                    <span class="f30 sp_weight"><em class="f22">￥</em>{{items.totalAmount || '0' | moneyUnit}}</span>
+                </li>
+            </ul>
+            <ion-infinite-scroll ng-if="hasMore" on-infinite="loadMax()" distance="5%"></ion-infinite-scroll>
+        </ion-content>
+    </section>
+</ion-view>

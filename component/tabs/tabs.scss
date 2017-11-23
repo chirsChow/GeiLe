@@ -1,0 +1,28 @@
+/*tabs by cheng 20170327*/
+.tabs{background-image:none;background-color: #fff;}
+.tabs:after{     content: '';     position: absolute;     top: 0;     left: 0;     border-top: 1px solid #ddd;  box-sizing: border-box;  -webkit-box-sizing: border-box;width: 200%;    height: 2px;   transform: scale(0.5);   transform-origin: left top;  -webkit-transform: scale(0.5);   -webkit-transform-origin: left top;}
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated{color: #29ADFD !important;opacity: 1;}
+ion-tabs.tabs-color-active-positive .tab-item{opacity: 1;color: #CAD0D5;font-size: 0.2rem !important;}
+/*处理Android的tabs问题*/
+.tabs-top.tabs-striped .tab-item.tab-item-active, .tabs-top.tabs-striped .tab-item.active, .tabs-top.tabs-striped .tab-item.activated{margin-top: 0;border:none;}
+.tab-item i.icon {background-image: url(../img/tab/cjc_icon.png);background-size: 1.32rem;width: 0.48rem;height: 0.48rem;margin: 0.06rem auto 0.03rem !important;}
+.home-tab-on{background-position: 0 0;}
+.home-tab-off{background-position: -0.7rem 0;}
+.my-tab-off{background-position: -.69rem -1.14rem;}
+.my-tab-on{background-position: 0.02rem -1.14rem;}
+.news-tab-off{background-position: -0.7rem -0.56rem;}
+.news-tab-on{background-position: 0 -0.56rem;}
+
+.android_padding{position: absolute; top:0;width: 100%; bottom: 0;}
+.ios_padding{top:0.4rem;}
+.pane, .view{height: initial !important;}
+//tab的蒙层
+.tab-layer{
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.99rem;
+  z-index: 5;
+}

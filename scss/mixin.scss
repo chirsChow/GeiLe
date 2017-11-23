@@ -1,0 +1,50 @@
+//背景图大小及其宽高
+@mixin setWidthBackground($w,$h) {
+  height: $h;
+  width: $w;
+  background-size: $w $h;
+}
+
+@mixin flex1($v) {
+  -webkit-box-flex: $v; /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: $v; /* OLD - Firefox 19- */
+  -webkit-flex: $v; /* Chrome */
+  -ms-flex: $v; /* IE 10 */
+  flex: $v; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+
+@mixin flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+//主轴为垂直方向
+@mixin flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+//侧轴居中对齐
+@mixin flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+//主轴居中对齐
+@mixin flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+//主轴两端对齐
+@mixin flex-pack-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}

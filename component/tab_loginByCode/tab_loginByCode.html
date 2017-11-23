@@ -1,0 +1,40 @@
+<ion-view hide-tabs="true" id='tab_loginByCode'>
+<ion-content>
+    <header class="header">
+        <a class="icon icon_cross" href="javascript:history.go(-1)"></a>
+        <div class="cjc_title f34">验证码登录</div>
+        <div class="cjc_titleR f30" ui-sref="tab.tab_register">注册</div>
+        <div class="icon icon_le"></div>
+    </header>
+
+    <section class="section">
+        <div>
+            <i class="icon icon_phone" ng-class="{true:'icon_phone_on',false:''}[false]"></i>
+            <input  type="tel"
+                    ng-model="inputData.check_phone" 
+                    ng-focus="checkPhoneFocus()"
+                    ng-blur="checkPhoneBlur()" 
+                    maxlength="11" 
+                    class="bor-bot"
+                    placeholder="请输入您的手机号">
+            <span class="vCode f24" ng-click="gotoSendMessage()" ng-bind="btnText"
+            ng-class="{true:'coloraa f30',false:'color29 f26'}[isCounting]"></span>
+        </div>
+        <div>
+            <i class="icon icon_vCode" ng-class="{true:'icon_vCode_on',false:''}[false]"></i>
+            <input  type="tel" 
+                    ng-model="inputData.check_code" 
+                    ng-focus="checkCodeFocus()"
+                    ng-blur="checkCodeBlur()" 
+                    maxlength="6" 
+                    class="bor-bot"
+                    placeholder="请输入手机验证码">
+        </div>
+    </section>
+    <footer class="footer">
+        <a ng-class="{true:'btnGreen',false:'btnGrayLogin'}[canLogin]" ng-click="login()">登 录</a>
+    </footer>
+    <!-- <div class="colorff f24 toRegister  tc" ui-sref="tab.tab_register">注册</div> -->
+</ion-content>
+	
+</ion-view>

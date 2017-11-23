@@ -1,0 +1,361 @@
+#payment_exceptional{
+    background-color: #f4f4f4;
+    #gl_header{
+        height: 3rem;
+    }
+    .cjc_content{
+        width: 7.1rem;margin: 1rem auto 0;height: 10.6rem;background-color: #fff;border-radius:0.08rem;position: relative;padding: 0 0.2rem;
+        .cjc_top_img{
+            width: 1.32rem;height: 1.32rem;position: absolute;left: 50%;top:-0.7rem;margin-left: -0.62rem;border-radius:50%;border:0.06rem solid #17AAF4;
+            img{border:0.04rem solid #fff;width: 1.2rem;height: 1.2rem;border-radius:50%;}
+        }
+        .cjc_number{
+            margin: 0 0.2rem;
+            div:first-child{margin-right: 0.5rem;line-height: 0.8rem;}
+            .cjc_input{
+                width: 4.1rem;height: 0.8rem;border:1px solid rgba(41,173,253,1);line-height: 0.8rem;border-radius:0.08rem;
+                input{width: 3.1rem;line-height: 0.8rem;background-color: transparent;margin-left: 0.2rem;color: rgba(41,173,253,1);height: 0.8rem;}
+                img{
+                    width: 0.8rem;height: 0.8rem;padding: 0.14rem;
+                }
+            }
+        }
+    }
+
+
+    .cjc_title_bg{width: 100%;height: 0.88rem;box-sizing: initial;line-height: 0.88rem;background-color: #FFF;padding-top: 0.5rem;
+        .lh88{line-height: 0.88rem;}
+        //.ion-ios-arrow-left:before{color: #666;line-height: 0.88rem;width: 1.1rem;font-size:0.6rem;text-align:center;}
+        .cjc_bank_add{width: 1.2rem;text-align: center}
+      }
+    .cjc_exceptional{
+        top:1.28rem;
+        .cjc_number_list{
+            position: absolute;width: 100%;height: 83%;left: 0;top: 17%;background-color: #fff;
+            ion-content{
+                height: 4rem;
+                .bor-top-bot{
+                    overflow: auto;
+                    div{width: 2.5rem;height: 1rem;line-height: 1rem;float: left;}
+                    div:after{
+                        content:"";width: 2.5rem; height: 1px; display: block;
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAx9pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QkNGMzQ3NDIyMDk2MTFFNUI3MjQ4MDExNEQ2MEM3NjMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QkNGMzQ3NDMyMDk2MTFFNUI3MjQ4MDExNEQ2MEM3NjMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCQ0YzNDc0MDIwOTYxMUU1QjcyNDgwMTE0RDYwQzc2MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCQ0YzNDc0MTIwOTYxMUU1QjcyNDgwMTE0RDYwQzc2MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoHqAXwAAAAZSURBVHjaYvr//z8DCLPcu3fvPwMQAAQYAGs3CZpuggEYAAAAAElFTkSuQmCC);
+                        background-position: bottom;
+                        background-repeat: repeat-x;
+                        background-size: 1px;
+                    }
+                }
+            }
+        }
+        .cjc_top {
+            margin: 0.2rem 0;
+            padding: 0.24rem;
+            background-color: #fff;
+            img {
+                width: 1rem;
+                height: 1rem;
+                border-radius: 0.1rem;
+                margin-right: 0.24rem;
+            }
+            .df1 {
+                .f30 {
+                    line-height: 0.6rem;
+                }
+            }
+            .cjc_money {
+                width: 1.7rem;
+                .f40 {
+                    line-height: 0.6rem;
+                }
+            }
+            .pay-info-right-class{
+                div{
+                    padding:.1rem 0;
+                }
+            }
+        }
+
+        .p0-24{
+            background-color: #fff;
+
+            .cjc_check {
+                display: inline-block;
+                width: 4.3rem;
+                height: .7rem;
+                color: #29adfd;
+                line-height: 0.68rem;
+                text-align: center;
+                font-size: 0.28rem;
+                background-color: #f4fbff;
+                border:1px solid #29adfd;
+                border-radius:.08rem;
+            }
+            //更换
+            .change-cls{
+                color: #29adfd!important;
+                text-align: center;
+                font-size: 0.28rem;
+            }
+
+
+            .cjc_bottom{
+                .f24.color33{display: block;}
+                .df{margin-bottom: 0.4rem;}
+                .df.cjc_dou{margin-bottom: 0.6rem;}
+                .df.cjc_dou div.df1{width: 1.4rem;    flex: inherit;font-size: 0.24rem;}
+                .df .df1{margin-right: 0.14rem;color: #ccc;line-height: 0.58rem;height: 0.58rem;text-align: center;font-size: 0.34rem;position: relative;
+                    &.f24{font-size:0.24rem;}
+                }
+                .df .df1:after{     content: '';     position: absolute;     top: 0;     left: 0;     border: 1px solid #ccc;border-radius:1rem;    box-sizing: border-box;     width: 200%;     height: 200%;   transform: scale(0.5);   transform-origin: left top; -webkit-transform: scale(0.5);   -webkit-transform-origin: left top; }
+                .df .df1.active{color: #29adfd;}
+                .df .df1.active:after{border: 1px solid #29adfd;}
+                .cjc_other{display: inline-block !important;margin-bottom: 0.1rem; vertical-align: bottom; }
+                .reward-label{
+                    margin:.4rem 0;
+                }
+            }
+
+            .selected-staff-container{
+                height:1.2rem;
+                line-height: 1.2rem;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-direction:row;
+                flex-direction:row;
+                align-items:center;
+                 -webkit-align-items:center;
+            }
+            //选中的员工样式
+            .selected-staff{
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: flex;
+                flex-direction:row;
+                -webkit-flex-direction:row;
+                align-items:center;
+                 -webkit-align-items:center;
+                -webkit-justify-content:space-between;
+                justify-content:space-between;
+                img{
+                    opacity:0.9;
+                    background:#d8d8d8;
+                    border:1px solid #ffffff;
+                    width:.6rem;
+                    height:.6rem;
+                    border-radius:100%;
+                    margin-right:.18rem;
+                }
+                span{
+                    font-size:.28rem;
+                    color:#333333;
+                    line-height:.3rem;
+                    text-align:left;
+                }
+            }
+        }
+        .cjc_excep_btn{
+            width: 6.3rem;
+            height: 0.88rem;
+            background-color: #29adfd;
+            color: #fff;
+            text-align: center;
+            line-height: 0.88rem;
+            border-radius:0.45rem;
+            margin: 0.8rem auto;
+            border:0;
+            &:disabled{
+                background-color:#ccc;
+            }
+        }
+    }
+    .cjc_search_back{line-height: 0.88rem;width: 1.1rem;font-size:0.6rem;text-align: center;}
+}
+.cjc_margin {
+    background-color: #fff;
+    margin: 0.2rem 0;
+    padding: 0 0.24rem;
+    height:1.6rem;
+    line-height:1.6rem;
+    .cjc_start {
+        display: inline-block;margin-left: -1.1rem;
+        i{margin-right: 0.3rem;}
+        .icon:after {
+            content: "";
+            background-image: url(../img/start-big-d.png);
+            background-size: 0.4rem;
+            background-repeat: no-repeat;
+        }
+        .icon0:after {
+            width: 0.4rem;
+            height: 0.4rem;
+            display: inline-block;
+            vertical-align: middle;
+            background-position: 0 0 !important;
+        }
+        .icon1:after {
+            width: 0.4rem;
+            height: 0.4rem;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url(../img/start-big.png);
+        }
+    }
+}
+#modal_header{
+    background-color: #f4f4f4;
+    .cjc_title_bg{width: 100%;height: 0.88rem;box-sizing: initial;line-height: 0.88rem;background-color: #29ADFD;padding-top: 0.5rem;}
+    .cjc_icon:after{content:"";background-image: url(../img/index/icon.png);background-size: 5rem;display: block;}
+    .cjc_icon1:after{width: 0.3rem;height: 0.3rem;background-position: -1rem 0; display: inline-block;margin:-0.04rem 0.04rem 0 0;    vertical-align: middle; }
+    .cjc_title_search{
+        position: relative;line-height: 0.54rem;background:#f4f4f4;border-radius:1rem;height:0.54rem;width: 100%;margin: 0.16rem auto;text-align: center;padding-left: 0.2rem;
+        .cjc_search_input{width: 3rem;}
+        .cjc_resize_width{width: 4rem;}
+        s{display: inline-block;height: .31rem;width: .31rem;background: url("../img/clear_local.png") no-repeat;background-size: .3rem .3rem;
+            position: absolute;right: .3rem;top: .13rem;display: none;
+            &.show{display: inline-block}
+        }
+    }
+    .tc{text-align: center;}
+    .tl{text-align: left;}
+    .cjc_search_button{width: 1.04rem;line-height: 0.88rem;text-align: center;}
+    .cjc_search_back{line-height: 0.88rem;width: 1.1rem;font-size:0.6rem;text-align: center;}
+    .cjc_search_input{display: inline-block; background-color: #f4f4f4; height: 0.5rem; border: none; vertical-align: top;font-size: 0.24rem;}
+    .cjc_payment{top: 1.3rem;padding: 0.2rem;
+        ul li{
+            
+        }
+    }
+}
+//员工搜索内容区
+.search-section {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction:row;
+    -webkit-flex-direction:row;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    flex-wrap: wrap;
+    -webkit-flex-wrap:wrap;
+    margin:.2rem;
+    .search-item {
+        margin:calc((100% - 0.4rem - 3*2.2rem)/1.2);
+        background: #ffffff;
+        border-radius: 8px;
+        width: 2.19rem;
+        height: 1.80rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        justify-content: center;
+        -webkit-justify-content:center;
+         -webkit-align-items:center;
+        align-items: center;
+        &:active{
+            background-color:#e8e9eb;
+        }
+        img {
+            opacity: 0.9;
+            background: #d8d8d8;
+            border: 1px solid #aaaaaa;
+            width: .8rem;
+            height: .8rem;
+            border-radius: 100%;
+            margin-bottom: .13rem;
+        }
+        span {
+            font-size: .24rem;
+            color: #666666;
+            text-align: center;
+        }
+        label {
+            width: 0;
+            height: 0;
+            i {
+                position: absolute;
+                right: 0.1rem;
+                top: 0.1rem;
+                display: inline-block;
+                width: .4rem;
+                height: .4rem;
+                background: url("../img/reward/no-selected.png") no-repeat center right;
+                background-size: .32rem .32rem;
+            }
+            input {
+                opacity: 0;
+                &:checked+i {
+                    background: url("../img/reward/selected.png") no-repeat center right;
+                    background-size: .32rem .32rem;
+                }
+            }
+        }
+    }
+    
+}
+ion-scroll{
+    .scroll{
+        height:100%;
+    }
+    .search-OK{
+        background-image:linear-gradient(-227deg, #67c6ff 7%, #2179eb 96%);
+        box-shadow:0 6px 20px 0 rgba(41,173,253,0.50);
+        border-radius:1rem;
+        width:1.2rem;
+        height:1.2rem;
+        line-height:1.2rem;
+        position:fixed;
+        bottom: 1.8rem;
+        right: .2rem;
+        text-align:center;
+        font-size:.28rem;
+        color:#ffffff;
+    }
+}
+//打赏-->没有员工记录
+.no-record {
+  text-align: center;
+  margin-top: 3.9rem;
+  font-size: .28rem;
+  color: rgb(135, 135, 135);
+  img {
+    width: 2.4rem;
+    margin-bottom: .6rem;
+  }
+}
+
+//其它金额
+.other-money-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    input {
+        color: #29adfd;
+        font-size: 0.4rem;
+        background-color: transparent;
+        height: 0.8rem;
+        padding:0;
+    }
+    input[disabled] {
+        background-color: #fff;
+    }
+    input::-webkit-input-placeholder {
+        font-size: .24rem;
+        color: #aaaaaa;
+        text-align: left;
+        vertical-align: middle;
+    }
+}
+
+
+.flex1 {
+    flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+}

@@ -1,0 +1,11 @@
+<ion-view hide-tabs='true' id='msg_system'>
+    <gl-header title="系统公告详情"></gl-header>
+    <div class="content-wrapper">
+        <p>系统公告详情</p>
+        <h1>{{list.title}}<span>{{list.time}}</span></h1>
+        <div class="img-box" ng-if="list.imgs.length != 0">
+            <img ng-src="{{list.imgs[0]}}" alt="">
+        </div>
+        <p class="content-1">{{list.content}}</p>
+    </div>
+</ion-view>

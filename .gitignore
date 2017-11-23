@@ -1,0 +1,8 @@
+##ignore this file##
+/css/
+/dist/
+/node_modules/
+config.js
+/js/all.min.js
+.idea
+.project

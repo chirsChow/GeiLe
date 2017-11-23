@@ -1,0 +1,111 @@
+#tab_oldTelCheck{
+	/*通用样式设置*/
+	*{
+		box-sizing: border-box;
+	} 
+	 
+	::-webkit-input-placeholder{
+		color:#ccc;
+	}
+
+	/*通用样式设置end*/
+
+	.container{
+		width:100%;
+		padding:0 0.24rem;
+	}
+
+	.coloraa{color:#aaa;}
+	.color29{color:#29adfd;}
+
+	.col{
+		padding:0 !important;
+		margin:0 !important;
+	}
+	.row{padding:0 !important;}
+	.arrow{
+		display: inline-block;
+		width:1rem;
+		height: 0.88rem;
+	}
+
+	/*header部分*/
+	.header{
+		width:100%;
+		height:1.28rem;
+		line-height: 1.28rem;
+		text-align: center;
+		padding-top:0.4rem;
+		font-size: 0.35rem;
+		background:#fff;
+		.arrow_left{
+			display: inline-block;
+			width:0.24rem;
+			height:0.43rem;
+			background: url(../img/ym_img/iconList.png) no-repeat 0 0;
+			background-size: 0.46rem;
+			margin-top:  0.24rem;
+			margin-left: 0.3rem;
+		}
+		.title{
+			font-size: 0.34rem;
+			color:#333;
+			height: 0.88rem;
+			line-height: 0.88rem;
+		}
+	}
+	/*header部分结束*/
+
+	.text{
+		padding:0.24rem;
+		span{
+			color:#666;
+			font-size: 0.28rem;
+			line-height: 0.38rem;
+		}
+	}
+
+	/*section部分*/
+	.section{
+		background:#fff;
+		margin-bottom: 0.8rem;
+		li{
+			height: 0.9rem;
+			line-height: 0.9rem;
+			padding:0 0.24rem;
+			span:first-child{
+				font-size: 0.3rem;
+				color:#333;
+				margin-right: 0.3rem;
+			}
+			input{
+				display: inline-block;
+				width: 3rem;
+				height: 0.7rem;
+				font-size: 0.26rem;
+				position: relative;
+				top:-0.06rem;
+			}
+		}
+	}
+	/*section部分结束*/
+
+	/*footer部分*/
+	.footer{
+		.btn_complete{
+			display: block;
+			width:6.9rem;
+			height:0.88rem;
+			line-height: 0.88rem;
+			margin:0 auto;
+			text-align: center;
+			color:#fff;
+			text-decoration: none;
+			font-size: 0.32rem;
+			background: #29adfd;
+			border-radius: 0.45rem;
+			margin-bottom: 0.3rem;
+		}
+	}
+	/*footer部分结束*/
+}

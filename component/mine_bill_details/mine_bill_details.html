@@ -1,0 +1,38 @@
+<ion-view hide-tabs='true' id='mine_bill_details'>
+   <!--  <header class="bor-bot">
+        <a href="" class="button-retrun ion-ios-arrow-left color66" ng-click="goBack()"></a>
+        <span class="f34">帐单详情</span>
+    </header> -->
+    <gl-header title="帐单详情"></gl-header>
+    <div class="bill-list p0-24">
+        <div class="img-box bor-bot">
+            <img ng-src="{{img}}" err-src='img/df-u-img.png' alt="">
+        </div>
+        <div class="info-box bor-bot">
+            <p class="color33 f30" ng-bind="billData.merchantName | ellipsisFilter:18"></p>
+            <p class="color99 f24" ng-bind='billData.paymentDate'></p>
+        </div>
+    </div>
+    <div class="msg-detail" ng-if='billData.operationName=="退款"'> 
+        <div class="color33 f28 bor-bot">退款单号 <span class="coloraa f24" ng-bind='billData.returnNo'></span></div>
+        <div class="color33 f30 bor-bot">原交易单号<span class="coloraa f26" ng-bind='billData.paymentNo'></span></div>
+        <!--<div class="color33 f30 bor-bot">支付方式<span class="coloraa f26" ng-bind='billData.scene | scenceFilter'></span></div>-->
+        <div class="color33 f30 bor-bot">交易总金额<span class="coloraa f26" ng-bind='"￥"+billData.money.toFixed(2)'></span></div>
+        <div class="color33 f30 bor-bot">退回银行卡支付<span class="coloraa f26" ng-bind='"￥"+billData.realMoney.toFixed(2)'></span></div>
+        <div class="color33 f30 bor-bot">退回乐豆支付<span class="coloraa f26" ng-bind='billData.happyCoin.toFixed(2)+"乐豆"'></span></div>
+        <div class="color33 f30 bor-bot">收回消费抵扣<span class="coloraa f26" ng-bind='billData.returnHappyCoin.toFixed(2)+"乐豆"'></span></div>
+    </div>
+    <div class="msg-detail" ng-if='billData.operationName=="消费" || billData.operationName=="打赏"'>
+        <div class="color33 f28 bor-bot">支付单号 <span class="coloraa f24" ng-bind='billData.paymentNo'></span></div>
+        <div class="color33 f30 bor-bot">支付方式<span class="coloraa f26" ng-bind='billData.scene | scenceFilter'></span></div>
+        <div class="color33 f30 bor-bot">交易总金额<span class="coloraa f26" ng-bind='"￥"+billData.money.toFixed(2)'></span></div>
+        <div class="color33 f30 bor-bot">乐豆支付<span class="coloraa f26" ng-bind='billData.happyCoin.toFixed(2)'></span></div>
+        <div class="color33 f30 bor-bot">现金支付<span class="coloraa f26" ng-bind='"￥"+billData.realMoney.toFixed(2)'></span></div>
+        <div class="color33 f30 bor-bot">赠送乐豆<span class="coloraa f26" ng-bind='billData.returnHappyCoin.toFixed(2)+"乐豆"'></span></div>
+    </div>
+    <div class="msg-detail">
+        <div class="color33 f30 bor-bot">摘要<span class="coloraa f26" ng-bind="billData.operationName + '-'+billData.merchantName | ellipsisFilter:12"></span></div>
+        <div class="color33 f30 bor-bot" ng-if="comment==0" ng-click='linkComment()'>评论<span class="coloraa f48 ion-ios-arrow-right"></span></div>
+        <div class="color33 f30 bor-bot" ng-if="billData.commentStauts==0" ng-click='linkDaShang($event,billData)'>打赏<span class="coloraa f48 ion-ios-arrow-right"></span></div>
+    </div>
+</ion-view>

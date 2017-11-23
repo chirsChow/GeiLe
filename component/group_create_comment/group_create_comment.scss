@@ -1,0 +1,103 @@
+#create_comment{background-color: #F4F4F4;
+  .pr{position: relative;}
+  .pa{position: absolute;}
+  .color33{color:#333;}
+  .mb10{margin-bottom: .1rem;}
+  p{margin:0;line-height: inherit;}
+  *{line-height: inherit;}
+  .backgroundsize{background-size: 3.58rem 2.84rem;background-image: url("../img/store-icons.png");display: block;}
+  a{color: inherit;text-decoration: none !important;}
+  .clearfix{overflow:hidden;}
+  .pingfang{font-family:'PingFangSC-Medium';}
+  .pingfang-R{font-family:'PingFangSC-Regular';}
+  .store-header{height: 1.28rem;padding-top: .4rem;background-color: #fff;
+    .df{@extend .pingfang-R;height: 0.88rem;line-height: .88rem;
+      a{padding: 0 .24rem;flex: 1;-webkit-flex: 1;
+        &.back{i{ background-position: -.49rem -.63rem; }}
+        &.report{i{background:none}}
+      }
+      p{font-size: .34rem;text-align: center;color: #333;flex: 3;-webkit-flex: 3;}
+      i{width: .48rem;height: .48rem;@extend .backgroundsize;display: inline-block;vertical-align: middle;}
+    }
+  }
+  section{
+    .scroll-content{top: 1.28rem}
+  }
+  .choose-item{background-color: #fff;margin-top: .2rem;
+    .items{height: 1.8rem;margin: 0 .24rem;padding: .24rem 0;display: flex;display: -webkit-flex;
+      .info{padding-left: .24rem;flex: 1;-webkit-flex: 1;
+        .name{font-size: .3rem;color: #263138;@extend .pingfang-R;margin-top: .1rem;}
+        .price{font-size: .24rem;color: #6F7B85;@extend .pingfang-R;margin-top: .2rem;}
+      }
+      .img-box{width: 1.2rem;height: 1.2rem;img{width: 100%;height: 100%;border-radius: .1rem;margin-top: 0.06rem;}}
+      .option{height: 1.2rem;width: .48rem;line-height: 1.2rem;
+        i{background: url('../img/tab_store/icon_22.png');background-size: .48rem .48rem ;height: .48rem;width: .48rem;display: inline-block;vertical-align: middle;}
+      }
+      &.active{
+        .option i{background-image: url('../img/tab_store/icon_21.png');}
+      }
+    }
+    .more{line-height: .8rem;font-size: .24rem;padding-right: .24rem;position: relative;
+      top: -.2rem;
+      a{color: #29adfd;display: inline-block;height: .8rem;}
+    }
+  }
+  .select-start{height: 1.2rem;text-align: center;
+    .start-box{margin-top: .4rem;
+      background: url("../img/starOff.png") repeat-x;
+      background-size: auto .4rem;width: 3.5rem;display: inline-block;position: relative;height: .4rem;
+      .start-l{background-size: auto .4rem;height: .4rem;
+        background: url("../img/starOn.png") repeat-x;
+        position: absolute;left: 0;top: 0;background-size: auto .4rem;
+      }
+      .select-box{@extend .clearfix;z-index: 5;position: absolute;width: 100%;height: 100%;top: 0;left: 0;
+        span{height: .4rem;width: .7rem;float: left;
+      }
+      }
+    }
+  }
+  .choose-box{background-color: #fff;padding: .1rem .24rem .16rem;
+    .item-box{@extend .pingfang-R;
+      .title{line-height: 1;padding: .14rem 0 .24rem;font-size: .24rem;color: #333;}
+      .items{@extend .clearfix;
+        span{line-height: .44rem;min-width: 1.24rem;padding: 0 .14rem;position: relative;
+          text-align: center;
+          display: inline-block;;float: left;margin-right: 0.14rem;color: #95A1AB;font-size: .24rem;margin-bottom: .14rem;
+
+          &.selected{
+            color: #29ADFD;background-color: #F5FBFF;position: relative;}
+          &.selected:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px solid #29adfd;
+            border-radius: .45rem;
+            width: 200%;
+            height: 200%;
+            transform: scale(0.5);
+            transform-origin: left top;
+          }
+        }
+        span:after{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          border: 1px solid #ddd;
+          border-radius: .45rem;
+          width: 200%;
+          height: 200%;
+          transform: scale(0.5);
+          transform-origin: left top;
+        }
+      }
+    }
+  }
+  .commented{padding: 0 .24rem;
+    a{width: 100%;margin:.4rem 0;background-color: #29adfd;line-height: .88rem;text-align: center;
+      color: #fff;font-size: .32rem;@extend .pingfang-R;display: inline-block;border-radius: 0.45rem;
+      &.no-check{background: #ccc;}
+    }
+  }
+}

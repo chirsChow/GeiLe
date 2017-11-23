@@ -1,0 +1,22 @@
+#index_alltype{
+    background-color: #f4f4f4;
+    .cjc_alltype{
+         .cjc_icon{background-size: 0.6rem;display: block;width: 0.5rem;height: 0.5rem;position: absolute;top:-0.24rem;left: 50%;margin-left: -0.25rem;    background-position: -0.06rem -0.1rem;}
+        .cjc_list{margin-top: 0.2rem;padding: 0.3rem 0;font-size:0.28rem;color:#666666;text-align:center;background-color: #fff;height: 1rem;line-height: 0.4rem;
+            .df1{line-height: 0.4rem;position: relative}
+            .df_width{line-height: 0.4rem;position: relative;width: 1.63rem;}
+            .cjc_list_type{    margin-top: 0.26rem;}
+            .cjc_more{width: 1rem;}
+            .cjc_more.ion-chevron-down:before{
+                font-size: 0.34rem;
+            }
+        }
+        .cjc_all_list{
+            overflow: auto;background-color: #fff;position: relative;    margin-top: 1px;
+            ul>li{
+                width: 25%;height: 1rem;line-height: 1rem;text-align: center;background-color: #fff;float: left;position: relative;font-size: 0.28rem;color: #666;
+            }
+            li:after{     content: '';     position: absolute;     top: 0;     left: 0;     border-bottom: 1px solid #ddd;  border-right: 1px solid #ddd;  box-sizing: border-box;     width: 200%;     height: 200%;   transform: scale(0.5);   transform-origin: left top; -webkit-transform: scale(0.5);   -webkit-transform-origin: left top;}
+        }
+    }
+}

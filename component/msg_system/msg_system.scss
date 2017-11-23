@@ -1,0 +1,44 @@
+#msg_system {
+  background: #f4f4f4;
+  .coloraa {
+    color:#aaa;
+  }
+  .colorfe {
+    color:#29adfd;
+  }
+  .content-wrapper {
+    background: #fff;
+    padding: 0.3rem 0.3rem 0.6rem;
+    p:first-child {
+      font-size: 0.22rem;
+      color: #aaa;
+      text-align: right;
+    }
+    h1 {
+      font-size: 0.3rem;
+      height: 0.3rem;
+      line-height: 0.3rem;
+      margin-bottom: 0.2rem;
+      span {
+        font-size: 0.22rem;
+        color: #aaa;
+        float: right;
+      }
+    }
+    .img-box {
+      width: 6.9rem;
+      border-radius: 0.1rem;
+      overflow: hidden;
+      margin-bottom: 0.2rem;
+      img {
+        width: 100%;
+      }
+    }
+    .content-1 {
+      font-size: 0.28rem;
+      color: #6F7B85;
+      line-height: 0.4rem;
+      font-family: PingFangSC-Regular;
+    }
+  }
+}

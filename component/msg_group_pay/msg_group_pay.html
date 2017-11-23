@@ -1,0 +1,34 @@
+<ion-view hide-tabs='true' id='msg_group_pay'>
+    <gl-header title="交易通知"></gl-header>
+    <div class="money-box">
+        <p class="participator">
+            <span>￥</span><span>{{baseInfo.totalAmt | moneyUnit}}</span>
+        </p>
+        <p>支付成功</p>
+    </div>
+    <div class="detail-wrapper" style="margin-top:0.2rem;">
+        <p class="bor-bot">
+            支付方式<span>乐抢单</span>
+        </p>
+    </div>
+    <div class="detail-wrapper">
+        <p class="bor-bot">
+            现金支付<span>￥{{baseInfo.cashAmt | moneyUnit}}</span>
+        </p>
+    </div>
+    <div class="detail-wrapper">
+        <p class="bor-bot">
+            <i class="icon icon1">抵</i>乐豆支付<span style="color: rgb(227, 124, 121)">{{baseInfo.beanAmt | moneyUnit}}豆</span>
+        </p>
+    </div>
+    <div class="detail-wrapper" style="margin-top:0.2rem;">
+        <p class="bor-bot">
+            <i class="icon icon2">赠</i>赠送乐豆<span style="color:rgb(248,169,48)">{{baseInfo.giftAmt | moneyUnit}}豆</span>
+        </p>
+    </div>
+    <div class="detail-wrapper" style="margin-top:0.2rem;" ng-if="isFinish" ng-click="linkDetail()">
+        <p class="bor-bot">
+            查看乐抢单详情<em></em>
+        </p>
+    </div>
+</ion-view>

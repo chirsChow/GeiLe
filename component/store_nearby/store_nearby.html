@@ -1,0 +1,82 @@
+<ion-view id='store_nearby_2' ng-class="{true:'no-list',false:''}[storeListItems.length<1]">
+    <div class="header-box">
+        <div class="store-menu-top">
+            <p ng-class="{true:'active',false:''}[selectClassifiesId == 0]" ng-click="selectClassifies(0)"><a href="">美食</a></p>
+            <p ng-class="{true:'active',false:''}[selectClassifiesId == 2]" ng-click="selectClassifies(2)"><a href="">娱乐</a></p>
+            <p ng-class="{true:'active',false:''}[selectClassifiesId == 1]" ng-click="selectClassifies(1)"><a href="">购物</a></p>
+            <p ng-class="{true:'active',false:''}[selectClassifiesId == null]" ng-click="selectClassifies(null)"><a href="">全部</a></p>
+        </div>
+        <div class="hot-list-box" ng-if="selectClassifiesId != null">
+            <ion-scroll direction="x"  scrollbar-x="false">
+                <div class="hot-list" style="width: {{(selectClassifiesItem.length+1)*1.3+.5+'rem'}}">
+                    <a href=""
+                       ng-if="selectClassifiesItem.length>0"
+                       ng-click="reloadList(0,'')"
+                       ng-class="{true:'active',false:''}[selectClassifiesItemId == 0]">热门</a>
+                    <a href="" ng-click="reloadList(item.id,item.name)"
+                       ng-class="{true:'active',false:''}[selectClassifiesItemId == item.id]"
+                       ng-repeat="item in selectClassifiesItem">{{item.name}}</a>
+                </div>
+            </ion-scroll>
+        </div>
+        <div style="height: 1px"></div>
+    </div>
+    <div class="store-list-header df bor-bot">
+        <p class="back" ui-check-sref="tab.index_location({title:''})"><a href="" ><i></i></a>{{currentPosition.streetName | ellipsisFilter:4}}</p>
+        <div class="search" ui-sref="tab.index_search"><a href=""><i></i>请输入商家名称</a></div>
+    </div>
+    <section  ng-class="{true:'hide-hot-list',false:''}[selectClassifiesId == null]" >
+        <ion-content delegate-handle="hot-list-box" overflow-scroll="true" lazy-scroll >
+            <!--<ion-refresher-->
+            <!--pulling-text="下拉刷新..."-->
+            <!--on-refresh="doRefresh()">-->
+            <!--</ion-refresher>-->
+            <div class="store-items store-items_1_c">
+                <div class="item-box bor-bot"  ui-check-sref="tab.tab_store({id:item.merchantNo,num:item.paymentCount})" ng-repeat="item in storeListItems track by $index" attached>
+                    <div class="item-info">
+                        <div class="img-box" tile-img="2/1" tile-src="{{item.images||'./img/store_list/icon_60.png'}}">
+                            <div class="bg"></div>
+                            <p class="title">{{item.shortName}}</p>
+                            <img err-src="./img/store_list/icon_60.png" src="{{item.images||'./img/store_list/icon_60.png'}}" alt="">
+                        </div>
+                        <div class="info">
+                            <p class="distance"><{{item.distance | distanceFilter}}m</p>
+                            <p class="type">{{item.areaName.length>3?"":item.areaName+'·'}}{{item.categoryName | ellipsisFilter:5}}</p>
+                            <!--<p class="type" ng-if="item.perCapita">人均消费￥{{item.perCapita}}</p>-->
+                            <p class="type" >人均消费￥{{item.perCapita?item.perCapita:'0元'}}</p>
+                            <div class="extra-item">
+                                <i ng-if="item.specialService.indexOf(3) != -1" class="po"></i>
+                                <i ng-if="item.specialService.indexOf(1) != -1" class="wf"></i>
+                                <i ng-if="item.specialService.indexOf(2) != -1" class="tc"></i>
+                                <i ng-if="item.specialService.indexOf(4) != -1" class="hs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra-info">
+                        <div class="comment_evaluate-score-default_box evaluate">
+                            <p class="comment_evaluate-score-cai" style="width: {{item.commentGrade*20 | gradeFilter}}%">
+                                <span class="comment_evaluate-score-default" ><i></i><i></i><i></i><i></i><i></i></span>
+                            </p>
+                            <span class="comment_evaluate-score-default"><i></i><i></i><i></i><i></i><i></i></span>
+                        </div>
+                        <p class="num-price">{{item.paymentCount | personNumberFilter}}人已消费 </p>
+                    </div>
+                    <div class="foucs-info">
+                        <p>赠豆比例<span class="font"><s class="sale-rate">{{item.saleRate}}</s> %</span></p>
+                    </div>
+                </div>
+            </div>
+            <ion-infinite-scroll
+                    ng-if="isHasMore"
+                    on-infinite="loadMore()"
+                    distance="5%">
+            </ion-infinite-scroll>
+        </ion-content>
+    </section>
+    <div class="cjc_nosearch_list" ng-if="noItem">
+        <div class="cjc_nosearch_img">
+            <img src="img/index/nogoods.png" width="100%">
+            <div class="tc color97 f28">暂无结果！</div>
+        </div>
+    </div>
+</ion-view>

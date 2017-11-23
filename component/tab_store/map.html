@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no" />
+    <title>给乐生活</title>
+    <link href="../../css/all.min.css" rel="stylesheet">
+    <style>
+        .BMap_bubble_title{font-size: 16px !important;}
+    </style>
+    <script>
+        var deviceWidth = document.documentElement.clientWidth;
+        if(deviceWidth > 640) deviceWidth = 640;
+        document.documentElement.style.fontSize = deviceWidth / 7.5 + 'px';
+    </script>
+</head>
+<body>
+<div id="tab_store_madal">
+    <div class="map-box">
+        <div class="map ">
+            <div id="allmap"></div>
+            <div class="options">
+                <span class="all" ng-click="toggleShowOptions()"></span>
+                <span class="transits" ng-click="transits()"></span>
+                <span class="driving" ng-click="driving()"></span>
+                <span class="walk" ng-click="walk()"></span>
+            </div>
+        </div>
+        <div class="rs-map">
+            <div id="r-result"></div>
+        </div>
+    </div>
+    <!--<div ng-class="{true: 'map-box', false: 'map-box transits-box'}[isTransits]">-->
+        <!--<div class="map">-->
+            <!--<div id="allmap"></div>-->
+            <!--<div ng-class="{true: 'options show-options', false: 'options'}[isShowOptions]">-->
+                <!--<span class="all" ng-click="toggleShowOptions()"></span>-->
+                <!--<span class="transits" ng-click="transits()"></span>-->
+                <!--<span class="driving" ng-click="driving()"></span>-->
+                <!--<span class="walk" ng-click="walk()"></span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="rs-map">-->
+            <!--<div id="r-result"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+</body>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=m5E7OZOUfxf4K8aXNcRDDDkxGAIKOdlL"></script> -->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=HIF9z3sj78rvtXQVtKl3S1oQ9dU2ZgyD"></script>
+<script>
+    $(function () {
+        var city=getUrlParam('city'),start=getUrlParam('start').split(','),end=getUrlParam('end').split(','),currentType=getUrlParam('type');
+        var hide=getUrlParam('hide');
+        var start_name = start[0],start_lng = start[1],start_lat = start[2];
+        var end_name = end[0] , end_lng = end[1] ,end_lat = end[2],end_address=end[3]
+//        $('#allmap').css('opacity',0)
+        var map = new BMap.Map("allmap");
+        var endPoint=new BMap.Point(end_lng,end_lat);
+        var startPoint=new BMap.Point(start_lng,start_lat);
+        var point = endPoint;
+        map.centerAndZoom(point, 15);
+        if(currentType == 1){  //1.定义  2.公交   3.驾车  4. 步行
+            mapLocal()
+        }else  {
+            transits(true)
+        }
+
+        //定位
+        function mapLocal() {
+            $('.map-box').addClass('transits-box')
+            var point = endPoint;
+            var marker = new BMap.Marker(point);  // 创建标注
+            map.addOverlay(marker);              // 将标注添加到地图中
+            var opts = {
+                width : 200,     // 信息窗口宽度
+                title : end_name , // 信息窗口标题
+            }
+            var infoWindow = new BMap.InfoWindow(end_address, opts);  // 创建信息窗口对象
+            marker.addEventListener("click", function(){
+                marker.openInfoWindow(infoWindow,point); //开启信息窗口
+            });
+            marker.openInfoWindow(infoWindow,point); //开启信息窗口
+        }
+        //公交
+        function transits(type) {
+            if(hide) {
+                walk(true)
+                return
+            }
+            $('.map-box').removeClass('transits-box')
+            if(currentType == 2 && !type) return;
+            map.clearOverlays();
+            currentType = 2
+            transit = new BMap.TransitRoute(map, {renderOptions: {map: map, panel: "r-result"}});
+            transit.setPageCapacity(5)
+            transit.search({title:start_name,point:startPoint}, {title:end_name,point:endPoint});
+        }
+        //驾车
+        function driving() {
+            if(currentType == 3) return;
+            currentType = 3
+            $('.map-box').addClass('transits-box')
+            map.clearOverlays();
+            var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+            driving.search({title:start_name,point:startPoint}, {title:end_name,point:endPoint});
+        }
+        //步行
+        function walk() {
+            if(currentType == 4) return;
+            currentType = 4
+            $('.map-box').addClass('transits-box')
+            map.clearOverlays();
+            var walking = new BMap.WalkingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+            walking.search({title:start_name,point:startPoint}, {title:end_name,point:endPoint});
+        }
+
+        $('.all').on('click',function () {
+            $('.options').toggleClass('show-options');
+            if(currentType == 1){
+                transits()
+            }
+        })
+        $('.transits').on('click',function () {
+            transits()
+        })
+        $('.driving').on('click',function () {
+            driving()
+        })
+        $('.walk').on('click',function () {
+            walk()
+        })
+
+
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg); //匹配目标参数
+            if (r != null) return decodeURI(r[2]); return null; //返回参数值
+        }
+
+    })
+</script>
+</html>

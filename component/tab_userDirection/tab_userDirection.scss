@@ -1,0 +1,20 @@
+#tab_userDirection{
+  .re{position: relative;}
+  .ab{position: absolute;}
+  .color22{color:#222;}
+  .color99{color:#999;}
+  .color29{color:#29ADFD;}
+  .mb42{margin-bottom: .42rem;}
+  .imgWrapper{margin-bottom: 1rem;
+    img{width: 7.5rem;display: block;margin: 0 auto;}
+  }
+  .section{
+    width: 7.5rem;
+    height: 2.6rem;
+    padding: .39rem .15rem 0 .33rem;
+    margin-bottom: 2.65rem;
+    .time{height: 1.24rem;}
+    .tel{height: .96rem;line-height: .96rem;}
+    .icon_tel{top:.24rem;right:.35rem;width:.48rem;height: .48rem;background: url(../img/ym_img/icon_tel.png) no-repeat;background-size: .48rem;}
+  }
+}

@@ -1,0 +1,54 @@
+<ion-view hide-tabs='true' id='my_set'>
+   <!--  <header class="cjc_title_bg">
+        <div class="tc df">
+            <div class="cjc_search_back">
+                <a href="javascript:history.go(-1)" class="button-retrun ion-ios-arrow-left color33"></a>
+            </div>
+            <div class="df1 f34 lh88">设置</div>
+            <div class="lh88 f28 cjc_bank_add"></div>
+        </div>
+    </header> -->
+     <gl-header title="设置"></gl-header>
+    <section class="scrolltop128 bj">
+        <ion-content overflow-scroll="false" class="has-header">
+            <ul class="information_list cb">
+                <li class="item_box p0-24 bgff bor-bot" ui-sref="tab.my_payments">
+                    <span class="fl f30 color33">支付设置</span>
+                    <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                </li>
+                <li class="item_box p0-24 bgff bor-bot" ui-sref="tab.my_security">
+                    <span class="fl f30 color33">安全中心</span>
+                    <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                </li>
+                 <li class="item_box p0-24 bgff bor-bot" ui-sref="tab.my_message">
+                    <span class="fl f30 color33">消息通知提醒</span>
+                    <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                </li>
+                <li class="box20" ng-click="gotoSpitslot()">
+                    <div class="item_box p0-24 bgff bor-bot">
+                        <span class="fl f30 color33">去点赞</span>
+                        <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                    </div>
+                </li>
+                <li class="item_box p0-24 bgff bor-bot" ui-sref="tab.tab_aboutGL">
+                    <span class="fl f30 color33">关于给乐</span>
+                    <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                </li>
+                <!-- <li class="box20" ng-click="callPhone()">
+                    <div class="item_box p0-24 bgff bor-bot">
+                        <span class="fl f30 color33">联系给乐客服</span>
+                        <div class="fr mt33 iphone">4000200365</div>
+                    </div>
+                </li> -->
+               <!--  <li class="item_box p0-24 bgff bor-bot" ng-click="clearCache()">
+                    <span class="fl f30 color33">清除缓存</span>
+                    <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                    <span class="fr f30 coloraa">3M</span>
+                </li> -->
+            </ul>
+            <div class="btn" ng-click="gotoLogout()">
+                <button class="xia_but f32 colorff">退出账号</button>
+            </div>
+        </ion-content>
+    </section>
+</ion-view>

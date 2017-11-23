@@ -1,0 +1,47 @@
+<ion-view hide-tabs='true' id='tab_modifyLoginPwd' class="bgf4">
+	<gl-header title="修改登录密码"></gl-header>
+	<section class="section">
+		<label>
+			<input class="prevPwd"
+				   ng-model="inputData.prevPwd" 
+				   maxlength="16" 
+				   type="password" 
+				   placeholder="请输入原登录密码">
+		</label>
+		<div ng-if="tips1" class="tips f24" ng-bind="tipsContent1"></div>
+	</section>
+	<footer class="footer">
+		<a href="" class="btn_next" ng-click="next()">下一步</a>
+	</footer>
+
+	<script id="my-modal.html" type="text/ng-template">
+		<ion-modal-view class="bgf4" id="modifyLoginPwd_modal">
+			<!-- <header class="header">
+				<div class="container row">
+					<a class="col col-33 col-center arrow" ng-click="closeModal()"><i class="fl arrow_left"></i></a>
+					<div class="col col-33 col-center"><span class="title">修改登录密码</span></div>
+				</div>
+			</header> -->
+			<gl-header title="修改登录密码" back="function" on-back="closeModal()"></gl-header>
+
+			<section class="section2">
+				<label>
+					<input  type="password"
+							maxlength="16" 
+							ng-model="inputData.pwd"
+						    placeholder="请设置新登录密码，8-16位字符与数字组合">
+				</label>
+				<label>
+					<input  type="password"
+							maxlength="16" 
+							ng-model="inputData.pwdConfirm" 
+							placeholder="请再次输入密码">
+				</label>
+				<div ng-if="tips" class="tips f24" ng-bind="tipsContent"></div>
+			</section>
+			<footer class="footer">
+				<a href="" class="btn_next" ng-click="modifyComplete()">确定修改</a>
+			</footer>
+		</ion-modal-view>
+	</script>
+</ion-view>

@@ -1,0 +1,29 @@
+<!--账单消息-->
+<div class="item-box" ng-click="setMessageHasRead('bill', item)">
+    <div class="wrapper">
+        <div class="icon-layout"><img src="img/index/msg_icon_2.png"/></div>
+        <div class="pleft content">
+            <div class="title-txt">{{item.billDate}}月账单统计</div>
+            <div class="title-txt">{{item.updateTime}}</div>
+            <div class="flex3">
+                <div class="flex1">
+                    <div class="color263138 f34 primary">{{item.cashAmount}}</div>
+                    <div class="color26313809 f22">现金支付 (元)</div>
+                </div>
+                <div class="flex1">
+                    <div class="color263138 f34 primary">{{item.beanAmount}}</div>
+                    <div class="color26313809 f22">乐豆支付 (元)</div>
+                </div>
+                <div class="flex1">
+                    <div class="color263138 f34 primary">{{item.giftAmount}}</div>
+                    <div class="color26313809 f22">赠送乐豆 (豆)</div>
+                </div>
+            </div>
+        </div>
+        <div class="circle" ng-click="showAtLocationPopup('bill', $index, $event)">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>

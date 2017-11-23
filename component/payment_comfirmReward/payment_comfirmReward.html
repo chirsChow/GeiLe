@@ -1,0 +1,69 @@
+<ion-view hide-tabs='true' id='payment_comfirmReward'>
+    <header class="cjc_title_bg bor-bot">
+        <div class="tc df">
+            <div>
+                <a ng-click="goBack()" class="button-retrun tr_1"><em class="return_4"></em></a>
+            </div>
+            <div class="df1 f34 lh88">确认打赏</div>
+            <div class="cjc_bank_add"></div>
+        </div>
+    </header>
+    <div class="header_box">
+	    <ul>
+	    	<img ng-src="{{staff.photo||'./img/df-u-img.png'}}" class="hear_img">
+	        <span class="header_text">
+                <span class="f28">{{staff.name}}</span>
+                <span class="f22">（工号{{staff.operatorNo}}）</span>
+            </span>
+	    </ul>
+    </div>
+    <div style="background-color:#fff;">
+    <!--打赏金额-->
+    <div class="money-div">
+    	<div class="m-left">打赏金额</div>
+    	<div class="m-middle tc font">
+    		<span class="f32">￥</span><span class="f88">{{tip}}</span>
+    	</div>
+    </div>
+    <!-- <div class="le-div bor-bot">
+	    <div class="item-toggle pr">
+	        <span class="font" ng-class='{true:"le-money",false:"le-money2"}[obj.leBen]'>{{leBenNum}}</span>
+	        <label class="toggle toggle-blance">
+	            <input type="checkbox" ng-model="obj.leBen" ng-change="changeCoin()">
+	            <div class="track">
+	                <div class="handle"></div>
+	            </div>
+	        </label>
+	    </div>
+    	<div class="le-avild">可用乐豆</div>
+    </div> -->
+    <!--<div class="payment-div">-->
+	    <!--<span class="payment-money font">-->
+        <!--<span class="f22">￥</span>{{payMoney}}</span>-->
+    	<!--<div class="payment-avild">支付金额</div>-->
+    <!--</div>-->
+    </div>
+    <!--选择银行卡-->
+    <!-- <div class="bank-div pr">
+    	<img ng-src="{{mybankCheck.bankImg}}" />
+    	<div class="bank-name">{{mybankCheck.bankName}} {{mybankCheck.cardType =="C" && " 信用卡" || " 储蓄卡"}}（{{mybankCheck.cardNo.substr(-4,4)}}）</div>
+    	<div class="bank-change" ng-click="changeBank()">更换</div>
+    </div> -->
+    <div id="wxpay">
+        <div class="bgff bor-bot type_select df">
+            <div></div>
+            <div class="f28">支付类型</div>
+        </div>
+        <div class="p24 df bgff bor-bot f28" ng-click="changeType(0)">
+            微信支付
+            <div class="bankimg"><img src="./img/wxpay.png" width="100%" height="100%" alt=""></div>
+        </div>
+    </div>
+    <div class="button-ok" ng-click="pay()">确认支付</div>
+    <!-- <wx-pay wxurl="{{wxUrl}}" show="wxPayShow"></wxPay> -->
+    <paying-box ng-if="queryBoo"
+                cancel-pay="cancelPay()"
+                shop-img="storeInfo.image"
+                shop-name="storeInfo.shortName"
+                money="data.price"></paying-box>
+</ion-view>

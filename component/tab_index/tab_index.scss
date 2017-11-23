@@ -1,0 +1,289 @@
+@import "../../scss/mixin";
+#tab_index {
+  .cjc_icon:after{content:"";background-image: url(../img/index/icon.png);background-size: 5rem;display: block;}
+  .header_bg {
+    width: 100%;
+    height: 2.9rem;
+    background: #29ADFD;
+    .wrapper{
+      padding-left: 0.3rem;
+      padding-top: 0.4rem;
+      .search{
+        @include flex();
+        @include flex-align-center();
+        .search-bar{
+          @include flex1(1);
+          @include flex();
+          @include flex-align-center();
+          height: .64rem;
+          background: #22A5F4;
+          box-shadow: inset 0 0 2px 0 rgba(0,0,0,0.10);
+          border-radius: 1rem;
+
+          .area{
+            width: 1.57rem;
+            text-align: center;
+            border-right: 1px solid #fff;
+            i{
+              padding-left: .1rem;
+            }
+          }
+          .input {
+            @include flex1(1);
+            text-align: center;
+            span {
+              opacity: 0.8;
+              font-size: 0.26rem;
+              color: #FFFFFF;
+            }
+            .ion-ios-search{
+              font-size: .38rem;
+              vertical-align: text-bottom;
+              padding-right: .1rem;
+            }
+          }
+        }
+        .msg-icon:after{width: 0.5rem;height: 0.5rem;background:url("../img/index/bellNoShadow.png") no-repeat center; background-size:100% 100%;margin: 0.18rem 0.24rem 0.2rem 0.24rem;}
+        .msg-icon {position:relative;}
+        .msg-icon span {width:.2rem;height:.2rem;background-color:red;border-radius:50%;position:absolute;top:.17rem;right:.24rem;display:none}
+        .msg-icon span.block {display:block;}
+      }
+      .balance{
+        @include flex();
+        @include flex-align-center();
+        @include flex-pack-justify();
+        margin-top: 0.05rem;
+        .left{
+          @include flex1(1);
+          padding-left: .1rem;
+        }
+        .right{
+          width: 1.6rem;
+        }
+        .top{
+          height: .68rem;
+          line-height: .68rem;
+          margin: .1rem 0;
+        }
+        .bottom{
+          height: .4rem;
+          line-height: .4rem;
+          .eye{
+            width: .3rem;
+            height: .3rem;
+            vertical-align: sub;
+            margin-left: .3rem;
+          }
+        }
+        .scan-icon{
+          margin-left: 0.05rem;
+          display:inline-block;width: 0.58rem;height: 0.58rem;background:url("../img/index/scanSmall.png") no-repeat center; background-size:100% 100%;
+        }
+        .scan-txt{
+          color: rgba(255,255,255,0.8);
+          font-size: .24rem;
+        }
+        .eye-img{
+          width: 0.36rem;margin-left: 0.2rem;vertical-align: middle;
+        }
+        .bean-amt{
+          font-size: 0.74rem;
+          font-family: Kollektif;
+        }
+        .bean-txt{
+          font-family: Kollektif;
+          letter-spacing: 4px;
+          line-height: 0.3rem;
+          margin-left: 0.14rem;
+        }
+        .data-wrap{
+          @include flex();
+          .flex1{
+            margin-top: 0.02rem;
+            height: 0.74rem;
+            line-height: 0.74rem;
+          }
+          .data{
+            font-family: Kollektif;
+            letter-spacing: 4px;
+            line-height: 0.37rem;
+          }
+          .week{
+            font-family: Kollektif;
+            letter-spacing: 4px;
+            line-height: 0.37rem;
+          }
+        }
+      }
+    }
+  }
+  .ion-content-class {
+    top: 2.9rem;
+    .cjc_icon_slide{
+      .slider-pager {bottom: 0.1rem; text-align: center;}
+      .slider-pager .slider-pager-page{opacity: 0.5;color:#aaaaaa;width: 0.1rem;}
+      .slider-pager .slider-pager-page.active{opacity: 1}
+      .slider-pager .slider-pager-page.active .ion-record:before{border-radius:50%;opacity: 1}
+      .ion-record:before {width: 0.1rem; height: 0.1rem; display: block; background-color: #aaa; border-radius: 50%; content: ""; }
+      .x_icon{content:"";background-size: 1.63rem;display: block;width: 1.63rem;height: 1.20rem;margin: 0 auto;    background-position: 0 0.2rem;background-repeat: no-repeat;
+        div{padding-top: 1.1rem;}
+      }
+      .cjc_nav{overflow: auto;background: #fff; width: 100%;height:3.2rem;
+       ul{width: 100%;height: 100%}
+       ul li{display: block;float: left;width: 23%;height:1.2rem;margin-right: 0.18rem;margin-bottom: 0.18rem;text-align: center}
+        .border-no-margin{margin: 0;}
+      }
+    }
+    .cjc_padding {
+      padding-top: 0.14rem;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .cjc_nav_slide{
+      width: 100%;height: 2rem;
+      .slider-pager {text-align: center;bottom: 0.1rem;}
+      .slider-pager .slider-pager-page{opacity:1;width: 0.28rem; height: 0.06rem;border: 1px solid #D3DADF;border-radius: 0.28rem;}
+      .slider-pager .slider-pager-page.active{opacity:1;background: #D3DADF;}
+      .ion-record:before {content: '';display: none; }
+    }
+    .list-container {
+      .item-box {
+        height: 2.1rem;
+        background-color: #fff;
+        margin-top: 0.14rem;
+        .wrapper {
+          position: relative;
+          padding: .15rem .2rem .2rem 0;
+          .icon-layout {
+            margin-bottom: -0.48rem;
+            margin-left: 0.3rem;
+            img {
+              width: .48rem;
+              height: .48rem;
+            }
+          }
+          .title-txt {
+            font-size: 0.2rem;
+            color: rgba(149,161,171,0.8);
+            margin-bottom: 0.08rem;
+          }
+          .pleft {
+            padding-left: 1.08rem;
+          }
+          .content {
+            .primary {
+              height: .68rem;
+              line-height: .68rem;
+            }
+            .color6F7B85 {
+              color: rgba(111,123,133,0.8);
+            }
+            .color00001A {
+              color: #00001A;
+            }
+            .color263138{
+              color: #263138;
+              letter-spacing: 2px;
+            }
+            .color26313809{
+              color: rgba(38,49,56,0.8);
+              letter-spacing: 0;
+            }
+            .flex3{
+              @include flex();
+              align-items: flex-end;
+              -webkit-align-items: flex-end;
+              .flex1{
+                @include flex1(1);
+              }
+            }
+            .circle-msg {
+              height: 0.24rem;
+              line-height: 0.24rem;
+              text-align: center;
+              display: inline-block;
+              color: #6F7B85;
+              margin-left: 0.2rem;
+              font-size: 0.18rem;
+            }
+          }
+          .circle {
+            position: absolute;
+            top:0.4rem;
+            right: 0.2rem;
+            line-height: 0.08rem;
+            padding: 0 0.2rem;
+            width: 0.8rem;
+            span {
+              display: inline-block;
+              width: .06rem;
+              height: .06rem;
+              background: #6F7B85;
+              text-align: center;
+              border-radius: 50%;
+              cursor: pointer;
+              margin-right: .01rem;
+            }
+          }
+        }
+      }
+    }
+    .cjc_nocompleted {
+      width: 100%;
+      height: 0.6rem;
+      line-height: 0.6rem;
+      text-align: center;
+      background-color: rgba(255,64,77,0.1);
+      color: #FF404D;
+      .ion-close {
+        position: absolute;
+        font-size: 0.3rem;
+        right: 0;
+        padding: 0 0.3rem;
+      }
+    }
+  }
+  .popup-index {
+    position: relative;
+    top: -2.9rem;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      .content{
+        background-image: url("../img/index/popup_combined_shape.png");
+        background-repeat: no-repeat;
+        background-size: 3.3rem 1.85rem;
+        width: 3.3rem;
+        height: 1.85rem;
+        position: absolute;
+        right: .4rem;
+        z-index: 6;
+        .color263238{
+          color: #263238;
+        }
+        ul{
+          margin-top: 0.25rem;
+        }
+        li {
+          height: 0.8rem;
+          line-height: 0.8rem;
+          margin: 0 0.3rem;
+        }
+        li:first-child {
+          border-bottom: 1px solid #ddd;
+        }
+        .label-icon{
+          width: 0.34rem;
+          height: 0.34rem;
+          margin-right: 0.2rem;
+          vertical-align: sub;
+        }
+      }
+    }
+  }
+}
+

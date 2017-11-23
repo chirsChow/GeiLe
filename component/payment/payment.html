@@ -1,0 +1,34 @@
+<ion-view hide-tabs='true' id='payment'>
+    <!--title:标题
+        back：跳转地址/不填返回上一步
+        right:右侧文字/header_rgiht(css样式控制)
+        right-class:右侧样式
+        on-click:右侧点击事件-->
+    <gl-header title="付款码"></gl-header>
+    <section class="scrolltop88">
+        <ion-content overflow-scroll="false" overflow-scroll="false">
+            <div class="cjc_payment_content ">
+                <div class="f28 color33">向给乐商家付款</div>
+                <div class="cjc_payCode">
+                    <img ng-src="{{BarCode}}" width="100%" alt="">
+                </div>
+                <div class="f28 tc">
+                    {{barCodeNum}}<span class="colorfe" ng-click="showCodeNum()">{{barCodeNum == myCode && ' 隐藏数字' || ' 查看数字'}}</span>
+                </div>
+                <div class="cjc_paycode1">
+                    <img ng-src="{{QRCode}}" width="100%" alt="">
+                </div>
+            </div>
+            <div class="cjc_paybottom bgf4 f28 color33">
+                <span class="fb">支付方式:</span>
+                <span class="cjc_mybank ellipsis">{{newBank.bankName}}</span>
+                <span> {{newBank.cardType =="C" && " 信用卡" || " 储蓄卡"}}（{{newBank.cardNo.substr(-4,4)}}）</span>
+                <span class="colorfe" ng-click="changeBank()">更换</span>
+            </div>
+            <div class="tc colorff f24 fb scan-btn" ng-click="gotoscan()">
+                <i class="cjc_icon cjc_icon4"></i>
+                扫一扫
+            </div>
+        </ion-content>
+    </section>
+</ion-view>

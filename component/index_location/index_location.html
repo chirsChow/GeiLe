@@ -1,0 +1,60 @@
+<ion-view hide-tabs='true' id='index_location'>
+    <header class="cjc_title_bg bor-bot">
+        <div class="tc df">
+            <div class="cjc_search_back" ng-click="goBack()">
+                <a class="button-retrun color33"></a>
+            </div>
+            <div class="df1">
+                    <div class="cjc_title_search f24 coloraa" ng-class="{true:'tl',false:'tc'}[hasfocus]" ng-click="changeInupt()">
+                    <i class="cjc_icon cjc_icon1"></i>
+                    <input type="search" ng-model="searchInput" class="cjc_search_input" placeholder="请输入地址"
+                           ng-class="{true:'cjc_resize_width',false:''}[hasfocus]" ng-blur="blurInput()">
+                    <s ng-class="{true:'show',false:''}[showClose]" ng-click="emptyInput($event)"></s>
+                </div>
+            </div>
+            <div class="f28 colorff cjc_search_button" ng-click="searchClick()">搜索</div>
+        </div>
+    </header>
+    <section class="scrolltop138">
+        <ion-content overflow-scroll="false" class="cjc_search_content f28">
+            <div ng-if="!searchList">
+                <div class="cjc_hot_search">
+                    <div class="title color66 p0-24">当前地址</div>
+                    <div class="cjc_location_add df p0-24">
+                        <div class="df1 ellipsis" ng-click="chackAddress(myCity)">{{mylocation}}</div>
+                        <div class="colorfe" ng-class="{true:'active',false:''}[reLocationNewing]" ng-click="reLocationNew()">
+                            <i class="cjc_icon cjc_icon0"></i>
+                            重新定位
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="hasHistory">
+                    <div class="cjc_history_search">
+                        <div class="title  color66 p0-24">历史地址<span class="color99"></span></div>
+                        <div class="p0-24 bgff">
+                            <div class="cjc_history_list bor-bot" ng-repeat="item in locationHistory" ng-click="gotoAddress(item)">{{item}}</div>
+                        </div>
+                    </div>
+                    <div class="cjc_clear_history" ng-click="clearHistory()">清空历史地址</div>
+                </div>
+                
+            </div>
+            <div class="cjc_location_content f28" ng-if="searchList && !noLocationList">
+                <div class="cjc_location_list p0-24" ng-repeat="item in addressItem" ng-click="chackAddress(item)" >
+                    <div class="bor-bot p24-0">
+                        <div class="f32 color33 mb12">{{item.title}}</div>
+                        <div class="f28 color66 ellipsis">{{item.address}}</div>
+                    </div>
+                </div>
+            </div>
+        </ion-content >
+        <div class="cjc_nosearch_list" ng-if="noLocationList">
+            <div class="cjc_nosearch_img">
+                <img src="img/index/nogoods.png" width="100%">
+                <div class="tc color97 f28">暂无搜索结果！</div>
+            </div>
+        </div>
+    </section>
+    <app-map style="height:0px;" address="{{address}}" search="{{inputAdd}}"> </app-map>
+</ion-view>
+

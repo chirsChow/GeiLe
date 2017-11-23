@@ -1,0 +1,89 @@
+<ion-view id='tab_mine' on-drag-up="setup()" on-drag-down="reset()">
+    <div class="mine-header" ng-class="{'mine-header-up':isUp}">
+        <div class="news"  ng-click="linkMsg()">
+            <!--  <i class="icon icon0" ui-sref="tab.my_set"></i>  -->
+            <i class="icon"></i>
+            <span ng-class="{'block':nativeBroadcastMsg.unRead!=0}"></span>
+        </div>
+        <div class="setting"  ui-sref="tab.my_set">
+            <!--  <i class="icon icon0" ui-sref="tab.my_set"></i>  -->
+            <i class="icon"></i>
+        </div>
+        <div class="h-img" ng-class="{'set-img':isUp}" ui-sref="tab.my_personal">
+            <img ng-src="{{information.photo || 'img/df-u-img.png'}}" err-src="img/df-u-img.png">
+        </div>
+        <div class="df nav" ng-class="{'mine-opacity': isUp}">
+            <div class="df1 tc colorff" ui-sref="tab.my_personal">
+                <i class="font personal"></i>
+                <p class="desc">个人中心</p>
+            </div>
+            <div class="df1 tc colorff">
+                <i class="font" ng-bind="balanceNum || '0.00'"></i>
+                <p class="desc">乐豆余额（豆）</p>
+            </div>
+            <div class="df1 tc colorff" ng-click="gotoBankList()">
+                <i class="font" ng-bind="bankNum || 0"></i>
+                <p class="desc">银行卡</p>
+            </div>
+        </div>
+    </div>
+    <div class="bill-nav">
+        <h1 class="f30 title">我的账单</h1>
+        <p class="date">{{year+'年'+month+'月帐单'}}<span>（滑动查看月帐单）</span></p>
+        <ion-slide-box  active-slide="slideIndex" show-pager="true" delegate-handle='bill-handle' on-slide-changed="changeBill()">
+            <ion-slide ng-repeat='list in lists track by $index'>
+                <div class="df tc">
+                    <div class="df1">
+                        <div class="f28 fb colorff font" ng-bind="(list.totalMoney ||  list.totalMoney ==0)? list.totalMoney.toFixed(2) : '--'"></div>
+                        <div class="f22 color33 ls2">现金支付（元）</div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="df1">
+                        <div class="f28 fb colorff font" ng-bind="(list.totalPayHappyCoin || list.totalPayHappyCoin==0) ? list.totalPayHappyCoin.toFixed(2) : '--'"></div>
+                        <div class="f22 color33 ls2">乐豆支付（豆）</div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="df1">
+                        <div class="f28 fb colorff font" ng-bind="(list.totalReturnHappyCoin || list.totalReturnHappyCoin ==0) ? list.totalReturnHappyCoin.toFixed(2) : '--'"></div>
+                        <div class="f22 color33 ls2">赠送乐豆（豆）</div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </div>
+    <div class="split" ng-hide='lists[slideIndex].list.length==0 || lists[slideIndex].list==null'></div>
+    <ion-content  delegate-handle="tab_mine" has-bouncing="true" ng-class="{'mine-content-up':isUp}">
+        <div class="bill-wrapper">
+            <div class="bill-content bor-bot" ng-click="linkDetails(i)" ng-repeat='i in lists[slideIndex].list track by $index'>
+                <i class="icon">
+                    <img src="img/mine/xiao.png" ng-if="i.operationName=='消费' || !i.operationName">
+                    <img src="img/mine/tui.png" ng-if="i.operationName=='退款'">
+                    <img src="img/mine/qun.png" ng-if="i.operationName=='乐抢单'">
+                    <img src="img/mine/shang.png" ng-if="i.operationName=='打赏'">
+                </i>
+                <div class="reward" ng-show="i.commentStauts==0 || i.commentStauts==1" ng-click="linkDaShang($event,i)">打赏</div>
+                <h1 ng-bind="i.merchantName"></h1>
+                <div class="df">
+                    <div class="content-left df1">
+                        <p ng-bind="i.paymentDate"></p>
+                        <p ng-bind="i.money | moneyUnit"></p>
+                        <p>交易总金额（元）</p>
+                    </div>
+                    <div class="content-right df1">
+                        <p><span ng-bind = 'i.operationName | refundCashFilter'>现金支付（元）</span><span ng-bind="i.realMoney | moneyUnit"></span></p>
+                        <p><span ng-bind = 'i.operationName | refundBeanFilter'>乐豆支付（豆）</span><span ng-bind="i.happyCoin | moneyUnit"></span></p>
+                        <p><span ng-bind = 'i.operationName | refundGiftFilter'>赠送乐豆（豆）</span><span ng-bind="i.returnHappyCoin | moneyUnit"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="no-msg tc"  ng-if='lists[slideIndex].list.length==0'>
+            <img src="img/mine/no-bill.png" alt="" >
+            <p class="color00 tc">你目前还没有帐单记录</p>
+            <p>使用乐豆支付买单更优惠！</p>
+            <div class="msg-button" ui-sref="tab.store_list({tag:'美食'})">去看看附近商家</div>
+        </div>
+        <ion-infinite-scroll ng-if="noMoreMonth[slideIndex]" on-infinite="loadMoreBills(slideIndex)" immediate-check="false" distance="10%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

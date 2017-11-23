@@ -1,0 +1,52 @@
+#tab_register{
+  .pr{position: relative;}
+  .pa{position: absolute;}
+  .cjc_title{color: #fff;opacity: .8;    position: absolute; top: 0.7rem; left: 41%;}
+  .cjc_titleR{color: #fff;opacity: .8;    position: absolute; top: 0.7rem; right: .28rem;}
+  .btnLogin{position: absolute;display: block;width: 1rem;margin-left: -0.5rem;text-align: center;
+    line-height: 1rem;
+    color: #fff;
+    bottom: 0.9rem;opacity: .8;
+    left: 50%;}
+	background:url(../img/ym_img/bg_c.png) no-repeat;
+	background-size:100%;
+	*{box-sizing:border-box;}
+	.row,.col{padding:0 !important;margin:0 !important;}
+	::-webkit-input-placeholder{
+		font-size: .26rem;
+	}
+  .color29{color:#29ADFD;}
+  .coloraa{color:#aaa;}
+	.p30{padding: 0 .3rem;}
+	.bg{background: rgba(2,19,64,.06);}
+	.mb40{margin-bottom:.4rem;}
+  	.icon:after{content:"";display: block;background-image: url(../img/ym_img/icon_02.png);background-size: 4rem;}
+	.header{
+	    height: 3.9rem;
+	    .icon_cross:after{width:.52rem;height:.52rem;display: inline-block;background-position: -3.42rem -2.83rem;margin:.6rem 0 0 .24rem;}                
+	    .icon_le:after{width:1.44rem;height:1.44rem;display: inline-block;background-position: -2.31rem -.14rem;margin:.7rem 3.05rem .7rem;}                
+  	}
+
+  	.section{
+      background: url(../img/ym_img/paper_c.png) no-repeat;background-size: 7.3rem;height: 4.5rem;
+  		margin:0 .1rem 1.6rem;padding:.3rem .65rem 0 .55rem;border-radius:.1rem;
+  		div{height:1.3rem;width:100%;position: relative}
+  		input{display:inline-block;width:5.3rem;height:1.2rem;font-size:.3rem;color:#333;padding-top:.4rem;padding-left:.1rem;margin-left:.8rem;}
+  		.icon_phone:after{position:absolute;width:.52rem;height:.52rem;display: inline-block;background-position: -2.83rem -2.89rem;top:.55rem;left:.1rem;}
+       .icon_vCode:after{position:absolute;width:.52rem;height:.52rem;display: inline-block;background-position: -3.39rem -2.27rem;top:.55rem;left:.1rem;}
+      .icon_phone_on:after{background-position: -.75rem -.13rem;}
+  		.icon_vCode_on:after{background-position: -.75rem -1.67rem;}
+  		.vCode{position:absolute;top:0;right:0;height:1.2rem;width:1.5rem;text-align:right;padding-top:.65rem;}
+      .protocol{position: relative;}
+      p{min-width:1rem; height:1rem;padding-top:.46rem;}
+  		.btnLogin{text-align:right;color:#29ADFD;}
+      .agree{color:#4ED500;text-align:left;padding-left:.8rem;}
+      .icon_agree{position: absolute;top:.08rem;left:.1rem;display: inline-block;width:.5rem;height:1rem;background:url(../img/ym_img/agree.png) no-repeat center center;background-size:.32rem;}
+      .icon_agreeBlue{background:url(../img/ym_img/agree2.png) no-repeat center center;background-size:.32rem;}
+  	}
+
+  	.footer{
+  		margin:0 .3rem;
+      a{width:6.9rem;}
+  	}
+}

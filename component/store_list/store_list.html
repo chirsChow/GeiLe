@@ -1,0 +1,199 @@
+<ion-view hide-tabs="" id='store_list' ng-class="{true:'no-list',false:''}[storeListItems.length<1]">
+    <header class="store-list-header df bor-bot">
+        <a ui-sref="tab.index" class="back"><i></i></a>
+        <div class="search" ui-sref="tab.index_search"><a href=""><i></i>请输入商家名称</a></div>
+        <div class="head-option" ng-click="linkMsg()">
+            <a href="" class="msg"><i><s ng-if="nativeBroadcastMsg.unRead!=0"></s></i></a>
+        </div>
+    </header>
+    <div ng-click="showMenu()" ng-class="{true:'menu-list-bg show',false:'menu-list-bg'}[showMenuBg]"></div>
+    <div class="store-menu">
+        <div class="bor-bot store-menu-top">
+            <div class="classify-box menu-box">
+                <p ng-click="showMenu(1)"  ng-class="{true:' show-title',false:''}[currentMenu == 1]">
+                    {{selectClassifiesName}}<i></i></p>
+                <div class="classify-list" ng-class="{true:' show-menu',false:''}[currentMenu == 1]">
+                    <ul class="classify-left">
+                        <li  class="bor-bot"
+                             ng-click="selectClassifies(null,0)"
+                             ng-class="{true:'active',false:''}[selectClassifiesId == 0]">
+                            <a class="bor-right" href="">全部分类 <i></i></a></li>
+                        <li ng-repeat="item in allClassifies"
+                            ng-class="{true:'active',false:''}[selectClassifiesId == item.id]"
+                            class="bor-bot" ng-click="selectClassifies($index,item.id)">
+                            <a  class="bor-right" href="">{{item.name}}<i></i></a></li>
+                    </ul>
+                    <div class="classify-right">
+                        <ul>
+
+                            <li ng-click="selectClassifiesItem(item.id,item.name)"
+                                class="bor-bot"
+                                ng-class="{true:'active',false:''}[selectClassifiesItemId == item.id]"
+                                ng-repeat="item in subClassifies" >
+                                <a href=""><i></i>{{item.name != '' ? item.name:'全部'}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="area-box menu-box">
+                <p  ng-click="showMenu(2)" ng-class="{true:' show-title',false:''}[currentMenu == 2]">
+                    {{searchItem.selectAreasName!='' ? searchItem.selectAreasName:'附近地区'}}<i></i></p>
+                <div class="sort-list" ng-class="{true:' show-menu',false:''}[currentMenu == 2]">
+                    <ul>
+                        <li class="bor-bot"
+                            ng-click="selectArea('','')"
+                            ng-class="{true:'active',false:''}[searchItem.selectAreasName=='']"><a href=""><i></i>全部</a></li>
+                        <li class="bor-bot"
+                            ng-repeat="item in allAreas"
+                            ng-click="selectArea(item.areaName,item.areaId)"
+                            ng-class="{true:'active',false:''}[searchItem.selectAreasName==item.areaName]"><a href=""><i></i>{{item.areaName}}</a></li>
+                    </ul>
+                </div>
+                <!--<div class="classify-list " ng-class="{true:'show-menu',false:''}[currentMenu == 2]">-->
+                    <!--<ul class="classify-left">-->
+                        <!--<li class="bor-bot"><a class="bor-right" href="">附近 <i></i></a></li>-->
+                        <!--<li class="bor-bot active"><a  class="bor-right" href="">福田区 <i></i></a></li>-->
+                        <!--<li class="bor-bot"><a  class="bor-right" href="">罗湖区 <i></i></a></li>-->
+                        <!--<li class="bor-bot"><a  class="bor-right" href="">南山区 <i></i></a></li>-->
+                        <!--<li class="bor-bot"><a  class="bor-right" href="">宝安区 <i></i></a></li>-->
+                        <!--<li class="bor-bot"><a  class="bor-right" href="">龙岗区 <i></i></a></li>-->
+                        <!--<li class="bor-bot"><a  class="bor-right" href="">龙华新区 <i></i></a></li>-->
+                        <!--<li class="bor-bot"><a  class="bor-right" href="">盐田区 <i></i></a></li>-->
+                        <!--<li class="bor-bot"><a  class="bor-right" href="">南澳大鹏新区 <i></i></a></li>-->
+                        <!--<li class="bor-bot"><a  class="bor-right" href="">光明新区 <i></i></a></li>-->
+                    <!--</ul>-->
+                    <!--<div class="classify-right">-->
+                        <!--<ul>-->
+                            <!--<li class="bor-bot"><a href="">全部</a></li>-->
+                            <!--<li class="bor-bot"><a href="">黄冈</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot active"><a href=""><i></i>全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">adsf</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                            <!--<li class="bor-bot"><a href="">全部美食</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="sort-box menu-box">
+                <p ng-click="showMenu(3)" ng-class="{true:' show-title',false:''}[currentMenu == 3]">
+                    {{selectSortName != ''?selectSortName:'智能排序'}}<i></i></p>
+                <div class="sort-list" ng-class="{true:' show-menu',false:''}[currentMenu == 3]">
+                    <ul>
+                        <li class="bor-bot"
+                            ng-repeat="item in allSort"
+                            ng-click="selectSort(item.name,item.id)"
+                            ng-class="{true:'active',false:''}[selectSortName==item.name]"><a href=""><i></i>{{item.name}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="current-addr bor-bot">
+            <p class="icon-addr"><i></i></p>
+            <p class="addr"><span>{{currentPosition.streetName}}</span></p>
+            <a href=""  class="refresh-addr"  ng-click="refreshPosition()">
+                <i ng-class="{true:'active',false:''}[getetCurrentPositioning]"></i></a>
+        </div>
+    </div>
+    <section>
+        <ion-content overflow-scroll="true" lazy-scroll>
+            <ion-refresher
+                    pulling-text="下拉刷新..."
+                    on-refresh="doRefresh()">
+            </ion-refresher>
+            <!--<div class="store-items" >-->
+                <!--<div class="item-box bor-bot"  ui-check-sref="tab.tab_store({id:item.merchantNo})" ng-repeat="item in storeListItems track by $index" attached>-->
+                    <!--<div class="item-info">-->
+                        <!--<div class="img-box" tile-img="2/1" tile-src="{{item.images||'./img/store_list/icon_60.png'}}">-->
+                            <!--<div class="bg"></div>-->
+                            <!--<p class="title">{{item.shortName}}</p>-->
+                            <!--<img err-src="./img/store_list/icon_60.png" src="{{item.images||'./img/store_list/icon_60.png'}}" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="info">-->
+                            <!--<p class="distance"><{{item.distance | distanceFilter}}m</p>-->
+                            <!--<p class="type">{{item.areaName.length>3?"":item.areaName+'·'}}{{item.categoryName | ellipsisFilter:5}}</p>-->
+                            <!--<div class="extra-item">-->
+                                <!--<i ng-if="item.specialService && item.specialService.indexOf(3) != -1" class="po"></i>-->
+                                <!--<i ng-if="item.specialService && item.specialService.indexOf(1) != -1" class="wf"></i>-->
+                                <!--<i ng-if="item.specialService && item.specialService.indexOf(2) != -1" class="tc"></i>-->
+                                <!--<i ng-if="item.specialService && item.specialService.indexOf(4) != -1" class="hs"></i>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="extra-info">-->
+                        <!--<p class="evaluate">-->
+                            <!--<span class="evaluate-score" style="width: {{item.commentGrade*20 | gradeFilter}}%"></span>-->
+                        <!--</p>-->
+                        <!--<p class="num-price">{{item.paymentCount | personNumberFilter}}人已消费 {{item.perCapita?('￥'+item.perCapita+'/人'):''}}</p>-->
+                    <!--</div>-->
+                    <!--<div class="foucs-info">-->
+                        <!--<p>消费返豆<span class="font sale-rate">{{item.saleRate}} </span><span class="font">%</span></p>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            <!--</div>-->
+            <div class="store-list-item-n">
+                <div class="item-box-n bor-bot"
+                     ui-check-sref="tab.tab_store({id:item.merchantNo,num:item.paymentCount})"
+                     ng-repeat="item in storeListItems track by $index" attached>
+                    <store-item item="item" style="display: flex;display: -webkit-flex;width: 100%"></store-item>
+                </div>
+            </div>
+            <!--<div class="store-items store-items_1_c">-->
+                <!--<div class="item-box bor-bot"  ui-check-sref="tab.tab_store({id:item.merchantNo,num:item.paymentCount})" ng-repeat="item in storeListItems track by $index" attached>-->
+                    <!--<div class="item-info">-->
+                        <!--<div class="img-box" tile-img="2/1" tile-src="{{item.images||'./img/store_list/icon_60.png'}}">-->
+                            <!--<div class="bg"></div>-->
+                            <!--<p class="title">{{item.shortName}}</p>-->
+                            <!--<img err-src="./img/store_list/icon_60.png" src="{{item.images||'./img/store_list/icon_60.png'}}" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="info">-->
+                            <!--<p class="distance"><{{item.distance | distanceFilter}}m</p>-->
+                            <!--<p class="type">{{item.areaName.length>3?"":item.areaName+'·'}}{{item.categoryName | ellipsisFilter:5}}</p>-->
+                            <!--&lt;!&ndash;<p class="type" ng-if="item.perCapita">人均消费￥{{item.perCapita}}</p>&ndash;&gt;-->
+                            <!--<p class="type" >人均消费￥{{item.perCapita?item.perCapita:'0元'}}</p>-->
+                            <!--<div class="extra-item">-->
+                                <!--<i ng-if="item.specialService.indexOf(3) != -1" class="po"></i>-->
+                                <!--<i ng-if="item.specialService.indexOf(1) != -1" class="wf"></i>-->
+                                <!--<i ng-if="item.specialService.indexOf(2) != -1" class="tc"></i>-->
+                                <!--<i ng-if="item.specialService.indexOf(4) != -1" class="hs"></i>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="extra-info">-->
+                        <!--<div class="comment_evaluate-score-default_box evaluate">-->
+                            <!--<p class="comment_evaluate-score-cai" style="width: {{item.commentGrade*20 | gradeFilter}}%">-->
+                                <!--<span class="comment_evaluate-score-default" ><i></i><i></i><i></i><i></i><i></i></span>-->
+                            <!--</p>-->
+                            <!--<span class="comment_evaluate-score-default"><i></i><i></i><i></i><i></i><i></i></span>-->
+                        <!--</div>-->
+                        <!--<p class="num-price">{{item.paymentCount | personNumberFilter}}人已消费 </p>-->
+                    <!--</div>-->
+                    <!--<div class="foucs-info">-->
+                        <!--<p>赠豆比例<span class="font"><s class="sale-rate">{{item.saleRate}}</s> %</span></p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+             <ion-infinite-scroll
+                    ng-if="isHasMore"
+                    on-infinite="loadMore()"
+                    distance="5%">
+            </ion-infinite-scroll>
+        </ion-content>
+    </section>
+    <div class="cjc_nosearch_list" ng-if="searchItem.noItem">
+        <div class="cjc_nosearch_img">
+            <img src="img/index/nogoods.png" width="100%">
+            <div class="tc color97 f28">暂无结果！</div>
+        </div>
+    </div>
+</ion-view>

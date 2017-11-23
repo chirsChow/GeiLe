@@ -1,0 +1,48 @@
+<ion-view hide-tabs='true' id='index_search'>
+    <header class="cjc_title_bg bor-bot">
+        <div class="tc df">
+            <div class="cjc_search_back" ng-click="goBack()">
+                <a class="button-retrun colorff"></a>
+            </div>
+            <div class="df1">
+                <div class="cjc_title_search f24 coloraa tl">
+                    <i class="cjc_icon cjc_icon1"></i>
+                    <input type="search" ng-model="searchInput" class="cjc_search_input cjc_resize_width" placeholder="请输入商家名称" id="cjc_search_input">
+                    <s ng-class="{true:'show',false:''}[showClose]" ng-click="emptyInput($event)"></s>
+                </div>
+            </div>
+            <div class="f28 colorff cjc_search_button" ng-click="searchClick()">搜索</div>
+        </div>
+    </header>
+    <section class="scrolltop138">
+        <ion-content overflow-scroll="false" class="cjc_search_content f28">
+            <div ng-if="!searchList">
+                <div ng-if="hasHistory">
+                    <div class="cjc_history_search">
+                        <div class="title  color66 p0-24">历史搜索</div>
+                        <div class="p0-24 bgff">
+                            <div class="cjc_history_list bor-bot ellipsis" ng-repeat="item in searchHistory" ng-click="gotoAddress(item)">{{item}}</div>
+                        </div>
+                    </div>
+                    <div class="cjc_clear_history" ng-click="clearHistory()">清空历史记录</div>
+                </div>
+                
+            </div>
+            <div class="cjc_searchlist_content f28  bgff" ng-if="searchList && searchResult.length>0">
+                <div class="store-list-item-n">
+                    <div class="item-box-n bor-bot"
+                         ui-check-sref="tab.tab_store({id:item.merchantNo,num:item.paymentCount})"
+                         ng-repeat="item in searchResult track by $index" attached>
+                        <store-item item="item" style="display: flex;display: -webkit-flex;width: 100%"></store-item>
+                    </div>
+                </div>
+            </div>
+        </ion-content >
+        <div class="cjc_nosearch_list" ng-if="searchList && searchResult.length<1">
+            <div class="cjc_nosearch_img">
+                <img src="img/index/nogoods.png" width="100%">
+                <div class="tc color97 f28">暂无搜索结果！</div>
+            </div>
+        </div>
+    </section>
+</ion-view>

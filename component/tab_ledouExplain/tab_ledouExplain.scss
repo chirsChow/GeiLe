@@ -1,0 +1,118 @@
+#tab_ledouExplain{
+	/*通用样式设置*/
+	*{
+		box-sizing: border-box;
+	} 
+	.col{
+		padding:0 !important;
+		margin:0 !important;
+	}
+	.mt40{margin-top: .4rem;}
+	
+	.arrow{
+		display: inline-block;
+		width:1rem;
+		height: 0.88rem;
+	}
+	.row{padding:0 !important;}
+	.btnRound{
+		display: block;
+		margin:0 auto 0.16rem;
+		background:#29adfd;
+		border-radius:0.88rem;
+		height:0.72rem;
+		line-height: 0.72rem;
+		color:#fff;
+		font-size: 0.36rem;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	/*通用样式设置end*/
+
+	.container{
+		width:100%;
+		padding:0 0.28rem;
+	}
+
+	/*header部分*/
+	.header{
+		width:100%;
+		height:1.28rem;
+		margin-bottom: 0.2rem;
+		text-align: center;
+		padding-top:0.4rem;
+		font-size: 0.34rem;
+		background:#fff;
+		.arrow_left{
+			display: inline-block;
+			width:0.24rem;
+			height:0.43rem;
+			background: url(../img/ym_img/iconList.png) no-repeat 0 0;
+			background-size: 0.46rem;
+			margin-top:  0.24rem;
+			margin-left: .3rem;
+		}
+		.title{
+			font-size: 0.34rem;
+			color:#222;
+			height: 0.88rem;
+			line-height: 0.88rem;
+		}
+	}
+	/*header部分结束*/
+
+	.section{
+		height: 100%;
+		margin-bottom: 0.8rem;
+		padding-bottom: 0.8rem;
+		.ledou1{
+			height: 4rem;
+			background:url('../img/ym_img/ledou1.png') no-repeat;
+			background-size:7.5rem 4rem;
+			margin-bottom: 0.6rem;
+		}
+		.what{
+			width:3.28rem;
+		}
+		p{
+			color:#666;
+			font-size: 0.28rem;
+			height: 0.44rem;
+			line-height: 0.44rem;
+		}
+		.ledou2{
+			height: 4rem;
+			background:url('../img/ym_img/ledou2.jpg') no-repeat center center;
+			background-size:7.5rem 4rem;
+		}
+		.how{
+			width: 4.34rem;
+		}
+		.ledou3{
+			height: 7.28rem;
+			background:url('../img/ym_img/ledou3.png') no-repeat center center;
+			background-size:7.5rem 7.28rem;
+			margin-bottom: .5rem;
+		}
+		.ledou4{
+			height: 4rem;
+			background:url('../img/ym_img/ledou4.png') no-repeat center center;
+			background-size:7.5rem 4rem;
+		}
+		.use{
+			width:4.34rem;
+		}
+		.tips{
+			width:5.12rem;
+		}
+		.toLogin{
+			display: block;
+			height: .88rem;
+			line-height: .88rem;
+			border-radius:1rem;
+			font-size: 0.32rem;
+			margin-bottom: 1rem;
+		}
+	}
+}

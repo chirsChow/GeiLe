@@ -1,0 +1,37 @@
+<ion-view hide-tabs='true' id='tab_registerConfirm'>
+    <ion-content  overflow-scroll="false">
+        <header class="header">
+        <a class="icon icon_cross" href="javascript:history.go(-1)"></a>
+        <div class="cjc_title f34">设置密码</div>
+        <div class="icon icon_le"></div>
+    </header>
+
+    <section class="section bgff">
+        <div>
+            <i class="icon icon_pwd"></i>
+            <input  type="password"
+                    ng-model="inputData.pwd" 
+                    ng-focus="pwdFocus()"
+                       ng-blur="pwdBlur()" 
+                    maxlength="16" 
+                    class="bor-bot"
+                    placeholder="请设置8-16位数字与字符的密码组合">
+            <span class="vCode" ng-click="getCode()" ng-bind="btnText"></span>
+        </div>
+        <div>
+            <i class="icon icon_pwd"></i>
+            <input  type="password" 
+                    ng-model="inputData.pwdConfirm" 
+                    ng-focus="pwdConfirmFocus()"
+                       ng-blur="pwdConfirmBlur()" 
+                    maxlength="16" 
+                    class="bor-bot"
+                    placeholder="请再次确认登录密码">
+        </div>
+    </section>
+    <footer class="footer">
+        <a ng-class="{true:'btnGreen',false:'btnGrayLogin'}[filled]" ng-click="register()">完成注册</a>
+    </footer>
+    </ion-content>
+	
+</ion-view>

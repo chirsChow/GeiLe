@@ -1,0 +1,52 @@
+<ion-view hide-tabs='true' id='mine_beanfun'>
+    <gl-header title="我的乐豆" back="tab.tab_mine"></gl-header>
+    <div class="blue-wrapper"></div>
+    <div class="des-bar-container">
+        <p class="bean font" ng-bind="(balanceNum || balanceNum == 0) ? balanceNum : '--'">20</p>
+        <p class="desc">乐豆余额/豆</p>
+        <span class="explain" ui-sref="tab.tab_ledouExplain">乐豆说明</span>
+        <div class="nav-btn-wrapper">
+            <div ng-click="press(0)" class="nav-btn" ng-class="{'div-select':navNum==0}"><span>乐豆收入</span></div>
+            <div ng-click="press(1)" class="nav-btn" ng-class="{'div-select':navNum==1}"><span>乐豆支出</span></div>
+        </div>
+    </div>
+    <div on-swipe-right="mvRight($event)" on-swipe-left="mvLeft()">
+        <section class="scrolltop360">
+            <ion-content overflow-scroll="true" lazy-scroll ng-class="{'mv-left1':left}">
+                <div class="bean-list" ng-repeat="returnList in returnLists track by $index" attached>
+                    <div class="detail-box bor-bot">
+                        <p class="f30 color33">{{returnList.merchantName | ellipsisFilter:13 || '--'}}<i>{{returnList.operateName}}</i></p>
+                        <p class="f24 coloraa" ng-bind="returnList.dateTime">2017-03-22 12:12:12</p>
+                    </div>
+                    <span class="f34 color66 add font" ng-bind="'+'+returnList.happyCoin+'豆'"></span>
+                </div>
+                <div class="gap" style="height: .3rem"></div>
+                <div class="no-msg tc" ng-if='returnLists.length==0'>
+                    <img src="img/nomessage.png" alt="">
+                    <p class="color66 tc">暂无信息</p>
+                </div>
+                <ion-infinite-scroll ng-if="noMoreReturn" on-infinite="loadMoreReturn()"
+                                     distance="5%"></ion-infinite-scroll>
+
+            </ion-content>
+        </section>
+        <section class="scrolltop360">
+            <ion-content overflow-scroll="true" lazy-scroll ng-class="{'mv-left2':left}" class="content2">
+                <div class="bean-list" ng-repeat="consumptionList in consumptionLists  track by $index" attached>
+                    <div class="detail-box bor-bot">
+                        <p class="f30 color33">{{consumptionList.merchantName | ellipsisFilter:13 || '--'}}<i>{{consumptionList.operateName}}</i></p>
+                        <p class="f24 coloraa" ng-bind='consumptionList.dateTime'>2017-03-22 12:12:12</p>
+                    </div>
+                    <span class="f34 color66 sub font" ng-bind="'-'+consumptionList.happyCoin+'豆'">-10豆</span>
+                </div>
+                <div class="gap" style="height: .3rem"></div>
+                <div class="no-msg tc" ng-if='consumptionLists.length==0'>
+                    <img src="img/nomessage.png" alt="">
+                    <p class="color66 tc">暂无信息</p>
+                </div>
+                <ion-infinite-scroll ng-if="noMoreConsumption" on-infinite="loadMoreConsumption()"
+                                     distance="5%"></ion-infinite-scroll>
+            </ion-content>
+        </section>
+    </div>
+</ion-view>

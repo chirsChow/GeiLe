@@ -1,0 +1,78 @@
+<ion-view hide-tabs="" id='create_comment'>
+    <gl-header title="发表评论"></gl-header>
+    <!-- <header class="store-header">
+        <div class="df">
+            <a href="javascript:history.go(-1)" class="back"><i></i></a>
+            <p>发表评论</p>
+            <a href="javascript:void(0)" class="report" ><i></i></a>
+        </div>
+    </header> -->
+    <section>
+        <ion-content overflow-scroll="false">
+            <div class="choose-item mb10">
+                <div class="lists">
+                    <div class="items" ng-click="chooseItem($index,item.paymentNo)"  ng-class="{true:'active',false:''}[item.isChoose]">
+                        <div class="img-box"><img err-src="./img/store_list/icon_60.png" src="{{chooseItems.imageUrl||'./img/store_list/icon_60.png'}}" alt=""></div>
+                        <div class="info">
+                            <!--<div class="more fr" ng-click="moreOrders(item.paymentDate)"><a>更多订单</a></div>-->
+
+                            <p class="name">商家：{{chooseItems.merchantName}}</p>
+                            <p class="price">现金支付：￥{{chooseItems.money}}</p>
+                            <p class="price">交易时间：{{chooseItems.paymentDate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="more pa"><a href="#/tab/no_comment_list/{{merchantNo}}">更多订单</a></div> -->
+                <!-- <div class="more pa" ng-click="moreOrders(item.paymentDate)"><a>更多订单</a></div> -->
+            </div>
+            <div class="choose-box">
+                <div class="select-start pr">
+                  <div class="pa f24 color33" style="top:.53rem;">星级：</div>
+                    <div class="start-box">
+                        <div class="start-l" style="width: {{comment.score*20}}%"></div>
+                        <div class="select-box">
+                            <span ng-click="commentOption(1)"></span>
+                            <span ng-click="commentOption(2)"></span>
+                            <span ng-click="commentOption(3)"></span>
+                            <span ng-click="commentOption(4)"></span>
+                            <span ng-click="commentOption(5)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-box">
+                    <div class="title">综合评价：</div>
+                    <div class="items">
+                        <span ng-repeat="item in tpl.all" ng-class="{true:'selected',false:''}[comment.lists.zh == item.baseId]" ng-click="selectItem('zh',item.baseId,$event)">{{item.name}}</span>
+                    </div>
+                </div>
+                <div class="item-box">
+                    <div class="title">价格：</div>
+                    <div class="items">
+                        <span ng-repeat="item in tpl.price" ng-class="{true:'selected',false:''}[comment.lists.jg == item.baseId]" ng-click="selectItem('jg',item.baseId,$event)">{{item.name}}</span>
+                    </div>
+                </div>
+                <div class="item-box">
+                    <div class="title">环境：</div>
+                    <div class="items">
+                        <span ng-repeat="item in tpl.vir" ng-class="{true:'selected',false:''}[comment.lists.hj == item.baseId]" ng-click="selectItem('hj',item.baseId,$event)">{{item.name}}</span>
+                    </div>
+                </div>
+                <div class="item-box">
+                    <div class="title">交通：</div>
+                    <div class="items">
+                        <span ng-repeat="item in tpl.traffic" ng-class="{true:'selected',false:''}[comment.lists.jt == item.baseId]" ng-click="selectItem('jt',item.baseId,$event)">{{item.name}}</span>
+                    </div>
+                </div>
+                <div class="item-box">
+                    <div class="title">服务：</div>
+                    <div class="items">
+                        <span ng-repeat="item in tpl.service" ng-class="{true:'selected',false:''}[comment.lists.fw == item.baseId]" ng-click="selectItem('fw',item.baseId,$event)">{{item.name}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="commented">
+                <a href="" ng-class="{true:'',false:'no-check'}[isChecked]" ng-click="createComment()">发表</a>
+            </div>
+        </ion-content>
+    </section>
+</ion-view>

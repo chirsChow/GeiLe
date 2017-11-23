@@ -1,0 +1,65 @@
+<ion-view hide-tabs='true' id='mine_bill'>
+    <header class="">
+        <a class="button-retrun" ng-click="goBack()"><em class="return_4"></em></a>
+        <span class="f34">我的帐单</span>
+    </header>
+    <div class="month-bar">
+        <div class="nav-bar">
+            <div ng-click="preMonth(slideIndex)"></div>
+            <div ng-click="nextMonth(slideIndex)"></div>
+            <div class="f32" ng-bind="year+'年'+month+'月帐单'"></div>
+        </div>
+        <ion-slide-box active-slide="slideIndex" show-pager="false" does-continute="true" disable-scroll="true" delegate-handle='bill-handle'>
+            <ion-slide ng-repeat='list in lists track by $index'>
+                <div class="df tc">
+                    <div class="df1">
+                        <div class="f28 fb color66 font" ng-bind="(list.totalMoney ||  list.totalMoney ==0)? list.totalMoney.toFixed(2) : '--'"></div>
+                        <div class="f22 color33 ls2">现金支付（元）</div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="df1">
+                        <div class="f28 fb color66 font" ng-bind="(list.totalPayHappyCoin || list.totalPayHappyCoin==0) ? list.totalPayHappyCoin.toFixed(2) : '--'"></div>
+                        <div class="f22 color33 ls2">乐豆支付（豆）</div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="df1">
+                        <div class="f28 fb color66 font" ng-bind="(list.totalReturnHappyCoin || list.totalReturnHappyCoin ==0) ? list.totalReturnHappyCoin.toFixed(2) : '--'"></div>
+                        <div class="f22 color33 ls2">赠送乐豆（豆）</div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </div>
+    <section class="scrollTop418">
+        <ion-content overflow-scroll="true" lazy-scroll>
+            <div class="bill-box" ng-repeat='i in lists[slideIndex].list track by $index' attached>
+                <div class="bill-list" ng-click="linkDetails(i)">
+                    <p>{{i.operationName}}{{"-" + i.merchantName | ellipsisFilter:12}}
+                        <a class="money" ng-if="i.operationName == '消费' || i.operationName == '乐抢单'">
+                            <span ng-class="{'sub':i.operationName == '消费' || i.operationName == '打赏'}" ng-bind="i.operationName == '退款'?'+':'- '"></span>
+                            <span  ng-class="{'sub':i.operationName == '消费' || i.operationName == '打赏'}" class="font">{{i.money}}</span>
+                            <span  ng-class="{'sub':i.operationName == '消费' || i.operationName == '打赏'}">元</span>
+                        </a>
+                        <a class="money" ng-if="i.operationName == '打赏' && i.realMoney > 0">
+                            <span ng-class="{'sub':i.operationName == '消费' || i.operationName == '打赏'}" ng-bind="i.operationName == '退款'?'+':'- '"></span>
+                            <span  ng-class="{'sub':i.operationName == '消费' || i.operationName == '打赏'}" class="font">{{i.realMoney}}</span>
+                            <span  ng-class="{'sub':i.operationName == '消费' || i.operationName == '打赏'}">元</span>
+                        </a>
+                        <a class="money" ng-if="i.operationName == '打赏' && i.happyCoin > 0" style="margin-right:0.2rem;">
+                            <span ng-class="{'sub':i.operationName == '消费' || i.operationName == '打赏'}" ng-bind="i.operationName == '退款'?'+':'- '"></span>
+                            <span  ng-class="{'sub':i.operationName == '消费' || i.operationName == '打赏'}" class="font">{{i.happyCoin}}</span>
+                            <span  ng-class="{'sub':i.operationName == '消费' || i.operationName == '打赏'}">豆</span>
+                        </a>
+                    </p>
+                    <p><span ng-bind="i.paymentDate"></span><span ng-show="i.commentStauts==0" ng-click="linkDaShang($event,i)">打赏</span></p>
+                </div>
+            </div>
+            <div class="no-msg tc" ng-if='lists[slideIndex].list.length==0 || lists[slideIndex].list==null'>
+                <img src="img/nomessage.png" alt="" >
+                <p class="color66 tc">暂无信息</p>
+            </div>
+            <ion-infinite-scroll ng-if="noMoreMonth[slideIndex]" on-infinite="loadMoreBills(slideIndex)" immediate-check="false" distance="5%"></ion-infinite-scroll>
+        </ion-content>
+    </section>
+</ion-view>

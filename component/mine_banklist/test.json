@@ -1,0 +1,26 @@
+{
+  "result":0,
+  "description":"",
+  "data":[
+           {
+             "cardNo":"4223********6654",
+             "cardIndex":"312311313",
+             "defaultFlag":"true",
+             "cardType":"储蓄卡",
+             "bankIndex":"***",
+             "bankName":"平安银行",
+             "bankImg":"img/index/test3.png",
+             "color":"#ff5000"
+           },
+           {
+             "cardNo":"4223********6654",
+             "cardIndex":"312311313",
+             "defaultFlag":"false",
+             "cardType":"储蓄卡",
+             "bankIndex":"***",
+             "bankName":"瞎蒙银行",
+             "bankImg":"img/index/test3.png",
+             "color":"#ff0050"
+           }
+         ]
+}

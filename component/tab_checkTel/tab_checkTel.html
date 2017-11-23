@@ -1,0 +1,20 @@
+<ion-view hide-tabs='true' id='tab_checkTel'  style="background: #f4f4f4">
+<!-- 	<header class="header">
+		<div class="row">
+			<a href="javascript:history.go(-1)" class="col col-33 arrow"><i class="fl arrow_left"></i></a>
+			<div class="col col-33 col-center"><span class="title">手机号</span></div>
+		</div>
+	</header> -->
+	<gl-header title="手机号"></gl-header>
+	<section class="section">
+		<div>
+			<span class="fl">手机号</span>
+			<span class="fr" ng-bind="information.mobilePhone|phoneHide"></span>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<a href="" class="btn_modify" ui-sref="tab.tab_newTelChecking">修改手机号</a>
+		<p>一个手机号只能作为一个帐号的登录名</p>
+	</footer>
+</ion-view>

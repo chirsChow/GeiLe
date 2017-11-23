@@ -1,0 +1,30 @@
+<ion-view hide-tabs='true' id='msg_sys' hide-tabs='true'>
+   <!--  <header class="bor-bot">
+        <a href="" class="button-retrun ion-ios-arrow-left color66" ng-click="goBack()"></a>
+        <span class="f30">交易通知</span>
+    </header> -->
+    <gl-header title="交易通知"></gl-header>
+    <section class="scrolltop88">
+        <ion-content overflow-scroll="false" lazy-scroll>
+            <div class="msg-detail">
+                <div class="colorfe f28 bor-bot">{{list.title}}<span class="coloraa f24" ng-bind="list.tranTime"></span></div>
+                <div class="color66 f30 bor-bot">{{list.tranType | payTitle}}<span class="coloraa f26" ng-bind="list.payId || list.orderNo"></span></div>
+                <div class="color66 f30 bor-bot" ng-if="list.origPayId">原交易单号<span class="coloraa f26" ng-bind="list.origPayId"></span></div>
+                <div class="color66 f30 bor-bot">支付类型<span class="coloraa f26">{{list.payTypeName || (list.payType | payTypeFilter)}}</span></div>
+                <div class="color66 f30 bor-bot">支付方式<span class="coloraa f26">{{list.orderType | orderTypeFilter}}</span></div>
+                <div class="color66 f30 bor-bot">交易商家<span class="coloraa f26" ng-bind="list.merchant | ellipsisFilter:12"></span></div>
+            </div>
+            <div class="msg-detail">
+                <div class="color66 f30 bor-bot" ng-if='list.tranType!=1102'>{{list.tranType | cashAmt}}<span class="color33 f26">{{list.cashAmt | moneyUnit : true}}元</span></div>
+                <div class="color66 f30 bor-bot" ng-if='list.tranType!=1102'>{{list.tranType | beanAmt}}<span class="color33 f26">{{list.beanAmt | moneyUnit}}乐豆</span></div>
+                <div class="color66 f30 bor-bot">{{list.tranType!=1102 ? '交易总金额':'打赏金额'}}<span class="color33 f26">{{list.totalAmt | moneyUnit : true}}元</span></div>
+                <div class="color66 f30 bor-bot" ng-if='list.tranType!=1102'>{{list.tranType | giftAmt}}<span class="colorfe f26">{{list.giftAmt | moneyUnit}}乐豆</span></div>
+            </div>
+            <div class="detail-wrapper" style="margin-top:0.2rem;" ng-if="isFinish" ng-click="linkGroupDetail()">
+                <p class="bor-bot color66" >
+                    查看乐抢单退款详情<em></em>
+                </p>
+            </div>
+        </ion-content>
+    </section>
+</ion-view>

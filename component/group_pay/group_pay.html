@@ -1,0 +1,75 @@
+<ion-view hide-tabs='true' id='group_pay' can-swipe-back='false'>
+    <gl-header title="乐抢单确认支付" back="function" on-back="refreshWxStatus()"></gl-header>
+    <ion-content>
+        <div class="money-box">
+            <p ng-show="!IsParticipator">
+                <img ng-src="{{baseInfo.merchantImgUrl}}" err-src="img/u-img.png" alt=""><span>{{baseInfo.merchantName}}</span>
+            </p>
+            <p ng-class="{'participator':IsParticipator}">
+                <span>￥</span>
+                <span ng-if="!IsParticipator">{{baseInfo.totalAmount | moneyUnit}}</span>
+                <span ng-if="IsParticipator">{{personalPayNum | moneyUnit}}</span>
+            </p>
+            <p ng-bind="titleTips"></p>
+        </div>
+        <div class="detail-wrapper" style="margin-top:0.2rem;" ng-if="!IsParticipator">
+            <p class="bor-bot">
+                参与者支付<span>￥{{participantPay | moneyUnit}}</span>
+            </p>
+        </div>
+        <div class="detail-wrapper" style="margin-top:0.2rem;" ng-if="IsParticipator">
+            <p class="bor-bot">
+                乐抢单总金额<span>￥{{baseInfo.totalAmount | moneyUnit}}</span>
+            </p>
+        </div>
+        <div class="detail-wrapper" style="margin-top:0.2rem;" ng-if="!IsParticipator">
+            <p class="bor-bot">
+                个人支付<span>￥{{personalPayNum | moneyUnit}}</span>
+            </p>
+        </div>
+        <div class="detail-wrapper">
+            <p class="bor-bot">
+                现金支付<span>￥{{personalPay | moneyUnit}}</span>
+            </p>
+        </div>
+        <div class="detail-wrapper">
+            <div class="bor-bot bean-toggle">
+                <i class="icon icon1">抵</i>{{model.isChecked?'乐豆支付':'可用乐豆'}}
+                <div class="bean-amt">{{coin}}豆</div>
+                <label class="toggle toggle-balanced" ng-click="beanChecked()">
+                    <input type="checkbox"  ng-model="model.isChecked">
+                    <a class="track">
+                        <div class="handle"></div>
+                    </a>
+                </label>
+            </div>
+        </div>
+        <div class="detail-wrapper" style="margin-top:0.2rem;">
+            <p class="bor-bot">
+                <i class="icon icon2">赠</i>赠送乐豆<span style="color:rgb(248,169,48)">{{giftCoin}}豆</span>
+            </p>
+        </div>
+        <div class="detail-wrapper">
+            <p class="bor-bot">
+                <i class="icon icon2">赠</i>赠送比例<span style="color:rgb(248,169,48)">{{coinRate}}%</span>
+            </p>
+        </div>
+        <div id="wxpay" style="margin-top:0.3rem">
+            <div class="bgff bor-bot type_select df">
+                <div></div>
+                <div class="f28">支付类型</div>
+            </div>
+            <div class="p24 df bgff bor-bot f28" ng-click="changeType(0)">
+                微信支付
+                <div class="bankimg"><img src="./img/wxpay.png" width="100%" height="100%" alt=""></div>
+            </div>
+        </div>
+        <div class="pay-btn" ng-click="wxPay()">确认支付</div>
+    </ion-content>
+    <!-- <wx-pay wxurl="{{wxUrl}}" show="wxPayShow"></wxPay> -->
+    <paying-box ng-if="showIntervalBox"
+                cancel-pay="cancelPay()"
+                shop-img="baseInfo.merchantImgUrl"
+                shop-name="baseInfo.merchantName"
+                money="personalPayNum"></paying-box>
+</ion-view>

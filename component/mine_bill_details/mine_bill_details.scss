@@ -1,0 +1,57 @@
+#mine_bill_details {
+    background-color: #f4f4f4;
+    header {
+        height: 1.28rem;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+        line-height: 1.68rem;
+        background-color: #fff;
+
+    }
+    .bill-list {
+        height: 1.68rem;
+        background-color: #fff;
+        margin: .2rem 0;
+        .img-box,
+        .info-box,
+        .date-box {
+            height: inherit;
+        }
+        .img-box {
+            padding: .24rem;
+            padding-left: 0;
+            float: left;
+        }
+        .info-box {
+            overflow: hidden;
+            p:first-child {
+                padding-top: .38rem;
+            }
+            p:nth-child(2) {
+                padding-top: .14rem;
+            }
+            p:last-child {
+                padding-top: .3rem;
+            }
+        }
+        img {
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: .08rem;
+        }
+    }
+    .msg-detail {
+        width: 100%;
+        background-color: #fff;
+        margin-top: 10px;
+        padding: 0 .28rem;
+        div {
+            height: .91rem;
+            line-height: .91rem;
+        }
+        span {
+            float: right;
+        }
+    }
+}

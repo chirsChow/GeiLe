@@ -1,0 +1,30 @@
+<ion-view hide-tabs='true' id='mine_addNewBankCard' class="bgf4">
+     <gl-header title="新增银行卡"></gl-header>
+     <section class="scrolltop88 cardContainer mb20">
+        <div class="OCR bor-bot" ng-click="ocrClick()">
+            <img src="./img/hdqImg/@2xOCR.png" alt="">
+            <span>可使用<span>OCR</span>扫描银行卡或在下面手动输入信息</span>
+        </div>
+        
+        <div class="f28 bor-bot pr">
+            <span>开户名</span>
+            <span class="colorf6 star">*</span>
+            <input type="text" ng-model="inputData.userName" maxlength="15" placeholder="请输入持卡人姓名">
+        </div>
+        <div class="f28 bor-bot pr">
+            <span>银行卡号</span>
+            <span class="colorf6 star">*</span>
+            <input type="tel" ng-model="inputData.cardNo" maxlength="23" placeholder="请输入银行卡号">
+        </div>
+        <div class="f28 pr branch" id="chooseInfo">
+            <span>身份证号</span>
+            <span class="colorf6 star">*</span>
+            <input type="text" ng-model="inputData.idNo" maxlength="18" placeholder="请输入您的身份证号">
+        </div>
+    </section>
+    <p class="colorf6 f20 p50 mb60">注：*为必填内容</p>
+    <footer class="footer m35">
+        <a  ng-click="toAddCard()"
+        ng-class="{true:'btnSky',false:'btnGray'}[isFilled]">完 成</a>
+    </footer>
+</ion-view>

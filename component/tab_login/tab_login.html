@@ -1,0 +1,54 @@
+<ion-view  hide-tabs='true'  id='tab_login' >
+    <ion-content  overflow-scroll="false">
+        <header class="header">
+            <a class="icon icon_cross" ng-click="gotoIndex()"></a>
+            <div class="cjc_title f34">用户登录</div>
+            <div class="cjc_titleR f30" ui-sref="tab.tab_register({tel:inputData.phone})">注册</div>
+            <div class="icon icon_le"></div>
+        </header>
+        <section class="section">
+            <div>
+                <i class="icon icon_phone" ></i>
+                <input  type="tel"
+                        ng-model="data.phone" 
+                        ng-focus="phoneFocus()"
+                        ng-blur="phoneBlur()" 
+                        maxlength="11" 
+                        class="bor-bot"
+                        placeholder="请输入您的手机号">
+                <em class="icon icon_cross"  ng-click="clearPhone()"></em>
+            </div>
+            <div ng-if="!show_pwd">
+                <i class="icon icon_pwd" ></i>
+                <input  type="password"
+                        ng-model="data.pwd" 
+                        ng-focus="pwdFocus()"
+                        ng-blur="pwdBlur()"
+                        maxlength="16" 
+                        class="bor-bot"
+                        placeholder="请输入您的密码">
+                <em ng-click="showPwd()" class="icon icon_eye" ng-class="{true:'icon_eye_on',false:''}[show_pwd]"></em>
+            </div>
+            <div ng-if="show_pwd">
+                <i class="icon icon_pwd" ></i>
+                <input  type="text"
+                        ng-model="data.pwd" 
+                        ng-focus="pwdFocus()"
+                        ng-blur="pwdBlur()"
+                        maxlength="16" 
+                        class="bor-bot"
+                        placeholder="请输入您的密码">
+                <em ng-click="showPwd()" class="icon icon_eye" ng-class="{true:'icon_eye_on',false:''}[show_pwd]"></em>
+            </div>
+            <div class="f24">
+                <span class="fl f26" ui-sref="tab.tab_loginByCode({id:data.phone})">验证码登录</span>   
+                <span class="fr f26" ui-sref="tab.tab_forgetLoginPassword({getPhone:data.phone})">忘记密码</span>   
+            </div>
+        </section>
+        <footer class="footer">
+            <a ng-class="{true:'btnGreen',false:'btnGrayLogin'}[canLogin]" ng-click="login()">登 录</a>
+        </footer>
+        
+    </ion-content>	
+    <!-- <div class="colorff f24 toRegister  tc" ui-sref="tab.tab_register({tel:inputData.phone})">注册</div> -->
+</ion-view>

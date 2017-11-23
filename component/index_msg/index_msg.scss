@@ -1,0 +1,335 @@
+#index_msg {
+    background: #f4f4f4;
+    .scrolltop138 > .scroll-content {
+        top:1.38rem;
+    }
+   
+    header {
+        height: 1.38rem;
+        overflow: hidden;
+        background: #29ADFD;
+        position: relative;
+        text-align: center;
+        z-index: 9;
+        .back {
+             display: inline-block;
+           //display: block;
+            position: absolute;
+           // font-size: .56rem;
+            left: 0;
+            bottom: 0;
+            padding-right: 1rem;
+            padding-left:0.4rem;
+            width:1rem;
+            height: 1rem;
+            line-height: 1.1rem;
+            // background-color:#29ADFD;
+        }
+        .retrun_1{  
+            width:0.48rem;
+            height:0.48rem;
+            background-color:#fff;
+            color:#fff;
+            margin-top:0.3rem;
+            display: inline-block;
+            background:url('../img/w_return.png') no-repeat;
+            background-size:0.48rem;
+        }
+        .edit {
+            position: absolute;
+            display: block;
+            width: 1.5rem;
+            height: inherit;
+            line-height: 1.78rem;
+            right: 0;
+            top: 0;
+            font-size: .28rem;
+            color: #fff;
+        }
+        span {
+            display: inline-block;
+            width: 1.8rem;
+            height: .6rem;
+            margin-top: .64rem;
+            line-height: .53rem;
+            text-align: center;
+            background: #29ADFD;
+            border: 1px solid #fff;
+            color:#fff;
+            &:nth-child(2) {
+                border-bottom-left-radius: .08rem;
+                border-top-left-radius: .08rem;
+            }
+            &:nth-child(3) {
+                border-top-right-radius: .08rem;
+                border-bottom-right-radius: .08rem;
+            }
+        }
+        .pressed {
+            background: #fff;
+            color: #29ADFD;
+        }
+    }
+    ion-content {
+        padding: .2rem 0;
+    }
+    .item-content {
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .item {
+        border: none;
+        background-color: #f4f4f4;
+    }
+    .edit-container {
+        position: absolute;
+        left: 0;
+    }
+    .select-box {
+        width: 1.4rem;
+        height: 1.93rem;
+        position: absolute;
+        left: 0;
+        label {
+            display: block;
+            width: inherit;
+            height: inherit;
+            background: url('../img/msg/no-selected.png') no-repeat center;
+            background-size: .48rem .48rem;
+        }
+        .selected {
+            background: url('../img/msg/selected.png') no-repeat center;
+            background-size: .48rem .48rem;
+        }
+        input {
+            opacity: 0;
+        }
+    }
+    .select-box-act {
+        width: 1.4rem;
+        height: 2.28rem;
+        label {
+            display: block;
+            width: inherit;
+            height: inherit;
+            background: url('../img/msg/no-selected.png') no-repeat center;
+            background-size: .48rem .48rem;
+        }
+        .selected {
+            background: url('../img/msg/selected.png') no-repeat center;
+            background-size: .48rem .48rem;
+        }
+        input {
+            opacity: 0;
+        }
+    }
+    .delete {
+        width: 1.56rem;
+        height: 1.93rem;
+        line-height: 1.93rem;
+        background-color: #ff2121;
+        color: #fff;
+        position: absolute;
+        right: -1.76rem;
+        top: 0;
+        text-align: center;
+        border-top-left-radius: .08rem;
+        border-bottom-left-radius: .08rem;
+    }
+    .delete-act {
+        width: 1.56rem;
+        height: 2.28rem;
+        line-height: 2.28rem;
+        background-color: #ff2121;
+        color: #fff;
+        position: absolute;
+        right: -1.56rem;
+        top: 0;
+        text-align: center;
+        border-top-left-radius: .08rem;
+        border-bottom-left-radius: .08rem;
+    }
+    .sys-container {
+        margin-bottom: .2rem;
+        .option-button {
+            background-color: #ff2121;
+            color: #fff;
+            width: 1.56rem;
+            text-align: center;
+            display: block;
+            height: inherit;
+            line-height: 1.93rem;
+            border-radius: .08rem;
+        }
+        .item-options {
+            border: none;
+            background-color: #f4f4f4;
+            bottom: 0;
+            width: 1.76rem;
+        }
+    }
+    .act-container {
+        margin-bottom: .2rem;
+        .option-button {
+            background-color: red;
+            color: #fff;
+            width: 1.56rem;
+            text-align: center;
+            display: block;
+            height: 2.28rem;
+            line-height: 2.28rem;
+            border-radius: .08rem;
+            margin:0 auto;
+        }
+        .item-options {
+            border: none;
+            background-color: #f4f4f4;
+            width: 1.96rem;
+        }
+    }
+    .sys-msg-box {
+        width: 7.1rem;
+        border-radius: .08rem;
+        background-color: #fff;
+        padding-top: .18rem;
+        height: 1.93rem;
+        position: relative;
+        left: 0;
+        right: 0;
+        transition: left .15s;
+        margin: auto;
+        p {
+            margin-bottom: 0;
+        }
+        p:first-child {
+            font-size: .28rem;
+            line-height: .38rem;
+            span {
+                font-size: .22rem;
+                color: #aaa;
+                float: right;
+            }
+        }
+        p:nth-child(2) {
+            padding: .25rem 0;
+            font-size: .24rem;
+        }
+        p:nth-child(3) {
+            overflow: hidden;
+            span {
+                float: right;
+                padding:0.2rem;
+                padding-right:0
+            }
+        }
+    }
+    .read {
+        color:#aaa!important;
+    }
+    .act-msg-box {
+        height: 2.28rem;
+        width: 100%;
+        background-color: #fff;
+        position: relative;
+        left: 0;
+        right: 0;
+        transition: left .15s;
+        margin: auto;
+        .img-box {
+            width: 2.28rem;
+            height: inherit;
+            padding: .24rem;
+            float: left;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .desc-box {
+            p {
+                margin: 0;
+            }
+            p:first-child {
+                padding-top: .79rem;
+                color: #333;
+                font-size: .32rem;
+                font-family: PingFangSC-Medium;
+            }
+            p:last-child {
+                padding-top: .25rem;
+                font-size: .22rem
+            }
+            p:nth-child(2) {
+                padding-top: .18rem;
+                font-size: .28rem;
+            }
+        }
+    }
+    .edit-left {
+        left: 1.4rem;
+        transition: left .15s;
+    }
+    .no-msg {
+        text-align: center;
+        position: fixed;
+        top: 3.53rem;
+        width: 100%;
+        img {
+            width: 4rem;
+            height: 3.1rem;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .gap {
+        width: 100%;
+        height: .2rem;
+    }
+    .delete-msg {
+        width: 100%;
+        position: fixed;
+        height: 1.2rem;
+        transition: bottom .15s;
+        bottom: -1.2rem;
+        background-color: #fff;
+        button {
+            float: right;
+            width: 2.5rem;
+            margin: 0;
+            height: inherit;
+            border-radius: 0;
+            background-color: #ddd;
+            color: #fff;
+        }
+        .deleteblock2 {
+            background-color: #ff2121;
+        }
+        .deleteblock1 {
+            background-color: #ff2121;
+        }
+        label {
+            display: block;
+            overflow: hidden;
+            line-height: 1.2rem;
+            padding-left: 1.18rem;
+            background: url('../img/msg/no-selected.png') no-repeat .5rem center;
+            background-size: .48rem .48rem;
+        }
+        .selected {
+            background: url('../img/msg/selected.png') no-repeat .5rem center;
+            background-size: .48rem .48rem;
+        }
+        input {
+            opacity: 0;
+        }
+    }
+    .delete-block {
+        bottom: 0;
+        transition: bottom 0.15s;
+    }
+    .content-left {
+        bottom: 1.2rem;
+    }
+}
+

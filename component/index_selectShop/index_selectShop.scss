@@ -1,0 +1,25 @@
+#index_selectShop{
+
+	section{
+		.scroll-content.cjc_newtop{
+			top: 2.28rem;
+		}
+		.p24{
+			padding: 0.24rem 0.24rem 0;
+			.bor-bot{padding-bottom: 0.24rem;}
+			.cjc_icon:after{content:"";background-image: url(../img/index/icon.png);background-size: 5rem;display: block;}
+	    	.cjc_icon1:after{width: 0.3rem;height: 0.3rem;background-position: -1rem 0; display: inline-block;margin:-0.04rem 0.04rem 0 0;    vertical-align: middle; }
+			.cjc_title_search{
+		        line-height: 0.54rem;background:#f4f4f4;border-radius:1rem;height:0.54rem;width: 100%;text-align: center;padding-left: 0.2rem;
+		        .cjc_search_input{width: 1.8rem;}
+		        .cjc_resize_width{width: 4rem;}
+		    }
+		    .tc{text-align: center;}
+		    .tl{text-align: left;}
+		    .cjc_search_button{width: 1.04rem;line-height: 0.54rem;height: 0.54rem;background-color: #29ADFD;text-align: center;color: #fff;    border-radius: 1rem; margin-left: 0.2rem;}
+		    .cjc_search_back{line-height: 0.88rem;width: 1.1rem;font-size:0.6rem;text-align: center;}
+		    .cjc_search_input{display: inline-block; background-color: #f4f4f4; height: 0.5rem; border: none; vertical-align: top;    font-size: 0.24rem;}
+			}
+		}
+		
+}

@@ -1,0 +1,34 @@
+<ion-view hide-tabs='true' id='store_info'>
+    <!-- <header class="store-header">
+        <div class="df">
+            <a href="javascript:history.go(-1)" class="back"><i></i></a>
+            <p>商家信息</p>
+            <a href="javascript:void(0)" class="report" ng-click="reportStore()"><i></i></a>
+        </div>
+    </header> -->
+    <gl-header title="商家信息"></gl-header>
+    <section class="cont">
+        <!-- <div class="margin-top"></div> -->
+        <div class="store-info">
+            <p class="title">商家介绍</p>
+            <p class="des">{{storeInfo.profile}}</p>
+        </div>
+        <div class="store-service">
+            <div class="service-box">
+                <p class="title">特色服务</p>
+                <div class="lists" ng-if="storeInfo.specialService.length>0">
+                    <p ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('6') != -1" class="items pos"><i></i><span>订座</span></p>
+                    <p ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('4') != -1" class="items bx"><i></i><span>包厢</span></p>
+                    <p ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('1') != -1" class="items wifi"><i></i><span>WIFI</span></p>
+                    <p ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('2') != -1" class="items tc"><i></i><span>停车</span></p>
+                    <p ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('3') != -1" class="items dz"><i></i><span>POS</span></p>
+                    <p ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('5') != -1" class="items by"><i></i><span>表演</span></p>
+                </div>
+                <div class="time-ph">
+                    <p class="time">营业时间：{{storeInfo.businessHours}}</p>
+                    <div class="ph" ng-click="showTel()"><i></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</ion-view>

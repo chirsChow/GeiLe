@@ -1,0 +1,41 @@
+<ion-view hide-tabs='true' id='tab_accountProtect' style="background:#f4f4f4;">
+	<!-- <header class="header">
+		<div class="row">
+			<a href="javascript:history.go(-1)" class="col col-33 arrow"><i class="fl arrow_left"></i></a>
+			<div class="col col-33 col-center"><span class="title">账号保护</span></div>
+		</div>
+	</header> -->
+	<gl-header title="账号保护"></gl-header>
+	<section class="section">
+		<div class="container">
+			<ul>
+			 	<li>
+                    <span>账号保护</span>
+                    <div class="toggleBox" ng-click="useCheck()">
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-checked="isChecked">
+                            <a class="track">
+                                <div class="handle"></div>
+                            </a>
+                        </label>
+                    </div>
+                </li>
+			</ul>
+		</div>
+	</section>
+	<div class="text">
+		<span>开启帐号保护后，在不常用的手机上登录给乐生活，需要在常用设备上同意登录</span>
+	</div>
+	<main class="main">
+		<ul>
+			<li class="row" ng-repeat="list in myAccount" ng-if='myAccount'>
+				<div class="col col-90">
+					<p ng-bind="list.deviceName"></p>
+					<span ng-bind="list.deviceVersion"></span>
+				</div>
+			</li>
+		</ul>
+	</main>
+
+	
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-view hide-tabs='true' id='tab_register'>
+
+
+  <ion-content overflow-scroll="false">
+    <header class="header">
+      <a class="icon icon_cross" href="javascript:history.go(-1)"></a>
+      <div class="cjc_title f34">用户注册</div>
+      <div class="cjc_titleR f30" ng-click="gotoLogin()">登录</div>
+      <div class="icon icon_le"></div>
+    </header>
+
+    <section class="section">
+      <div>
+        <i class="icon icon_phone" ng-class="{true:'icon_phone_on',false:''}[false]"></i>
+        <input type="tel"
+               ng-model="inputData.phone"
+               maxlength="11"
+               class="bor-bot"
+               placeholder="请输入您的手机号">
+        <span class="vCode f26" ng-click="sendCode()" ng-bind="btnText"
+              ng-class="{true:'coloraa f30',false:'color29'}[isCounting]"></span>
+      </div>
+      <div>
+        <i class="icon icon_vCode" ng-class="{true:'icon_vCode_on',false:''}[false]"></i>
+        <input type="tel"
+               ng-model="inputData.check_code"
+               maxlength="6"
+               class="bor-bot"
+               placeholder="请输入手机验证码">
+      </div>
+      <div class="protocol">
+        <i class="icon_agree"
+           ng-class="{true:'icon_agreeBlue',false:''}[isAgree]"
+           ng-click="toggleIcon()"></i>
+        <p class="f22 fl agree" ng-class="{true:'',false:'coloraa'}[isAgree]" ui-sref="tab.my_about">
+          我己同意《给乐生活用户协议》
+        </p>
+
+      </div>
+    </section>
+    <footer class="footer">
+      <a ng-class="{true:'btnGreen',false:'btnGrayLogin'}[canNext]" ng-click="next()">注 册</a>
+    </footer>
+    <!-- <div class="tc" style="height: 1.6rem;line-height: 1.6rem;">
+      <span ng-if="showTips" class="f24" style="color:#f00;">{{tips}}</span>
+    </div> -->
+
+  </ion-content>
+  <!-- <p class="f24 fr btnLogin" ng-click="gotoLogin()">登录</p> -->
+
+</ion-view>

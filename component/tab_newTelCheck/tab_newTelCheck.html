@@ -1,0 +1,29 @@
+<ion-view hide-tabs='true' id='tab_newTelCheck' style="background: #f4f4f4">
+	<gl-header title="新手机号校验"></gl-header>
+	<div class="text">
+		<span>校验您的新手机</span>
+	</div>
+
+	<section class="section">
+		<ul>
+			<li class="bor-bot">
+				<span>手机号</span>
+				<input  type="tel" maxlength="11" 
+					    placeholder="请输入新手机号" 
+					    ng-model="inputData.newTel">
+			</li>
+			<li>
+				<span>验证码</span>
+				<input  type="text"
+						maxlength="6" 
+					    placeholder="请输入验证码" 
+					    ng-model="checkCode">
+				<span class="fr code f28 coloraa" ng-click="getCode()"
+				ng-class="{true:'coloraa',false:'color29'}[isCounting]">{{secondLeft}}</span>
+			</li>
+		</ul>
+	</section>
+	<footer class="footer" ng-click="next()">
+		<a href="" class="btn_complete">下一步</a>
+	</footer>
+</ion-view>

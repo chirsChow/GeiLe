@@ -1,0 +1,416 @@
+#tab_mine {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  .mine-header {
+    height: 2.89rem;
+    background-image: linear-gradient(-197deg, #4FBDFF 0%, #20B4FF 100%);
+    background-image: -webkit-linear-gradient(-197deg, #4FBDFF 0%, #20B4FF 100%);
+    padding-top: 0.6rem;
+    transition: all 0.2s;
+    overflow: hidden;
+    position: relative;
+    .news {
+      position: absolute;
+      right: 0.2rem;
+      top: 0.6rem;
+      .icon {
+        width: 0.48rem;
+        height: 0.48rem;
+        display: block;
+        background: url('../img/index/bellNoShadow.png') no-repeat center;
+        background-size: 100% 100%;
+      }
+      span {
+        position: absolute;
+        width: 0.16rem;
+        height: 0.16rem;
+        border-radius: 50%;
+        background-color:red;
+        top:0;
+        right:0;
+        display: none;
+      }
+      .block {
+        display: block;
+      }
+    }
+    .nav {
+      opacity: 1;
+      transition:0.2s all;
+    }
+    .mine-opacity {
+      opacity: 0;
+      transition:0.2s all;
+    }
+    .setting {
+      position: absolute;
+      right: 1rem;
+      top: 0.6rem;
+      .icon {
+        width: 0.48rem;
+        height: 0.48rem;
+        display: block;
+        background: url('../img/mine/setting.png') no-repeat center;
+        background-size: 100% 100%;
+      }
+    }
+    .h-img {
+      width: 0.9rem;
+      height: 0.9rem;
+      margin: 0 auto 0.35rem;
+      border-radius: 50%;
+      transition: all 0.2s;
+      border:1px solid #fff;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+    .set-img {
+      width: 0.48rem;
+      height: 0.48rem;
+      transition: all 0.2s;
+    }
+    .font {
+      font-size: 0.46rem;
+    }
+    .personal {
+      display: block;
+      width: 0.43rem;
+      height: 0.43rem;
+      background: url("../img/mine/personal.png") no-repeat center;
+      background-size: 0.36rem 0.36rem;
+      margin: 0 auto;
+    }
+    .desc {
+      font-size: 0.22rem;
+      color: #fff;
+      opacity: 0.9;
+      margin-top: 0.1rem;
+    }
+  }
+  .mine-header-up {
+    height: 1.3rem;
+    transition: all 0.2s;
+  }
+  .split {
+    height: 0.1rem;
+    background-color: #f4f4f4;
+  }
+  .bill-nav {
+    height: 3.32rem;
+    padding: 0.3rem 0.3rem 0;
+    .title {
+      margin-bottom: 0.14rem;
+    }
+    .date {
+      color: #95A1AB;
+      font-size: 0.24rem;
+      margin-bottom: 0.24rem;
+      span {
+        float: right;
+      }
+    }
+    .slider {
+      background: url("../img/mine/bill-bg.png") no-repeat top left;
+      background-size: 100% 100%;
+      -webkit-box-shadow: 0 0.1rem 0.14rem rgba(41, 173, 253, 0.3);
+      box-shadow: 0 0.1rem 0.14rem rgba(41, 173, 253, 0.3);
+    }
+    .slider-pager {
+      bottom: 0.2rem;
+      .slider-pager-page {
+        width: 0.28rem;
+        height: 0.06rem;
+        border: 1px solid #fff;
+        border-radius: 1rem;
+        opacity: 1;
+        i {
+          &:before {
+            display: none;
+          }
+        }
+      }
+      .slider-pager-page.active {
+        background: #fff;
+      }
+    }
+    .df {
+      padding-top: 0.3rem;
+      padding-bottom: 0.64rem;
+      .ls2 {
+        color: #fff;
+        opacity: 0.9;
+      }
+      .font {
+        font-size: 0.38rem;
+        margin-bottom: 0.26rem;
+      }
+    }
+  }
+  .scroll-content {
+    top: 6.41rem;
+    transition: all 0.2s;
+  }
+  .mine-content-up {
+    top: 4.82rem;
+    transition: all 0.2s;
+  }
+  .bill-wrapper {
+    padding: 0 0.3rem;
+    .bill-content {
+      padding: 0.3rem 0 0.3rem 0.6rem;
+      position: relative;
+      .icon {
+        position: absolute;
+        left: 0;
+        top: 0.2rem;
+        width: 0.48rem;
+        height: 0.48rem;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .reward {
+        position: absolute;
+        right: 0;
+        top: 0.2rem;
+        width: 0.78rem;
+        padding: 0.06rem 0.14rem;
+        border: 1px solid #29ADFD;
+        color: #29ADFD;
+        font-size: 0.22rem;
+        background-color: #F4FBFF;
+        border-radius: 1rem;
+      }
+      h1 {
+        font-size: 0.28rem;
+        color: #6F7B85;
+        margin-bottom: 0.09rem;
+      }
+      .content-left {
+        p:first-child {
+          font-size: 0.2rem;
+          color: #95A1AB;
+          margin-bottom: 0.25rem;
+        }
+        p:nth-child(2) {
+          font-size: 0.36rem;
+          color: #263138;
+          margin-bottom: 0.08rem;
+        }
+        p:last-child {
+          font-size: 0.22rem;
+          color: #95A1AB;
+        }
+      }
+      .content-right {
+        p {
+          font-size: 0;
+          vertical-align: top;
+          span:first-child {
+            font-size: 0.2rem;
+            color: #95A1AB;
+            padding-right: 0.3rem;
+            display: inline-block;
+          }
+          span {
+            font-size: 0.3rem;
+            color: #263138;
+            display: inline-block;
+          }
+        }
+        p:nth-child(2), p:first-child {
+          margin-bottom: 0.13rem;
+        }
+      }
+    }
+  }
+  .no-msg {
+    img {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+    p:nth-child(2) {
+      padding-top:0.24rem;
+      font-size:0.28rem;
+    }
+    p:nth-child(3) {
+      padding-top:0.2rem;
+      font-size:0.22rem;
+      color:#666;
+      padding-bottom:0.54rem;
+    }
+    .msg-button {
+      width:3.10rem;
+      height:0.8rem;
+      line-height:0.8rem;
+      margin:0 auto;
+      border-radius: 1rem;
+      color:#fff;
+      font-size:0.28rem;
+      text-align: center;
+      background-color:#29ADFD;
+    }
+  }
+}
+
+#my_certification {
+  background-color: #000;
+  font-family: PingFangSC-Regular;
+  .bj {
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 100%;
+  }
+  .pad40 {
+    padding-top: 0.4rem;
+  }
+  .mad20 {
+    margin: 0.4rem 0 0 0.24rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  .backgroundImg {
+    background: url(/img/hdqImg/hdqImg.png);
+    background-size: 0.5rem 6rem;
+  }
+  .bj {
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 100%;
+  }
+  //.pad40{padding-top:0.4rem;}
+  //.mad20{margin:0.4rem 0 0 0.24rem ;}
+  background-color: #f4f4f4;
+  .cjc_title_bg {
+    background-color: #fff;
+    width: 100%;
+    height: 0.88rem;
+    box-sizing: initial;
+    line-height: 0.88rem;
+    padding-top: 0.4rem;
+    color: #333;
+    .lh88 {
+      line-height: 0.88rem;
+    }
+    .ion-ios-arrow-left:before {
+      color: #666;
+      line-height: 0.88rem;
+      width: 1.1rem;
+      font-size: 0.6rem;
+      text-align: center;
+    }
+    .cjc_bank_add {
+      width: 1.2rem;
+      text-align: center
+    }
+  }
+
+  .ocr {
+    width: 100%;
+    height: 2.78rem;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  .ocr_phone {
+
+    .img_box {
+      margin: 0.4rem 0;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+    .bp50 {
+      display: block;
+
+    }
+  }
+  .ocr {
+    width: 100%;
+    height: 2.78rem;
+    text-align: center;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+  }
+  .ocr_phone {
+    .img_box {
+      margin-top: 0.49rem;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+  .box20 {
+    padding-top: 0.2rem;
+  }
+  .myForm {
+    width: 100%;
+    height: 2.28rem;
+    padding: .024rem;
+    .pd24 {
+      padding: 0.24rem;
+    }
+    .pbt24 {
+      margin-bottom: 0.24rem;
+    }
+    .card_box {
+      display: inline-block;
+      width: 2.22rem;
+      height: 0.44rem;
+      border: 0.01rem solid #29adfd;
+      line-height: 0.4rem;
+      text-align: center;
+      border-radius: 0.05rem;
+      background-color: #ecf8ff;
+    }
+    li {
+      width: 100%;
+      height: 0.78rem;
+      line-height: 0.78rem;
+      margin-bottom: 0.2rem;
+      border-radius: 0.08rem;
+      border: 1px solid #ccc;
+      //padding-bottom: 0.3rem;
+      box-sizing: border-box;
+      position: relative;
+      input {
+        width: 100%;
+        height: 0.7rem;
+        line-height: 0.7rem;
+        padding-left: 1.86rem;
+        padding-right: 0.24rem;
+        font-size: 0.28rem;
+        color: #333;
+        vertical-align: middle;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+      }
+      span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-left: 0.24rem;
+        line-height: 0.74rem;
+      }
+    }
+
+  }
+  .btn {
+    width: 100%;
+    padding: 0.8rem 0.3rem 0 0.3rem;
+    .xia_but {
+      width: 6.9rem;
+      height: 0.88rem;
+      border: 0;
+      background-color: #29adfd;
+      font-weight: 500;
+      border-radius: 0.45rem;
+    }
+  }
+
+}

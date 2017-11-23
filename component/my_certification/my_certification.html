@@ -1,0 +1,37 @@
+<ion-view hide-tabs='true' id='my_certification'>
+   <!--  <header class="cjc_title_bg">
+        <div class="tc df">
+            <div class="cjc_search_back">
+                <a href="javascript:history.go(-1)" class="button-retrun ion-ios-arrow-left color33"></a>
+            </div>
+            <div class="df1 f34 lh88">实名认证</div>
+            <div class="lh88 f28 cjc_bank_add"></div>
+        </div>
+    </header> -->
+    <gl-header title="实名认证"></gl-header>
+    <section class="scrolltop128 bj">
+        <ion-content overflow-scroll="false" class="has-header">
+            <div class="ocr" ng-click="gotoCard()">
+                <div class="ocr_phone"><img ng-src="img/hdqImg/@2xOCR.png" class="img_box" alt=""/></div>
+                <div class="f28 color66 bp50">可使用 <strong class="f28 colorfe">OCR</strong> 扫描身份证或在下面手动输入身份信息</div>
+            </div>
+            <div class="myForm bgff">
+               <div class="pd24">
+                   <ul>
+                       <li>
+                           <span class="f28 color66">真实姓名</span>
+                           <input type="text" placeholder="请输入您的真实姓名" ng-model="data.userName">
+                       </li>
+                       <li>
+                           <span class="f28 color66">身份证号码</span>
+                           <input type="text" placeholder="请输入您的身份证号码" maxlength="18" required ng-model="data.idCard">
+                       </li>
+                   </ul>
+               </div>
+            </div>
+            <div class="btn" ng-click="subimit()">
+                <button class="xia_but f32 colorff">完成</button>
+            </div>
+        </ion-content>
+    </section>
+</ion-view>

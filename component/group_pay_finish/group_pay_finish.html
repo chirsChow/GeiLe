@@ -1,0 +1,44 @@
+<ion-view hide-tabs='true' id='group_pay_finish' can-swipe-back='false'>
+    <gl-header title="乐抢单完成"  back="function" on-back="back()"></gl-header>
+    <div class="money-box">
+        <p ng-show="!IsParticipator">
+            <img ng-src="{{baseInfo.merchantImgUrl || 'img/df-u-img.png'}}" alt=""><span>{{baseInfo.merchantName}}</span>
+        </p>
+        <p ng-class="{'participator':IsParticipator}">
+            <span>￥</span><span ng-if="!IsParticipator">{{totalAmount | moneyUnit}}</span>
+            <span ng-if="IsParticipator">{{personalPay | moneyUnit}}</span>
+        </p>
+        <p>{{titleTips}}</p>
+    </div>
+    <div class="detail-wrapper" style="margin-top:0.2rem;">
+        <p class="bor-bot">
+            支付方式<span>乐抢单</span>
+        </p>
+    </div>
+    <div class="detail-wrapper" style="margin-top:0.2rem;" ng-if="!IsParticipator">
+        <p class="bor-bot">
+            个人支付<span>￥{{personalPay | moneyUnit}}</span>
+        </p>
+    </div>
+    <div class="detail-wrapper">
+        <p class="bor-bot">
+            现金支付<span>￥{{cashAmt | moneyUnit}}</span>
+        </p>
+    </div>
+    <div class="detail-wrapper">
+        <p class="bor-bot">
+            <i class="icon icon1">抵</i>乐豆支付<span style="color: rgb(227, 124, 121)">{{coin | moneyUnit}}豆</span>
+        </p>
+    </div>
+    <div class="detail-wrapper" style="margin-top:0.2rem;">
+        <p class="bor-bot">
+            <i class="icon icon2">赠</i>赠送乐豆<span style="color:rgb(248,169,48)">{{giftCoin | moneyUnit}}豆</span>
+        </p>
+    </div>
+    <div class="detail-wrapper" style="margin-top:0.2rem;" ng-if="baseInfo.userType == 0" ng-click="linkDetail()">
+        <p class="bor-bot">
+            查看乐抢单详情<em></em>
+        </p>
+    </div>
+    <div class="pay-btn" ng-click="linkComment()" ng-if="baseInfo.userType == 0">服务员星级评价</div>
+</ion-view>

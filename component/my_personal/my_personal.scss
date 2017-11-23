@@ -1,0 +1,82 @@
+#my_personal{
+    .bj{  background-color:#f4f4f4;width:100%;height:100%; }
+    .pad40{padding-top:0.4rem;}
+    .mad20{margin:0.4rem 0 0 0.24rem ;}
+
+    a{text-decoration: none;color:#333;}
+    .backgroundImg{background: url(/img/hdqImg/hdqImg.png);background-size: 0.5rem 6rem;}
+  background-color: #f4f4f4;
+  .cjc_title_bg{background-color: #fff;width: 100%;height: 0.88rem;box-sizing: initial;line-height: 0.88rem;padding-top: 0.4rem;color: #333;
+    .lh88{line-height: 0.88rem;}
+    .ion-ios-arrow-left:before{color: #666;line-height: 0.88rem;width: 1.1rem;font-size:0.6rem;text-align:center;}
+    .cjc_bank_add{width: 1.2rem;text-align: center}
+  }
+  .box20{margin-top:0.2rem;}
+    .portrait{
+      width:100%;
+      height:1.5rem;
+    }
+    .mt61{margin-top: 0.61rem;}
+    .mt58{margin: 0.58rem 0.11rem 0 0.3rem;  }
+    .icon{font-size: 0.33rem;color:#cdcdcd;}
+    .icon.colorff{color: #fff;}
+    .img_box{width:1rem;height:1rem;margin-top: 0.24rem;border-radius:50%;}
+    .information_list{width:100%;}
+    .item_box{
+      width:100%;
+      height:0.90rem;
+      line-height: 0.9rem;
+    }
+    .mt33{margin: 0.28rem 0.11rem 0 0.3rem;}
+    .f30{font-size: 0.3rem;}
+    .modal_top{
+      position: fixed;
+      bottom:0;
+      right:0;
+      left:0;
+      opacity: 1;
+      .modal_content{
+        width:100%;
+        height:100%;
+        padding: 0 0.24rem;
+        background-color:#fff;
+        .gh_head{
+         width:100%;
+          height:1rem;
+          line-height: 1rem;
+        }
+        .Ph_Img{
+
+          width:0.48rem;
+          height:0.48rem;
+          display: inline-block;
+          margin-top: 0.24rem;
+        }
+        .bgt{
+          background: url(/img/hdqImg/@2xpicture.png) no-repeat;
+          background-size: 0.48rem;
+        }
+        .bg2{
+          background: url(/img/hdqImg/@2xcamera.png) no-repeat;
+          background-size: 0.48rem;
+        }
+        .btn{
+          width:100%;
+          height:1.47rem;
+          text-align: center;
+          padding-top: 0.3rem;
+          .call_off{
+            border: 0;
+            background-color: #29adfd;
+            color:#fff;
+            font-size: 0.32rem;
+            font-weight: 400;
+            width:6.9rem;
+            height:0.88rem;
+          }
+        }
+
+      }
+    }
+
+}

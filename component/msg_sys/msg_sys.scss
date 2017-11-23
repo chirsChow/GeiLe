@@ -1,0 +1,55 @@
+#msg_sys {
+    background-color: #f4f4f4;
+    .msg-detail {
+        width: 100%;
+        background-color: #fff;
+        margin-top: 10px;
+        padding: 0 .28rem;
+        div {
+            height: .91rem;
+            line-height: .91rem;
+        }
+        span {
+            float: right;
+        }
+    }
+    .detail-wrapper {
+        padding: 0 0.3rem;
+        background: #fff;
+        p {
+            height: 0.9rem;
+            line-height: 0.9rem;
+            position: relative;
+        }
+        span:last-child {
+            float: right;
+        }
+        em {
+            display: inline-block;
+            position: absolute;
+            width: 0.42rem;
+            height: 0.42rem;
+            right: 0;
+            top: 0.25rem;
+            background: url("../img/in.png") no-repeat center;
+            background-size: 100%;
+        }
+        .icon {
+            display: inline-block;
+            width: 0.3rem;
+            text-align: center;
+            height: 0.3rem;
+            line-height: 0.3rem;
+            font-size: 0.24rem;
+            border-radius: 0.04rem;
+            color: #fff;
+            margin-right: 0.11rem;
+        }
+        .icon1 {
+            background: #F07373;
+        }
+        .icon2 {
+            background: #FFA702;
+        }
+    }
+}

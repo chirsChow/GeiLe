@@ -1,0 +1,159 @@
+$blue: #29ADFD;
+#mine_beanfun {
+  background-color: #f4f4f4;
+  .content2 {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  .mv-left1 {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    transition: 0.3s all;
+  }
+  .mv-left2 {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    transition: 0.3s all;
+  }
+  .blue-wrapper {
+    width: 100%;
+    height: 1.75rem;
+    background-color: $blue;
+  }
+  .des-bar-container {
+    position: fixed;
+    height: 2.8rem;
+    background-color: white;
+    opacity: 0.96;
+    border-radius: 0.1rem;
+    top: 1.4rem;
+    left: 20px;
+    right: 20px;
+    margin: auto;
+    color: rgb(41, 173, 253);
+    -webkit-box-shadow: 0 1px 8px #29adfd;
+    -moz-box-shadow: 0 1px 8px #29adfd;
+    box-shadow: 0 1px 8px #29adfd;
+    .bean {
+      padding-top: 0.5rem;
+      font-size: .5rem;
+      padding-left: 0.6rem;
+    }
+    .desc {
+      padding-top: 0.12rem;
+      font-size: 0.24rem;
+      padding-left: 0.6rem;
+    }
+    .explain {
+      position: absolute;
+      top: 0.3rem;
+      right: 0.3rem;
+      display: block;
+      padding: 0.1rem 0.15rem;
+      font-size: 0.24rem;
+      z-index: 1;
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 1px solid rgb(41, 173, 253);
+        width: 200%;
+        height: 200%;
+        transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        border-radius: 100px;
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        content: '';
+      }
+    }
+    .nav-btn-wrapper {
+      position: absolute;
+      bottom: -0.03rem;
+      left: 0;
+      width: 100%;
+      height: 0.9rem;
+      padding: 0.1rem;
+      font-size: 0;
+      background-color: rgb(44, 158, 228);
+      border-bottom-left-radius: 0.1rem;
+      border-bottom-right-radius: 0.1rem;
+      display: flex;
+      display: -webkit-flex;
+      .nav-btn {
+        flex: 1;
+        height: 0.7rem;
+        text-align: center;
+        border-radius: 0.1rem;
+        span {
+          display: block;
+          margin: 0.1rem 1.07rem;
+          height: 0.48rem;
+          font-size: 0.24rem;
+          color: #fff;
+          line-height: 0.36rem;
+        }
+        &.div-select {
+          background-color: rgb(57, 180, 255);
+          span {
+            border-bottom: 2px solid #fff;
+          }
+        }
+      }
+    }
+  }
+  .scrolltop360 > .scroll-content {
+    top: 4.3rem;
+    margin-top: 0;
+    padding-top: 0;
+    transition: 0.3s all;
+  }
+  .bean-list {
+    padding: 0 .24rem;
+    height: 1.38rem;
+    position: relative;
+    span {
+      position: absolute;
+      right: .24rem;
+      top: .76rem;
+      font-family: PingFangSC-Medium;
+    }
+    .add {
+      color: rgb(101, 200, 22);
+    }
+    .sub {
+      color: rgb(254, 84, 85);
+    }
+  }
+  .img-box {
+    padding: .24rem 0;
+    padding-right: .2rem;
+    float: left;
+    height: inherit;
+    img {
+      border-radius: .08rem;
+      width: .9rem;
+      height: .9rem;
+    }
+  }
+  .detail-box {
+    height: inherit;
+    overflow: hidden;
+    p:first-child {
+      padding-top: .30rem;
+    }
+    p:last-child {
+      padding-top: .20rem;
+    }
+  }
+  .no-msg {
+    margin-top: .8rem;
+    img {
+      width: 4rem;
+      height: 3.1rem;
+    }
+  }
+  .scroll {
+    height: auto;
+  }
+}

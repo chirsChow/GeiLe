@@ -1,0 +1,109 @@
+.sprite_background_store_nearby_1492838091000{background-size:1.02rem 0.68rem;background-image:url(../img/store_list/sprite_store_nearby_1492838091000.png);}
+
+#index_search,#index_location{
+    .cjc_title_search{
+        position: relative;
+        s{display: inline-block;height: .31rem;width: .31rem;background: url("../img/clear_local.png") no-repeat;background-size: .3rem .3rem;
+            position: absolute;right: .3rem;top: .13rem;display: none;
+            &.show{display: inline-block}
+        }
+    }
+
+    .button-retrun{
+        width:0.48rem;
+        height:0.48rem;
+        display: inline-block;
+        background:url("../img/tab_store/back-satreo.png") no-repeat;
+        background-size:0.48rem;
+    }
+    background-color: #f4f4f4;
+    .clearfix {*zoom: 1;}
+    .clearfix:before,
+    .clearfix:after {display: table;line-height: 0;content: "";}
+    .clearfix:after {clear: both;}
+    .cjc_title_bg{width: 100%;height: 0.88rem;box-sizing: initial;line-height: 0.88rem;background-color: #29ADFD;padding-top: 0.5rem;}
+    .cjc_icon:after{content:"";background-image: url(../img/index/icon.png);background-size: 5rem;display: block;}
+    .cjc_icon1:after{width: 0.3rem;height: 0.3rem;background-position: -1rem 0; display: inline-block;margin:-0.04rem 0.04rem 0 0;    vertical-align: middle; }
+    .cjc_title_search{
+        line-height: 0.54rem;background:#f4f4f4;border-radius:1rem;height:0.54rem;width: 100%;margin: 0.16rem auto;text-align: center;padding-left: 0.2rem;
+        .cjc_search_input{width: 1.8rem;}
+        .cjc_resize_width{width: 4rem;}
+    }
+    .tc{text-align: center;}
+    .tl{text-align: left;}
+    .cjc_search_button{width: 1.04rem;line-height: 0.88rem;text-align: center;}
+    .cjc_search_back{line-height: 0.88rem;width: 1.1rem;font-size:0.6rem;text-align: center;}
+    .cjc_search_input{display: inline-block; background-color: #f4f4f4; height: 0.5rem; border: none; vertical-align: top;    font-size: 0.24rem;} 
+    .cjc_search_content{
+        .cjc_hot_search{
+            .title{height: 0.68rem;line-height: 0.68rem;} 
+            .cjc_hot_list{
+                background-color: #fff;
+                overflow: auto;
+                div{
+                    width: 33.3%;height: 0.8rem;line-height: 0.8rem;text-align: center;display:block;float: left;position: relative;margin-bottom: -0.01rem; }
+                div:after{     content: '';     position: absolute;     top: 0;     left: 0;     border-top: 1px solid #ddd;  border-right: 1px solid #ddd;  box-sizing: border-box;     width: 200%;     height: 200%;
+                    transform: scale(0.5);   transform-origin: left top;  }
+            }
+        }
+        .cjc_history_search{
+            .title{height: 0.68rem;line-height: 0.68rem;} 
+            .cjc_history_list{height: 0.94rem;line-height: 0.94rem;}
+        }
+        .cjc_clear_history{font-size: 0.28rem;color: #999;text-align: center;line-height: 0.8rem;width: 2.5rem;height: 0.8rem;margin:0.6rem auto;position: relative;border: 1px solid #999;border-radius:0.1rem;}
+        // .cjc_clear_history:after{     content: '';     position: absolute;     top: 0;     left: 0;     border: 1px solid #999;border-radius:0.2rem;    box-sizing: border-box;     width: 200%;     height: 200%;
+        //     transform: scale(0.5);   transform-origin: left top;
+        //     -webkit-transform: scale(0.5);   -webkit-transform-origin: left top; }
+            
+    }
+    .cjc_searchlist_content{
+        position: relative;
+        .store-items{padding: 0 .24rem;padding-top: .24rem;
+            .item-box{padding-top: .24rem !important;position: relative;
+                .bg{    position: absolute;  width: 100%; height: .95rem; z-index: 5; background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.5), transparent); background: -moz-linear-gradient(rgba(0, 0, 0, 0.5), transparent); background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);}
+                &:first-child{margin-top: 0;}
+                .item-info{@extend .clearfix;background-color: #f4f4f4;border-radius: .08rem;
+                    .img-box{width: 4.42rem;height: 2.2rem;float: left;position: relative;border-radius: .08rem;
+                        overflow: hidden;img{width: 100%;}
+                        .title{font-size: .32rem;position: absolute;z-index: 9;top: .2rem;left: .2rem;color: #fff;}
+                    }
+                    .info{width: 2.6rem;float: left;padding-left: .2rem;color: #666;font-size: .28rem;
+                        .distance{margin-top: .36rem;}
+                        .type{margin-top: .2rem}
+                        .extra-item{margin-top: .2rem;
+                            i{display: inline-block;vertical-align: middle;
+                                &:after{display: inline-block;vertical-align: middle;}
+                            }
+                            i{height: .28rem;width: .28rem;
+                                &.po{background-position: -0.74rem -0.3rem;@extend .sprite_background_store_nearby_1492838091000;}
+                                &.wf{background-position: 0 -0.4rem;@extend .sprite_background_store_nearby_1492838091000;}
+                                &.hs{background-position: -0.3rem -0.4rem;@extend .sprite_background_store_nearby_1492838091000;}
+                                &.tc{background-position: -0.74rem 0;@extend .sprite_background_store_nearby_1492838091000;}
+                            }
+                        }
+                    }
+                }
+                .extra-info{@extend .clearfix;margin-top: .2rem;padding-bottom: .2rem;
+                    .evaluate{position: relative;display: inline-block;float: left;;
+                        width: 1.50rem;height: .24rem;background: url("../img/start-small-d2.png");background-size: 1.5rem 0.24rem;
+                        span{position: absolute; height: .24rem;background: url("../img/start-small2.png");background-size: 1.5rem 0.24rem;
+                        }
+                    }
+                    .num-price{float: left;color: #666;font-size: .24rem;margin-left: .15rem}
+                }
+                .foucs-info{width: 2.4rem;height: .86rem;font-size: .32rem;color: #fff;position: absolute;
+                    right: 0;bottom: .2rem;
+                    background: url("../img/store_list/icon_49.png");text-align: center;
+                    background-size:2.4rem .86rem ;
+                    p{line-height: .8rem;}
+                }
+            }
+        }
+    }
+    .cjc_nosearch_list{
+        width: 100%;height: 100%;
+        .cjc_nosearch_img{width: 4rem; height: 0.4rem;position: absolute;top: 50%;left: 50%;margin-left: -2rem;margin-top:-2rem; }
+    }
+    
+}

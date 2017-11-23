@@ -1,0 +1,45 @@
+#my_about{
+  font-family:PingFangSC-Regular;
+  .bj{  background-color:#f4f4f4;width:100%;height:100%; }
+  //.pad40{padding-top:0.4rem;}
+  //.mad20{margin:0.4rem 0 0 0.24rem ;}
+  background-color: #f4f4f4;
+  .cjc_title_bg{background-color: #fff;width: 100%;height: 0.88rem;box-sizing: initial;line-height: 0.88rem;padding-top: 0.4rem;color: #333;
+    .lh88{line-height: 0.88rem;}
+    .ion-ios-arrow-left:before{color: #666;line-height: 0.88rem;width: 1.1rem;font-size:0.6rem;text-align:center;}
+    .cjc_bank_add{width: 1.2rem;text-align: center}
+  }
+
+  .content_text_box{
+    width:100%;
+    background-color:rgb(247,247,247);
+    padding:0 0.3rem;
+    min-height: 10rem;
+    text-align: justify;
+
+  }
+  .hdq_fu_text{
+    font-size: 0.28rem;
+    width:100%;
+    height:0.6rem;
+    font-weight: 600;
+    line-height: 0.6rem;
+
+  }
+   p{
+      font-size: 0.26rem;
+      color:rgb(102,102,102);
+       line-height: 0.5rem;
+       margin-bottom: 0.26rem;
+       //word-spacing: 0.3rem;
+      // word-spacing: -0.5rem;
+    }
+
+    .hdq_fu_top{
+      font-size: 0.26rem;
+      color:rgb(102,102,102);
+      line-height: 0.5rem;
+      // word-spacing: 0.3rem;
+     // word-spacing: -0.5rem;
+    }
+}

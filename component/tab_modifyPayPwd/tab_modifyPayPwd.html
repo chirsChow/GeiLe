@@ -1,0 +1,44 @@
+<ion-view hide-tabs='true' id='tab_modifyPayPwd' style="background: #f4f4f4">
+	<gl-header title="修改支付密码"></gl-header>
+	<section class="section">
+		<label>
+			<input ng-model="inputData.prevPwd"  
+				   type="password" 
+				   maxlength="6" 
+				   placeholder="请输入原支付密码">
+		</label>
+	</section>
+	<footer class="footer">
+		<a href="" class="btn_next" ng-click="next()">下一步</a>
+	</footer>
+
+	<script id="my-modal.html" type="text/ng-template">
+		<ion-modal-view class="bgf4" id="modifyPayPwd_modal">
+			<!-- <header class="header">
+				<div class="container row">
+					<a class="col col-33 col-center arrow" ng-click="closeModal()"><i class="fl arrow_left"></i></a>
+					<div class="col col-33 col-center">修改支付密码</div>
+				</div>
+			</header> -->
+			<gl-header title="修改支付密码" back="function" on-back="closeModal()"></gl-header>
+
+			<section class="section2"z>
+				<label>
+					<input ng-model="inputData.pwd" 
+					       maxlength="6" 
+					       type="password" 
+					       placeholder="请设置6位数字的支付密码">
+				</label>
+				<label>
+					<input ng-model="inputData.pwdConfirm" 
+						   maxlength="6" 
+						   type="password" 
+						   placeholder="请再次输入密码">
+				</label>
+			</section>
+			<footer class="footer">
+				<a href="" class="btn_next" ng-click="modifyComplete()">完成修改</a>
+			</footer>
+		</ion-modal-view>
+	</script>
+</ion-view>

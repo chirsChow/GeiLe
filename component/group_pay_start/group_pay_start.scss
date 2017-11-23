@@ -1,0 +1,69 @@
+#group_pay_start{
+  .store-header{height: 1.28rem;padding-top: .4rem;background-color: #29ADFD;
+    .df{height: 0.88rem;
+      span{flex: 1;-webkit-flex: 1;    display: flex;font-size: .28rem;color: #fff;  align-items:center;  -webkit-align-items:center;
+        justify-content:center;  -webkit-justify-content:center;height: .88rem;
+        i{background-image: url(../img/tab_store/back-satreo.png);height: .48rem;width: .48rem;background-size: 100% 100%;}
+      }
+      p{font-size: .34rem;text-align: center;color: #fff;flex: 4;-webkit-flex: 4;  display: flex;
+        display: -webkit-flex;  align-items:center;  -webkit-align-items:center;  justify-content:center;  -webkit-justify-content:center;  } }
+  }
+  .scroll-content{
+    top:1.28rem;background-color: #29ADFD;
+    .scroll{min-height: 100%;padding-bottom: 1.5rem;}
+  }
+  .guize-box{
+    .title{font-size: .32rem;text-align: center;padding: .4rem 0 .2rem;color: #333;}
+    .cont{padding: .2rem .3rem;
+      p{margin-bottom: .4rem;line-height: .4rem;font-size: .28rem; color: #263138; }
+    }
+    .bot{color: #95A1AB;font-size: .22rem;text-align: center;padding: .2rem 0 .7rem;}
+  }
+  .qrcode2{
+    position: absolute;right: .4rem;top: .55rem;z-index: 999;
+    i{background-image: url("../img/group_pay/leqiang.png");width: .2rem;height: .2rem;display: inline-block;
+      background-size: 100% 100%;position: relative;top: .03rem;}
+  }
+  .content-box{background-color: #fff; width: 7.1rem;margin: 0 auto;border-radius: .1rem;padding-bottom: .45rem;
+    .items{display: flex;display: -webkit-flex;padding: .2rem 0;  border-radius: .1rem;border-bottom: 1px solid #FAFAFA;margin: 0 .2rem;
+      .df{width: 100%;}
+      .img{width: .6rem;img{width: 100%;height: .6rem;border-radius:50%;}}
+      .info{flex: 1;-webkit-flex: 1;padding-left: .12rem;
+        >p{font-size: .24rem;color: #263238;span{font-size: .16rem;color: #C6CBCF;border-radius: .2rem;border: 1px solid  #C6CBCF;}
+          margin: .05rem 0 .05rem;}
+        >span{color: #C6CDD2;font-size: .2rem;line-height: .35rem;}
+      }
+      .status{width: 1.4rem;  display: flex;
+        display: -webkit-flex;  align-items:center;  -webkit-align-items:center;  justify-content:center;  -webkit-justify-content:center;
+        color: #263238;font-size: .24rem;
+        i{background:url(../img/group_pay/weizhifu.png);height: .22rem;width: .22rem;background-size: 100% 100%;margin-left: .1rem;
+          &.active{background-image: url(../img/group_pay/yizhifu.png)}
+        }
+      }
+    }
+    .pay_num{text-align: center;
+      .num{font-size: .5rem;color: #151515;letter-spacing: 1px;line-height: .6rem;font-weight: 500;margin-top: .5rem;
+        span{font-size: .3rem;font-weight: 300;}
+      }
+      .info{font-size: .22rem;color: #C6CBCF;letter-spacing: 3.2px;}
+    }
+    .code-box{text-align: center;padding-top: .3rem;
+      >p{font-size: .24rem;color: #A5B1B9;letter-spacing: .22rem;width: 4rem;margin: .2rem auto .2rem;text-align: center;padding-left: .2rem;}
+      .img{height: 3.6rem;width: 3.6rem;background: #eee;display: inline-block;
+        img{width: 100%;height: 100%;}
+      }
+      #qrcode img{margin: auto;   width: 3.6rem;}
+    }
+    .add-list{text-align: center;width: 6rem;margin: .35rem auto;
+      p{width: .8rem;height: .8rem;img{width: 100%;height: .8rem;border-radius:50%;}display: inline-block;margin: .15rem;}
+    }
+    .add-num{line-height: .3rem;letter-spacing: .04rem;font-size: .24rem;color: #999999;text-align: center}
+  }
+  .btd{width: 100%;
+    span{display: block;font-size: .3rem;color: #29ADFD;letter-spacing: .02rem;margin: .2rem .2rem 0;  display: flex;
+      display: -webkit-flex;  align-items:center;  -webkit-align-items:center;  justify-content:center;  -webkit-justify-content:center;
+      background: #fff;height: .88rem;border-radius: .88rem;font-weight: 400;
+    }
+  }
+  .cjc_list{margin-top: 0.4rem;}
+}

@@ -1,0 +1,42 @@
+<ion-view hide-tabs='true' id='payment_finish'>
+    <header class="cjc_title_bg pr">
+        <div class="w124 lh88 cjc_back" ng-click="gotoBack()"><a class="button-retrun header-back colorff"></a></div>
+        <div class="f34 lh88 colorff cjc_title">完成支付</div>
+    </header>
+    <!--支付成功-->
+    <div class="finish-container cjc-payment-success">
+        <div class="cjc-img tc">
+            <img ng-src="{{finishData.mainImage || 'img/df-u-img.png'}}" alt="">
+            {{finishData.merchantShortName}}
+        </div>
+        <div class="tc f60"><span class="f24">￥</span>{{finishData.cashAmount}}</div>
+        <div class="tc f24 color99">现金支付</div>
+        <div class="bor-bot df bor-bot-red">
+            <div class="df1 tl f28">乐豆支付</div>
+            <div class="df1 tr f32">{{finishData.beanAmount}}元</div>
+        </div>
+        <div class="bor-bot df">
+            <div class="df1 tl f28 color99">交易总金额</div>
+            <div class="df1 tr f32">{{finishData.totalAmount}}元</div>
+        </div>
+        <div class="cjc-bottom">
+            <img src="img/dou.png" alt="">
+            恭喜你获得了<span>{{finishData.giftAmount}}</span>乐豆
+        </div>
+        <div class="cjc-excep" ng-click="gotoExcep()">服务员星级评价</div>
+        <!-- <img style="width: 2rem;margin-top: .4rem;" src="img/index/true_1.png" />
+        <div class="amt-label"><span class="f24">￥</span><span class="font">{{money.toFixed(2)}}</span></div>
+        <div class="f28 finish-content">您已获得 <span class="f40 font" style="color: #ff9f00;" ng-bind="myCount"></span> 乐豆，可在"首页"或"我的"查看乐豆余额，下次交易时可直接通过乐豆支付</div>
+        <div class="df" style="height: 4rem;">
+            <div class="df1 cjc_back_home" ui-sref="tab.index">返回首页</div>
+            <div class="df1 cjc_btn" ng-click="gotoExcep()">打赏</div>
+        </div> -->
+    </div>
+    <!--支付失败-->
+    <!-- <div ng-if="result == 'fail'" class="finish-container" style="width: 95%;">
+        <img style="width: 2rem;margin-top: .4rem;" src="img/index/fail_1.png" />
+        <div class="fail-label">支付失败</div>
+        <div class="f28 finish-content" ng-bind-html="failResult"></div>
+        <div class="cjc_btn" ui-sref="tab.index">返回首页</div>
+    </div> -->
+</ion-view>

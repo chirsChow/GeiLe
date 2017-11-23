@@ -1,0 +1,58 @@
+<ion-view hide-tabs='true' id='index_selectShop'>
+	<gl-header title="选择乐抢单商家" back="tab.index" right="记录" on-click="gotoSponsor()"></gl-header>
+	<section>
+		<div class="p24">
+			<div class="tc df bor-bot">
+            <div class="df1">
+                <div class="cjc_title_search f24 coloraa">
+                    <i class="cjc_icon cjc_icon1"></i>
+                    <input type="text" ng-model="searchInput" class="cjc_search_input" placeholder="请输入商家名称" id="cjc_search_input">
+                </div>
+            </div>
+            <div class="f28 colorff cjc_search_button" ng-click="searchClick()">搜索</div>
+        </div>
+		</div>
+		
+        <ion-content overflow-scroll="true" lazy-scroll class="cjc_newtop">
+            <ion-refresher
+                    pulling-text="下拉刷新..."
+                    on-refresh="doRefresh()">
+            </ion-refresher>
+            <div class="store-list-item-n">
+                <div class="bor-bot item-box-n" ng-click="gotoPay(item.merchantNo)" ng-repeat="item in storeListItems track by $index" attached>
+                    <store-item item="item" style="display: flex;display: -webkit-flex;width: 100%"></store-item>
+                    <!-- <div class="item-info">
+                        <div class="img-box" tile-img="2/1" tile-src="{{item.images||'./img/store_list/icon_60.png'}}">
+                            <div class="bg"></div>
+                            <p class="title">{{item.shortName}}</p>
+                            <img err-src="./img/store_list/icon_60.png" src="{{item.images||'./img/store_list/icon_60.png'}}" alt="">
+                        </div>
+                        <div class="info">
+                            <p class="distance"><{{item.distance | distanceFilter}}m</p>
+                            <p class="type">{{item.areaName.length>3?"":item.areaName+'·'}}{{item.categoryName | ellipsisFilter:5}}</p>
+                            <p class="type" >人均消费￥{{item.perCapita?item.perCapita:'0元'}}</p>
+                            <div class="extra-item">
+                                <i ng-if="item.specialService.indexOf(3) != -1" class="po"></i>
+                                <i ng-if="item.specialService.indexOf(1) != -1" class="wf"></i>
+                                <i ng-if="item.specialService.indexOf(2) != -1" class="tc"></i>
+                                <i ng-if="item.specialService.indexOf(4) != -1" class="hs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra-info">
+                        <div class="comment_evaluate-score-default_box evaluate">
+                            <p class="comment_evaluate-score-cai" style="width: {{item.commentGrade*20 | gradeFilter}}%">
+                                <span class="comment_evaluate-score-default" ><i></i><i></i><i></i><i></i><i></i></span>
+                            </p>
+                            <span class="comment_evaluate-score-default"><i></i><i></i><i></i><i></i><i></i></span>
+                        </div>
+                        <p class="num-price">{{item.paymentCount | personNumberFilter}}人已消费 </p>
+                    </div>
+                    <div class="foucs-info">
+                        <p>赠豆比例<span class="font"><s class="sale-rate">{{item.saleRate}}</s> %</span></p>
+                    </div> -->
+                </div>
+            </div>
+        </ion-content>
+    </section>
+</ion-view>

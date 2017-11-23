@@ -1,0 +1,111 @@
+<ion-view hide-tabs='true' id='group_pay_active' ng-class="{true:'actives'}[itemInfo.mine.payStatus=='SUCCESS']" can-swipe-back='false'>
+    <header class="store-header">
+        <div class="df">
+            <span >
+                <s ng-click="closeGroupPlay()" ng-if="itemInfo.mine.actived" style="text-decoration: none">撤销</s>
+            </span>
+            <p>乐抢单</p>
+            <span ng-click="closePlay()"><s ng-if="itemInfo.isPalyed" style="text-decoration: none">关闭</s></span>
+        </div>
+    </header>
+    <div ng-if="setshowGuiZes" class="guize-box" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.40);z-index: 999;">
+        <div style="position: absolute;top: .85rem;bottom:1.5rem;left: .2rem;right: .2rem;background: #fff;border-radius: .1rem;overflow: scroll">
+            <p class="title">乐抢单规则</p>
+            <div class="cont" >
+                <p>1、乐抢单由一人发起，先选择商家设置乐抢单金额或扫描商家收款码，确认后发起乐抢单，其他人扫描乐抢单二维码参与。</p>
+                <p>2、乐抢单人数最少2人，若发起人认领金额后则至少需要3人。</p>
+                <p>3、乐抢单由发起者设置金额，金额不能低于10元。</p>
+                <p>4、发起者可以设置乐抢单的认领金额，其中认领金额不低于乐抢单金额的11%，不高于90%。</p>
+                <p>5、乐抢单的发起者点击“随机抽签”后所有人进入到随机抽签界面，系统按参与人数随机生成个人买单金额，乐抢单人员点击“欢乐逗地主”匹配相应的金额，若没有在60s内操作，则系统默认对人员和金额匹配。</p>
+                <p>6、乐抢单的随机抽签匹配金额最高者获得“地主”称号，匹配金额最低者获得“幸运之星”称号。</p>
+                <p>7、参与乐抢单的所有人与抽签金额相匹配后，发起者就可进行乐抢单支付，若有参与者未支付则由发起者补足参与者未支付的金额完成乐抢单。</p>
+                <p>8、中途退出乐抢单后，若未进入随机抽签，参与者则可重新扫码加入；发起者可通过点击首页“未完成的乐抢单”重新进入。若已进入随机抽签，则发起者或参与者（使用给乐生活APP）都可通过点击首页“未完成的乐抢单”重新进入，或通过乐抢单记录重新进入；若参与者使用微信参与的乐抢单，可通过扫描其他人页面的二维码继续参与到乐抢单。</p>
+                <p>9、乐抢单支持微信支付、乐豆支付，若个人买单金额小于1元时则不支持乐豆支付，若乐豆余额大于买单金额时则微信支付金额必须大于等于1元。</p>
+                <p>10、乐抢单所有人支付后都可获得赠送乐豆，支付金额越大赠送乐豆越多，乐豆可在给乐生活联盟商家使用。</p>
+                <p>11、乐抢单所有人支付后都可获得赠送乐豆，支付金额越大赠送乐豆越多，乐豆可在给乐生活联盟商家使用。</p>
+                <p>&nbsp;&nbsp;（1）乐抢单完成之前由发起者发起，若参与者未付款，则乐抢单解散；若参与者正在支付或者支付完成时，则支付金额会在1-3个工作日返回到所使用支付账户。</p>
+                <p>&nbsp;&nbsp;（2）乐抢单完成后，如要撤单，则需和商家协商后由商家发起撤单。</p>
+                <p>12、若在乐抢单过程中遇到无法解决的问题，可联系给乐工作人员解决，24小时服务热线4000200365。</p>
+            </div>
+            <p class="bot">乐抢单最终解释权归深圳给乐信息科技有限公司所有</p>
+        </div>
+        <p style="text-align: center;width: 100%;position: absolute;bottom: .4rem;left: 0;">
+            <img ng-click="setshowGuiZe()" style="display:inline-block;width:  .8rem;" src="./img/group_pay/pop_close.png" alt=""></p>
+    </div>
+    <div ng-click="itemInfo.showMaxMin=false" ng-if="itemInfo.showMaxMin"  class="scroll-info">
+        <img ng-if="itemInfo.showMax" src="./img/group_pay/tuhaoshow.png" alt="">
+        <img ng-if="itemInfo.showMin" src="./img/group_pay/xinyuanshouw.png" alt="">
+    </div>
+    <div class="hide-code" ng-if="showqrcode"  style="position: absolute;
+            width: 100%;height: 100%;top: 0;z-index: 99999;
+            background-color: rgba(0,0,0,.5)">
+        <div style="width: 6.4rem;margin: 2.05rem auto 0;background-color: #fff;border-radius: .15rem;padding-top: 1px;text-align: center;
+        padding-bottom: .6rem;">
+            <p style="font-size: .24rem;color: #C6CBCF;text-align: center;margin: .5rem 0">扫描下方二维码，继续参与乐抢单</p>
+            <div style="display: inline-block;padding: 0 .4rem;width:100%;" id="qrcode-box">
+                <img style="width: 100%;" ng-src="{{QRCodeImage}}" alt="">
+            </div>
+        </div>
+        <p style="text-align: center;margin: .4rem 0;">
+            <img ng-click="setshowqrcode()" style="display:inline-block;width:  .8rem;" src="./img/group_pay/pop_close.png" alt=""></p>
+    </div>
+    <ion-content>
+        <div class="scroll-box">
+            <div style="height: .2rem;"></div>
+            <div class="content-box" ng-if="itemInfo.isShow">
+                <p class="total">总计{{itemInfo.total | moneyUnit}}元</p>
+                <div ng-click="setshowqrcode()" class="qrcode">
+                    <div id="qrcodedd" >
+                        <img style="width: 100%;" src="./img/group_pay/img-code.png" alt="">
+                    </div>
+                    <p>继续参与</p>
+                </div>
+                <div class="qrcode2" ng-click="setshowGuiZe()">
+                    <p style="color: #29ADFD;font-size: .2rem;">乐抢单规则 <i></i></p>
+                </div>
+                <div id="roll-time" ng-if="itemInfo.rollTime>0">
+                    <span style="color: #E98A0C;">60s</span>后自动完成乐抢单
+                </div>
+                <lucky-turntable ></lucky-turntable>
+                <p class="msg" ng-if="!itemInfo.isShowList">地主随机选，买单不用抢</p>
+                <p class="pay-need" ng-if="itemInfo.isShowList && itemInfo.pay_need>0">待支付{{itemInfo.pay_need | moneyUnit}}元</p>
+                <p class="pay-need" ng-if="itemInfo.isShowList && itemInfo.pay_need==0">支付完成</p>
+                <div class="create-one" ng-if="itemInfo.isShowList&&itemInfo.isPalyed">
+                    <p ng-if="itemInfo.ps_need>0">{{itemInfo.ps_need}}人待支付</p>
+                    <div class="items">
+                        <div class="df">
+                            <div class="img"><img src="{{itemInfo.mine.h_img}}" alt=""></div>
+                            <div class="info">
+                                <p>{{itemInfo.mine.userName}} <span ng-if="it.actived">发起者</span></p>
+                                <span >第{{itemInfo.mine.number}}名</span>
+                            </div>
+                            <div class="status"> <span>{{itemInfo.mine.money | moneyUnit}}元 </span>
+                                <i  ng-class="{true:'active'}[itemInfo.mine.pay]" ></i> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-list" ng-if="itemInfo.isShowList">
+                    <div class="items" ng-repeat="it in itemInfo.itemReceive" ng-if="it.receive">
+                        <div class="df">
+                            <div data-num="{{$index+1}}" class="img"><img src="{{it.h_img}}" alt="">
+                                <i ng-if="it.isMax && itemInfo.endReceive"></i>
+                                <s ng-if="it.isMin && itemInfo.endReceive"></s>
+                            </div>
+                            <div class="info">
+                                <p>{{it.userName.length>5?it.userName.slice(0,5)+'..':it.userName}} <span ng-if="it.actived">发起者</span></p>
+                            </div>
+                            <div class="status">
+                                <span ng-if="!(itemInfo.paramInfo.rlAmount>0&&it.actived)">{{it.money  | moneyUnit}}元 </span>
+                                <span ng-if="itemInfo.paramInfo.rlAmount>0&&it.actived" style="color: #5EC4F7;">已认领{{it.money  | moneyUnit}}元 </span>
+                                <i ng-class="{true:'active'}[it.pay]"></i> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+    <div ng-if="!itemInfo.mine.pay" class="btnd" ng-click="goWxPay()">
+        <span ng-class="{true:'active'}[itemInfo.isPalyed]">{{humanType==0?"确认买单":"支付"}}</span>
+    </div>
+</ion-view>

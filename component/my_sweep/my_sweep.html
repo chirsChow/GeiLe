@@ -1,0 +1,136 @@
+<ion-view hide-tabs='true' id='my_sweep'>
+    <gl-header title="支付"></gl-header>
+    <section class="scrolltop128">
+        <ion-content overflow-scroll="false" overflow-scroll="false" class="new_pay">
+            <div class="top">
+                <div class="tc">
+                    <img ng-src="{{storeInfo.image || 'img/df-u-img.png'}}" width="100%" height="100%">
+                    <span class="f28 color6F7B85">{{storeInfo.shortName}}</span>
+                </div>
+                <div class="bor-bot top_price">
+                    <div class="cjc_yuan">￥</div>
+                    <input type="text" ng-model="data.price" class="cjc_input_color df1" placeholder="输入支付金额" size="8" maxLength=8>
+                </div>
+                <!-- <div class="df top_input">
+                    <div class="cjc_icon f24 colorff">￥</div>
+                    <div class="df1 tl f28">支付金额</div>
+                    
+                </div> -->
+            </div>
+            <div class="p0-30  middle">
+                <div class="df bor-bot">
+                    <div class="cjc_icon f24 colorff">赠</div>
+                    <div class="df1 tl f28">赠送乐豆</div>
+                    <div class="df1 tr f28 colorFFA702">{{backRate || 0}}豆</div>
+                </div>
+                <div class="df">
+                    <div class="cjc_icon f24 colorff">赠</div>
+                    <div class="df1 tl f28">赠送比例</div>
+                    <div class="df1 tr f28 colorFFA702">{{storeInfo.saleRate}}%</div>
+                </div>
+            </div>
+            <div class="bgff bor-bot type_select df">
+                <div></div>
+                <div class="f28">支付方式</div>
+                <div class="df1 tc" ng-click="typeSelect(0)" ng-class="{'active':!imgActive}">
+                    <img ng-src="{{{true:'./img/pay/select.png',false:'./img/pay/noselect.png'}[!imgActive]}}" alt="">
+                    个人支付
+                </div>
+                <div class="df1 active tc" ng-click="typeSelect(1)" ng-class="{'active':imgActive}">
+                    <img ng-src="{{{true:'./img/pay/select.png',false:'./img/pay/noselect.png'}[imgActive]}}" alt="">
+                    乐抢单
+                </div>
+            </div>
+            <div ng-if="!imgActive">
+                <div class="p0-24 mb20 bgff bottom">
+                    <div class="df bor-bot">
+                        <div class="df1 tl f28">现金支付</div>
+                        <div class="df1 tr f28">￥{{payCash || 0}}</div>
+                    </div>
+                    <div class="df p1-0">
+                        <div class="w225 lh90">
+                        	{{balanceNumText}}
+                        	<span class="">(支付金额>=1元可使用乐豆)</span>
+                        </div>
+                        <div class="df1 lh90 colorF07575 f28" ng-bind="mybalanceNum+'豆'"></div>
+                        <div ng-click="beanChecked()">
+                           <label class="toggle toggle-balanced">
+                               <input type="checkbox"  ng-model="isChecked">
+                               <a class="track">
+                                   <div class="handle"></div>
+                               </a>
+                           </label>
+                       </div>
+                    </div>
+                </div>
+                <div id="wxpay">
+                    <div class="bgff bor-bot type_select df">
+                        <div></div>
+                        <div class="f28">支付类型</div>
+                    </div>
+                    <div class="p24 df bgff bor-bot f28" ng-click="changeType(0)">
+                        微信支付
+                        <div class="bankimg"><img src="./img/wxpay.png" width="100%" height="100%" alt=""></div>
+                    </div>
+                </div>
+                
+                <!-- <div class="p24 df bgff" ng-if="payTypeLength || !payTypeLength && payType[0].organCode == '10001'">
+                    <div class="color33 df1 f28" ng-click="changeType(1)">
+                        <img ng-src="{{{true:'./img/pay/select.png',false:'./img/pay/noselect.png'}[payTypeActive]}}" alt="" class="checkbox_img" ng-if="payTypeLength">{{mybankCheck.bankName}} {{mybankCheck.cardType =="C" && " 信用卡" || " 储蓄卡"}}（{{mybankCheck.cardNo.substr(-4,4)}}）
+                        <div class="bankimg1"><img ng-src="{{mybankCheck.bankImg}}" width="100%" height="100%" alt=""></div>
+                    </div>
+                    <div class="colorfe f28" ng-click="changeBank()">更换</div>
+                </div> -->
+            </div>
+            <div ng-if="imgActive && !hasInputPrice" class="p0-24 df group_pay bgff">
+                <div class="df1 tl f24 coloraa">土豪可认领买单金额</div>
+                <div class="df1 tr f24 colorfe" ng-click="showAlert()">我要认领</div>
+            </div>
+            <div ng-if="imgActive && hasInputPrice" class="p0-24 df group_pay bgff">
+                <div class="df1 tl f24 coloraa">己认领{{data.inputPrice}}元</div>
+                <div class="df1 tr f24 colorfe" ng-click="showAlert()">重新认领</div>
+            </div>
+            <div class="cjc_btn" ng-if="!imgActive" ng-click="gotoPay()">确认</div>
+            <div class="cjc_btn" ng-if="imgActive" ng-click="gotoGroup()">发起乐抢单</div>
+        </ion-content>
+    </section>
+    <!--完成支付-->
+    <div class="hdq_modal1" id="modal_hdq" ng-if="false">
+        <div class="modal_top">
+            <div class="modal_content">
+                <div class="modal_txt">
+                    <div class="f32 color33 hdq_inline">支付成功，您己获得<em class="f50 FF00">18</em>乐豆</div>
+                    <div class="hdq_MT6 f26 color66">乐豆可在任何合作商店消费</div>
+                    <p class="f26 color66">相当于<em>18</em>元现金</p>
+                </div>
+            </div>
+        </div>
+        <div class="hdq_PBottom" ui-sref="tab.index">
+            <button class="btn f32">返回首页</button>
+        </div>
+    </div>
+    <div class="showInput" ng-if="showInput">
+        <div class="bg" ng-click="hideInput()"></div>
+        <div class="show_box">
+            <div class="p30 bor-bot">
+                <div class="tc f24 color99">请输入认领金额</div>
+                <div class="bor-bot tc">
+                    <span class="f24">￥</span>
+                    <input type="tel" ng-model="data.inputPrice" class="cjc_input_color">
+                </div>
+                <div class="f22 coloraa ">*认领金额最小为乐抢单金额的{{rlAmountPro.min *100 || 50}}%，最大为乐抢单金额的{{rlAmountPro.max*100 || 80}}%</div>
+                <div class="showTip" ng-if="showTip">{{showTipText}}</div>
+            </div>
+            <div class="df">
+                <div class="df1 bor-right color66 tc" ng-click="cancelInput()">取消</div>
+                <div class="df1 colorfe tc" ng-click="sureInput()">确定</div>
+            </div>
+        </div>
+    </div>
+    <!-- <wx-pay wxurl="{{wxUrl}}" show="wxPayShow"></wxPay> -->
+    <paying-box ng-if="queryBoo"
+                cancel-pay="cancelPay()"
+                shop-img="storeInfo.image"
+                shop-name="storeInfo.shortName"
+                money="data.price"></paying-box>
+</ion-view>

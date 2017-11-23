@@ -1,0 +1,94 @@
+<ion-view hide-tabs='true' id='my_personal'>
+    <!-- <header class="cjc_title_bg">
+        <div class="tc df">
+            <div class="cjc_search_back">
+                <a href="javascript:history.go(-1)" class="button-retrun ion-ios-arrow-left color33"></a>
+            </div>
+            <div class="df1 f34 lh88">个人信息</div>
+            <div class="lh88 f28 cjc_bank_add"></div>
+        </div>
+    </header> -->
+    <gl-header title="个人中心"></gl-header>
+    <section class="scrolltop128 bj">
+        <ion-content overflow-scroll="false" class="has-header" overflow-scroll="false">
+            <div class="box20"></div>
+            <div class="portrait cb bgff p0-24 bor-bot" ng-click="uploadImg()">
+                <a href="" class="fl">
+                    <img ng-src="{{information.photo || 'img/df-u-img.png'}}" err-src="img/df-u-img.png" class="img_box" alt=""/>
+                </a>
+                <div class="fr mt58"><i class="icon ion-chevron-right"></i></div>
+                <span class="fr f28 coloraa mt61">更换头像</span>
+            </div>
+            <ul class="information_list cb box20">
+                <li class="item_box p0-24 bgff bor-bot" ui-sref="tab.collect_list">
+                    <span class="fl f30 color33">我的收藏</span>
+                    <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                </li>
+                <li class="item_box p0-24 bgff bor-bot" ui-sref="tab.comment_list">
+                    <span class="fl f30 color33">我的评价</span>
+                    <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                    <span class="fr f28 coloraa"></span>
+                </li>
+                <li class="item_box p0-24 bgff bor-bot box20" ng-click="gotoCertification()">
+                    <span class="fl f30 color33">姓名</span>
+                    <div class="fr mt33"><i class="icon ion-chevron-right {{information.realName!='' ? 'colorff':''}}"></i></div>
+                    <span class="fr f28 {{information.realName!=''?'coloraa':'colorfe'}}">{{information.realName==''?'去实名' : information.realName}}</span>
+                </li>
+                <li class="item_box p0-24 bgff bor-bot" ui-sref="tab.tab_checkTel">
+                    <span class="fl f30 color33">手机号</span>
+                    <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                    <span class="fr f28 coloraa" ng-bind="information.mobilePhone | phoneHide"></span>
+                </li>
+                <!-- <li class="item_box p0-24 bgff bor-bot" ui-sref="tab.tab_checkTel">
+                    <span class="fl f30 color33">我的二维码</span>
+                    <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                </li> -->
+                <li class="box20" ng-click="gotoCertification()">
+                    <div class="item_box p0-24 bgff bor-bot">
+                        <span class="fl f30 color33">身份认证</span>
+                        <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                        <span class="fr f28 {{information.authStatus ==1?'coloraa':'colorfe'}}">{{information.authStatus ==1?'已认证':'去认证'}}</span>
+                    </div>
+                </li>
+                <!--<li class="item_box p0-24 bgff bor-bot">-->
+                    <!--<span class="fl f30 color33">手机认证</span>-->
+                    <!--<div class="fr mt33"><i class="icon ion-chevron-right"></i></div>-->
+                    <!--<span class="fr f28 colorfe">去认证</span>-->
+                <!--</li>-->
+                <li>
+                    <div class="item_box p0-24 bgff bor-bot" ng-click="gotoBankList()">
+                        <span class="fl f30 color33">绑定银行卡</span>
+                        <div class="fr mt33"><i class="icon ion-chevron-right"></i></div>
+                        <span class="fr f28 {{bankList.length>0?'coloraa':'colorfe'}}">{{bankList.length>0?'已绑定':'去绑定'}}</span>
+                    </div>
+                </li>
+            </ul>
+        </ion-content>
+    </section>
+    <script id="my-modal.html" type="text/ng-template">
+      <ion-modal-view id="modal_header">
+            <gl-header title="实名认证" back="function" on-back="closeModal()"></gl-header>
+            <section class="scrolltop128 bj" id="my_certification">
+                <ion-content overflow-scroll="false" class="has-header">
+                    <div class="myForm bgff">
+                       <div class="pd24">
+                           <ul>
+                               <li>
+                                   <span class="f28 color66">真实姓名</span>
+                                   <input type="text" placeholder="请输入您的真实姓名" ng-model="data.userName">
+                               </li>
+                               <li>
+                                   <span class="f28 color66">身份证号码</span>
+                                   <input type="text" placeholder="请输入您的身份证号码" maxlength="18" required ng-model="data.idCard">
+                               </li>
+                           </ul>
+                       </div>
+                    </div>
+                    <div class="btn" ng-click="subimit()">
+                        <button class="xia_but f32 colorff">完成</button>
+                    </div>
+                </ion-content>
+            </section>
+      </ion-modal-view>
+    </script>
+</ion-view>

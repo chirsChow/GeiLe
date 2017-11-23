@@ -1,0 +1,104 @@
+<ion-view id='tab_index' class="bgf4" can-swipe-back='false'>
+<app-map style="height:0px;" address="{{address}}" search="{{inputAdd}}"> </app-map>
+    <header class="header_bg">
+        <div class="wrapper">
+            <!--搜索框-->
+            <div class="search">
+                <div class="search-bar">
+                    <div class="area" ng-click="showCityList()">
+                        <span ng-cloak class="ellipsis f28 colorff">{{$root.myCity1}}</span>
+                        <!--下倒三角-->
+                        <i class="ion-android-arrow-dropdown colorff"></i>
+                    </div>
+                    <div class="input" ui-sref="tab.index_search">
+                        <i class="ion-ios-search colorff"></i><span>输入商家名称</span>
+                    </div>
+                </div>
+                <div class="cjc_icon msg-icon" ng-click="linkMsg()">
+                    <span ng-class="{'block':nativeBroadcastMsg.unRead!=0}"></span>
+                </div>
+            </div>
+            <!--乐豆余额-->
+            <div class="balance" on-swipe-left="onSwipeLeft()" on-swipe-right="onSwipeRight()">
+                <div class="left colorff" ng-click="switchShowBalance()">
+                    <div ng-if="showBalance" class="top bean-amt" ng-cloak>{{balanceNum || 0}}<span class="bean-txt f24">乐豆</span></div>
+                    <div ng-if="!showBalance" class="top data-wrap">
+                        <div class="bean-amt" style="margin-right: 0.14rem;">{{day}}</div>
+                        <div class="flex1">
+                            <div class="data f24">{{month}}</div>
+                            <div class="week f24">{{week}}</div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <span class="scan-txt" ng-if="!isLogin" ui-sref="tab.tab_login">登录后可使用「乐豆支付」</span>
+                        <span class="scan-txt" ng-if="isLogin" ng-cloak>{{viewBeanEvent}}{{showBalance ? "隐藏":"显示"}}余额 <img ng-src="{{showBalance?'img/index/eye_open.png':'img/index/eye_close.png'}}" class="eye-img"/> </span>
+                    </div>
+                </div>
+                <div class="right" ng-click="gotoscan()">
+                    <i class="cjc_icon scan-icon top"></i>
+                    <div class="scan-txt f22 bottom">扫一扫</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <ion-content overflow-scroll="false" class="ion-content-class">
+        <!--乐抢单-->
+        <div ng-if="completedShow" class="cjc_nocompleted" ng-click="gotoPolling()">
+            <span class="f28">当前有未完成的乐抢单</span>
+            <span class="ion-close" ng-click="closeCompletedShow()"></span>
+        </div>
+        <!--菜单表格-->
+        <ion-slide-box class="cjc_icon_slide" delegate-handle="subType" show-pager="{{showPager}}">
+            <ion-slide ng-repeat="item in indexSubArr">
+                <div class="p0-24 cjc_nav">
+                    <ul>
+                        <li ng-repeat="list in item" ui-check-sref="{{list.href}}" ng-class="{'border-no-margin':($index+1)%4===0}">
+                            <i class="x_icon" style="background-image: url({{subUrl}}{{list.imageUrl}});">
+                                <div class="f24" ng-bind="list.name"></div>
+                            </i>
+                        </li>
+                    </ul>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+        <!--轮播图-->
+        <ion-slide-box does-continue=true slide-interval="3000" auto-play=true class="cjc_nav_slide" delegate-handle="my-handle" id="nav_slide">
+            <ion-slide ng-repeat="bImg in bannerImg" ng-click="gotoDetail(bImg)">
+                <img ng-src="{{bImg.adImg || './img/index/index_bg.png'}}" err-src="./img/index/index_bg.png" height="100%" style="width: 7.5rem;" />
+            </ion-slide>
+        </ion-slide-box>
+        <!--消息列表-->
+        <ul ng-if="msgLists.length > 0" class="list-container">
+            <li ng-repeat="item in msgLists" ng-include="item.msgTempleateUrl"></li>
+        </ul>
+        <!--没有登录或者没有消息时显示-->
+        <div ng-if="(!isLogin || msgLists.length <= 0) && !(!isLogin && msgLists.length > 0)">
+            <div class="imgWrapper">
+                <!--新用户指南-->
+                <img class="cjc_padding" src="img/index/user_direction.png" width="100%" ui-sref="tab.tab_userDirection" />
+                <!--乐豆说明-->
+                <img class="cjc_padding" src="img/index/bean_explain.png" width="100%" ui-sref="tab.tab_ledouExplain" />
+            </div>
+        </div>
+    </ion-content>
+    <!--弹出窗口-->
+    <div class="popup-index" ng-if="showDialog">
+        <div class="wrapper" ng-click="closeDialog()">
+            <div class="content" ng-style="popupTop">
+                <ul>
+                    <li ng-click="ignoreMsg()"><img class="label-icon" src="img/index/popup-eyeclose-msg.png"/><span class="f30 color263238">忽略此动态</span></li>
+                    <li ng-click="neverMsg()"><img class="label-icon" src="img/index/popup-delete-msg.png"/><span class="f30 color263238">不再接收此消息</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--层打开新页面-->
+    <script id="my-modal.html" type="text/ng-template">
+        <ion-modal-view id="modal_header">
+            <gl-header title="{{title}}" back="function" on-back="closeModal()"></gl-header>
+            <ion-content  scroll="true" overflow-scroll="true" id="modal_content">
+                <iframe ng-src={{myUrl}} width="100%"  style="height:100%;width:100%;min-height: 100%" seamless frameborder="0"></iframe>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+</ion-view>

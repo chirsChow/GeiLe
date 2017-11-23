@@ -1,0 +1,188 @@
+#payment_comfirmReward {
+    background-color: #f3f3f3;
+    //头部
+    .cjc_title_bg {
+        background: #29adfd;
+        width: 100%;
+        height: 0.88rem;
+        box-sizing: initial;
+        line-height: 0.88rem;
+        padding-top: 0.4rem !important;
+        color: #333;
+        z-index: 999;
+        text-align: center;
+        color:#fff;
+        .lh88 {
+            line-height: 0.88rem;
+        }
+        .tr_1 {
+            display: inline-block;
+            line-height: 0.88rem;
+            width: 1.1rem;
+            font-size: 0.6rem;
+            text-align: center;
+            color:#fff;
+        }
+        .return_4{
+            display:inline-block;
+            width:0.48rem;
+            height:0.48rem;
+            background:url('../img/tab_store/back-satreo.png') no-repeat;
+            background-size:0.48rem;
+            //margin-top:0.4rem; 
+        }
+        .cjc_bank_add {
+            width: 1.2rem;
+            text-align: center
+        }
+    }
+    .header_box {
+        overflow: hidden;
+        background: #29adfd;
+        ul {
+            margin: 0.1rem .3rem .3rem .3rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            border-radius: 0.1rem;
+            background-color: #53bdfb;
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: row;
+            align-items: center;
+            -webkit-flex-direction: row;
+            -webkit-align-items: center;
+        }
+        .hear_img {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            border:1px solid #ffffff;
+            overflow: hidden;
+            margin: 0 0.38rem 0 .24rem;
+        }
+        .header_text {
+            flex: 1;
+            font-size: 0.28rem;
+            font-family: PingFangSC-Regular;
+            color: #fff;
+            height: 0.81rem;
+            line-height: 0.81rem;
+        }
+    }
+    //打赏金额
+    .money-div {
+        height: 2.4rem;
+        margin: 0 .24rem 0.2rem;
+        .m-left {
+            font-size: .24rem;
+            color: #333333;
+            text-align: left;
+            padding-top: .35rem
+        }
+        .m-middle {
+            font-size: .24rem;
+            color: #29adfd;
+            margin-top: .4rem;
+        }
+        .m-bottom {
+            font-size: .2rem;
+            color: #666666;
+            margin-top: .1rem;
+            margin-bottom: .5rem;
+        }
+    }
+    .le-div {
+        margin: 0 .24rem;
+        height: 1.8rem;
+        padding: .25rem 0 .2rem 0;
+        .item-toggle .toggle {
+            position: absolute;
+            top: 6px;
+            right: 0;
+            z-index: 3;
+        }
+        .le-money {
+            font-size: .4rem;
+            color: #ff9f00;
+            line-height: 40px;
+            text-align: center;
+            margin-left: .85rem;
+        }
+        .le-money2 {
+            font-size: .4rem;
+            color: #ccc;
+            line-height: 40px;
+            text-align: center;
+            margin-left: .85rem;
+        }
+        .le-avild {
+            font-size: .24rem;
+            color: #333333;
+            line-height: .3rem;
+            text-align: left;
+            margin-top: .2rem;
+            margin-left: .8rem;
+        }
+    }
+    //支付金额
+    .payment-div {
+        margin: 0 .24rem;
+        height: 1.8rem;
+        padding: .25rem 0 .2rem 0;
+        .payment-money {
+            font-size: .4rem;
+            color: #417fdf;
+            line-height: 40px;
+            text-align: center;
+            margin-left: .85rem;
+        }
+        .payment-avild {
+            font-size: .24rem;
+            color: #333333;
+            line-height: .3rem;
+            text-align: left;
+            margin-top: .2rem;
+            margin-left: .8rem;
+        }
+    }
+    .bank-div {
+        background-color: #fff;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        align-items: center;
+        -webkit-flex-direction: row;
+        -webkit-align-items: center;
+        margin-top: .2rem;
+        height: .94rem;
+        line-height: .94rem;
+        img {
+            background: #d8d8d8;
+            width: .4rem;
+            height: .4rem;
+            border-radius: 100%;
+            margin: 0 .24rem;
+        }
+        .bank-name {
+            font-size: .28rem;
+            color: #333333;
+        }
+        .bank-change {
+            font-size: .24rem;
+            color: #29adfd;
+            position:absolute;
+            right:.24rem;
+            top: .34rem;
+        }
+    }
+    .button-ok{
+    	background:#29adfd;
+		border-radius:0.45rem;
+		margin:.4rem .3rem;
+		height:.88rem;
+		line-height:.88rem;
+		text-align:center;
+		font-size:.32rem;
+		color:#ffffff;
+    }
+}

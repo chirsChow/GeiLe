@@ -1,0 +1,40 @@
+<ion-view hide-tabs='true' id='mine_banklist'>
+   <!--  <header class="cjc_title_bg">
+        <div class="tc df">
+            <div class="cjc_search_back">
+                <a href="javascript:history.go(-1)" class="button-retrun ion-ios-arrow-left color33"></a>
+            </div>
+            <div class="df1 f34 lh88">我的银行卡</div>
+            <div class="lh88 f28 cjc_bank_add" ng-click="gotoAddBank()">新增</div>
+        </div>
+    </header> -->
+     <gl-header title="我的银行卡" back="tab.tab_mine" right="新增" on-click="gotoAddBank()"></gl-header>
+    <section class="scrolltop88">
+        <ion-content overflow-scroll="false" class="f28" id='banklist' lazy-scroll>
+            <!-- <div class="cjc_bank_card" ng-style="{background: list.color}" ng-repeat="list in bankList">
+                <div class="color66 cjc_bank_top">
+                    <img ng-src="{{list.bankImg}}" alt="">
+                    <span class="f34 colorff">{{list.bankName}} </span>
+                    <span class="f30 colorff">{{list.cardType =='C' && '信用卡' || "储蓄卡"}}</span>
+                </div>
+                <div class="f40 colorff cjc_bank_bottom">{{list.cardNo | bankItem}}</div>
+            </div> -->
+            <ion-list can-swipe="true">
+                <ion-item ng-repeat="list in bankList" class="bank-list" ng-if="list.color != undefined" attached>
+                    <div class="cjc_bank_card" ng-style="{background: list.color}">
+                        <div class="cjc_bank_type">{{list.openFeature == '0' ? 'POS支付' : '快捷支付'}}</div>
+                        <div class="color66 cjc_bank_top">
+                            <img ng-src="{{list.bankImg}}" alt="">
+                            <span class="f34 colorff">{{list.bankName}} </span>
+                            <span class="f30 colorff">{{list.cardType =='C' && '信用卡' || "储蓄卡"}}</span>
+                        </div>
+                        <div class="f40 colorff cjc_bank_bottom">{{list.cardNo | bankItem}}</div>
+                    </div>
+                    <ion-option-button class="option-button" ng-click="delCard($index,list.cardIndex)">
+                        解绑
+                    </ion-option-button>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </section>
+</ion-view>

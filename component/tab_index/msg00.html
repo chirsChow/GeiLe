@@ -1,0 +1,24 @@
+<!--支付消息-->
+<div class="item-box" ng-click="setMessageHasRead('pay', item)">
+    <div class="wrapper">
+        <div class="icon-layout"><img src="img/index/msg_icon_3.png"/></div>
+        <div class="pleft content" ng-init="t = item.orderType">
+            <div class="title-txt"><span>支付助手</span>
+                <!-- orderType  1：正常订单,2：打赏订单（现金）,3：达人订单,4：网购订单,5：乐豆打赏,6：C到C乐豆支付,7：群支付-->
+                <span ng-if="t == 2" class="circle-msg">打赏</span>
+                <span ng-if="t == 5" class="circle-msg">打赏</span>
+                <span ng-if="t == 7 && item.tranType!='2100'" class="circle-msg">乐抢单</span>
+                <span ng-if="t == 7 && item.tranType=='2100'" class="circle-msg">退款</span>
+                <span ng-if="t != 2 && t != 5 && t != 7" class="circle-msg">{{item.tranTypeStr}}</span>
+            </div>
+            <div class="title-txt">{{item.updateTime}}</div>
+            <div class="primary f34 color00001A"><span class="f24">&yen; </span>{{item.totalAmt}}</div>
+            <div class="color6F7B85 f24">支付{{item.totalAmt}}元，赠送乐豆{{item.giftAmt}}豆。</div>
+        </div>
+        <div class="circle" ng-click="showAtLocationPopup('pay', $index, $event)">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>

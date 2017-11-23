@@ -1,0 +1,129 @@
+<ion-view hide-tabs="" id='tab_store_2' ng-cloak>
+    <header class="store-header">
+        <div class="df">
+            <div class="title">
+                <a ng-click="goBack()"><i></i></a>
+                <p class="h4">{{storeInfo.shortName | ellipsisFilter:9}}</p>
+                <div class="dots"><span>{{slideDotsIndex}}</span>/{{storeInfo.images?storeInfo.images.length:1}}</div>
+            </div>
+            <div class="header-option">
+                <!--<a href="" ng-click="reportStore()" class="report"><i></i></a>-->
+                <a ng-click="CommentStore()" ng-if="isCommentStore" href="" class="message"><i></i></a>
+                <a href=""  class="save" ng-class="{true:'saved',false:''}[storeInfo.favorite]" ng-click="saveStore()"><i></i></a>
+            </div>
+        </div>
+    </header>
+    <section class="cont">
+     <ion-content  on-scroll="contentScroll()" delegate-handle="tab_store_con">
+        <div class="banner">
+           <div class="slide-box-1"> <div class="slide-box">
+               <ion-slide-box does-continue="true" auto-play="true" show-pager='false' on-slide-changed="slideChange(index)">
+                   <ion-slide ng-repeat="imgSrc in storeInfo.images track by $index">
+                       <!--<div class="box" tile-img="4/3" tile-src="{{imgSrc}}"><img src="{{imgSrc}}" alt=""></div>-->
+                       <div class="box"><img src="{{imgSrc || './img/tab_store/store_bg.png'}}" err-src="./img/tab_store/store_bg.png" alt=""></div>
+                   </ion-slide>
+               </ion-slide-box>
+           </div></div>
+            <div class="focus-info" ng-class="{true:'active',false:''}[!storeInfo.onlinePay]" ng-click="pay()">
+                <p>赠豆&nbsp{{storeInfo.saleRate | number}}%</p>
+                <a href="" >买&nbsp单</a>
+            </div>
+        </div>
+        <div class="store-info-box">
+            <div class="store-info">
+                <div class="title bor-bot">
+                    <div class="name">
+                        <p class="store-name"><a href="#/tab/store_info/{{storeInfo.merchantNo}}">{{storeInfo.shortName  | ellipsisFilter:9}}</a></p>
+                        <div class="extra-info" style="height: .3rem;">
+                            <!--<div class="comment_evaluate-score-default_box">-->
+                                <!--<p class="comment_evaluate-score-cai" style="width: {{commentGradeList*20 | gradeFilter}}%">-->
+                                    <!--<span class="comment_evaluate-score-default" ><i></i><i></i><i></i><i></i><i></i></span>-->
+                                <!--</p>-->
+                                <!--<span class="comment_evaluate-score-default"><i></i><i></i><i></i><i></i><i></i></span>-->
+                            <!--</div>-->
+                            <div  style="overflow: hidden;width: 1.4rem;float: left" >
+                            <div class="start">
+                            <p class="no"><span></span><span></span><span></span><span></span><span></span></p>
+                            <p class="yes"><span ng-if="item.commentGrade>0"></span><span ng-if="commentGradeList>0"></span>
+                                <span ng-if="commentGradeList>1"></span><span ng-if="commentGradeList>2"></span>
+                                <span ng-if="commentGradeList>3"></span><span ng-if="commentGradeList>4"></span></p>
+                            </div>
+                            <!--<p class="fen">{{item.commentGrade}}分　{{item.paymentCount | personNumberFilter}}人已消费 </p>-->
+                            </div>
+                            <p class="num-price" ng-if="!paymentCountNum">{{storeInfo.paymentCount | personNumberFilter}}人已消费</p>
+                            <p class="num-price" ng-if="paymentCountNum">{{paymentCountNum | personNumberFilter}}人已消费</p>
+                        </div>
+                        <p ng-if="! storeInfo.onlinePay" class="no-pay">（暂未开通在线支付）</p>
+                        <!--<div class="dis">-->
+                        <!--<p class="evaluate"><span class="evaluate-score" style="width: {{commentGradeList*20 | gradeFilter}}%"></span></p>-->
+                        <!--<span><{{storeInfoDistances | distanceFilter}}m</span>-->
+                        <!--</div>-->
+                        <!--<p class="time">营业时间：{{storeInfo.businessHours}}</p>-->
+                    </div>
+                    <!--<p class="tel"><a href="" ng-click="showTel()"><i></i></a></p>-->
+                </div>
+                <div class="addr">
+                    <div class="addr-info">
+                        <i></i>
+                        <p class="info" ng-click="openModal()">{{storeInfo.address}}</p>
+                    </div>
+                    <div class="go-there" ng-click="goThere()">
+                        <i></i>
+                        <p><{{storeInfoDistances | distanceFilter}}m</p>
+                    </div>
+                </div>
+                <!--<div class="extra-item" ng-if="storeInfo.specialService.length>0">-->
+                    <!--<div ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('3') != -1" class="ext-i"><i class="po"></i>POS</div>-->
+                    <!--<div ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('4') != -1" class="ext-i"><i class="bx"></i>包厢</div>-->
+                    <!--<div ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('1') != -1" class="ext-i"><i class="wf"></i>WIFI</div>-->
+                    <!--<div ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('2') != -1" class="ext-i"><i class="tc"></i>停车</div>-->
+                    <!--<div ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('6') != -1" class="ext-i"><i class="dz"></i>订座</div>-->
+                    <!--<div ng-if="storeInfo.specialService && storeInfo.specialService.indexOf('5') != -1" class="ext-i"><i class="by"></i>表演</div>-->
+                <!--</div>-->
+                <div class="time-ph">
+                    <p class="time">营业时间：{{storeInfo.businessHours}}</p>
+                    <div class="ph" ng-click="showTel()"><i></i></div>
+                </div>
+                <div class="showdo"></div>
+            </div>
+        </div>
+        <div class="store-evaluate">
+            <div class="title bor-bot">
+                <p class="num">综合评价 <span>({{commentGradeList}}分)</span></p>
+                <p class="more" ng-click="gotoCommentList()"><span style="font-size: .26rem;">我的评价</span><i
+                style="position: relative;top: -.04rem;"></i></p>
+            </div>
+             <div class="eva-list">
+                 <div class="item-list bor-bot" ng-if="commentLists.length>0" ng-repeat="item in commentLists">
+                     <div class="info">
+                         <span style="padding-right: .05rem;">打分</span>
+                         <div class="start">
+                             <p class="no"><span></span><span></span><span></span><span></span><span></span></p>
+                             <p class="yes"><span ng-if="item.item.grade>0"></span><span ng-if="item.grade>0"></span>
+                                 <span ng-if="item.grade>1"></span><span ng-if="item.grade>2"></span>
+                                 <span ng-if="item.grade>3"></span><span ng-if="item.grade>4"></span></p>
+                         </div>
+                         <!--<div class="comment_evaluate-score-default_box">-->
+                             <!--<p class="comment_evaluate-score-cai" style="width: {{item.grade*20 | gradeFilter}}%">-->
+                                 <!--<span class="comment_evaluate-score-default" ><i></i><i></i><i></i><i></i><i></i></span>-->
+                             <!--</p>-->
+                             <!--<span class="comment_evaluate-score-default"><i></i><i></i><i></i><i></i><i></i></span>-->
+                         <!--</div>-->
+                         <p class="tel">{{item.name}}</p>
+                     </div>
+                     <div class="eva-items">
+                         <span ng-repeat="val in item.labels" ng-if="val">{{val}}</span>
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <ion-infinite-scroll
+                 ng-if="commentsIsMore"
+                 on-infinite="loadMoreComments()"
+                 distance="10%">
+         </ion-infinite-scroll>
+      </ion-content>
+    </section>
+</ion-view>
+

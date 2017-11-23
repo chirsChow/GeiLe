@@ -1,0 +1,136 @@
+@import "../../scss/mixin";
+#store_list{font-family:'PingFangSC-Regular';
+  input{padding: 0}
+  a{color: inherit;text-decoration: none !important;display: inline-block}
+  .pingfang{font-family:'PingFangSC-Medium';}
+  .pingfang-R{font-family:'PingFangSC-Regular';}
+  .clearfix {*zoom: 1;}
+  .clearfix:before,
+  .clearfix:after {display: table;line-height: 0;content: "";}
+  .clearfix:after {clear: both;}
+  i{display: inline-block;vertical-align: middle;
+    &:after{display: inline-block;vertical-align: middle;}
+  }
+  .store-list-header{height: 1.28rem;background-color: #fff;line-height: .88rem;position: relative;z-index: 99;
+  padding-top: .4rem;
+    .back{width: 0.96rem;padding-left: .24rem;
+      i{background-image: url("../img/store_list/icon_31.png");@include setWidthBackground(.48rem,.48rem);}
+    }
+    .head-option{width: .96rem;@extend .clearfix;padding-right: .24rem;
+      a{display: block;float: right;line-height: .88rem;
+        i{background-image: url("../img/store_list/icon_52.png");@include setWidthBackground(.48rem,.48rem);}
+      }
+    }
+    .search{flex: 1;line-height: .88rem;
+      a{width: 100%;line-height: .54rem;height: .54rem;;display: inline-block;background-color: #f4f4f4;border-radius: .54rem;
+        color: #aaa;text-align: center;
+        i{background-image: url("../img/store_list/icon_35.png");@include setWidthBackground(.38rem,.38rem);
+          position: relative;top: -.04rem;left: -.01rem;
+        }
+      }
+
+    }
+
+  }
+  .store-menu{position: relative;z-index: 99;background-color: #fff;
+    .menu-box{width: 33.33%;float: left;
+      >p{line-height: .8rem;text-align: center;color: #666;font-size: .28rem;
+        i{background-image: url("../img/store_list/icon_33.png");@include setWidthBackground(.28rem,.28rem);margin-left: .07rem;
+        position: relative;top: -.02rem}
+        &.show-title{color: #29adfd;
+          i{background-image: url("../img/store_list/icon_34.png");}
+        }
+      }
+    }
+    .store-menu-top{@extend .clearfix;height: .8rem;overflow: hidden;padding:0 .24rem;}
+    .classify-list{@extend .clearfix;position: relative;position: absolute;top: 100%;left: 0;width: 100%;background-color: #fff;
+      display: none;
+      .classify-left{width: 33.33%;
+        li{a{height: .88rem;line-height: .88rem;color: #333;font-size: .28rem;text-align: left;padding-left: .24rem;
+          display: block;padding-right: .55rem;
+          i{position: absolute;width: .55rem;line-height: .88rem;right: 0;top: 0;display: inline-block;height: .88rem;background: none;
+            &:after{content: '';background-image: url("../img/store_list/icon_46.png");@include setWidthBackground(.42rem,.42rem);  }
+          }
+        }
+          &.active{a{  color:#29adfd;background-color: #f4f4f4;
+            i{ &:after{content: '';background-image: url("../img/store_list/icon_37.png");} }
+          }}
+          position: relative;
+        }
+      }
+      .classify-right{width: 66.66%;position: absolute;height: 100%;overflow: scroll;right: 0;top: 0;background-color: #eee;
+        li{a{text-align: center;display: block;line-height: .88rem;font-size: .28rem;color: #999;
+          i{background-image: url("../img/store_list/icon_36.png");@include setWidthBackground(.42rem,.42rem); margin-right: .1rem;display: none;}
+        }
+          &.active{a{  color:#29adfd;background-color: #f4f4f4;
+            i{display: inline-block;}
+          }}
+        }
+      }
+    }
+    .sort-list{position: relative;position: absolute;top: 100%;left: 0;width: 100%;background-color: #fff; display: none;
+      li{a{text-align: left;display: block;line-height: .88rem;font-size: .28rem;color: #999;padding-left: .24rem;
+        i{background-image: url("../img/store_list/icon_36.png");@include setWidthBackground(.42rem,.42rem); margin-right: .1rem;display: none;}
+      }
+        &.active{a{  color:#29adfd;background-color: #f4f4f4;
+          i{display: inline-block;}
+        }}
+      }
+    }
+    .show-menu{  display: block;
+
+    }
+
+  }
+  .menu-list-bg{position: absolute;width: 100%;height: 100%;z-index: 97;background-color: rgba(0,0,0,.4);
+    display: none;
+    &.show{display: block;}
+  }
+  .current-addr{margin: 0 .24rem;height: .6rem;font-size: .24rem;color: #999;line-height: .6rem;@extend .clearfix;
+
+    p.addr{float: left;height: .6rem;line-height: .6rem;  }
+    .icon-addr{width: .95rem;text-align: right;float: left;line-height: .6rem;padding-right: .18rem;
+      i{background-image: url("../img/store_list/icon_32.png");@include setWidthBackground(.32rem,.32rem);}}
+    .refresh-addr{width: .5rem;line-height: .6rem;float: right;text-align: right;
+      i{background-image: url("../img/store_list/icon_47.png");@include setWidthBackground(.3rem,.3rem);}
+    }
+  }
+  section{
+    .scroll-content{top:2.68rem;}
+  }
+  .store-items{padding: 0 .24rem;
+    .item-box{margin-top: .24rem;position: relative;
+      .item-info{@extend .clearfix;background-color: #f4f4f4;border-radius: .08rem;
+        .img-box{width: 4.42rem;height: 2.2rem;float: left;position: relative;border-radius: .8rem;
+          .title{font-size: .32rem;position: absolute;z-index: 9;top: .2rem;left: .2rem;color: #fff;@extend .pingfang;}
+        }
+        .info{width: 2.6rem;float: left;padding-left: .2rem;color: #666;font-size: .28rem;
+          .distance{margin-top: .36rem;}
+          .type{margin-top: .2rem}
+          .extra-item{margin-top: .2rem;
+            i{@include setWidthBackground(.28rem,.28rem);
+              &.po{background-image: url("../img/store_list/icon_40.png");}
+              &.wf{background-image: url("../img/store_list/icon_41.png");}
+              &.hs{background-image: url("../img/store_list/icon_42.png");}
+              &.tc{background-image: url("../img/store_list/icon_45.png");}
+            }
+          }
+        }
+      }
+      .extra-info{@extend .clearfix;margin-top: .2rem;padding-bottom: .2rem;
+        .evaluate{position: relative;display: inline-block;float: left;;
+          width: 1.50rem;height: .24rem;background: url("../img/start-small-d.png") repeat-x;background-size: auto 0.24rem;
+          span{position: absolute; height: .24rem;background: url("../img/start-small.png") repeat-x;background-size: auto 0.24rem;
+          }
+        }
+        .num-price{float: left;color: #666;font-size: .24rem;margin-left: .15rem}
+      }
+      .foucs-info{width: 2.4rem;height: .86rem;font-size: .32rem;@extend .pingfang;color: #fff;position: absolute;
+        right: 0;bottom: .2rem;
+        background-image: url("../img/store_list/icon_49.png");text-align: center;
+        background-size:2.4rem .86rem ;
+        p{line-height: .8rem;}
+      }
+    }
+  }
+}

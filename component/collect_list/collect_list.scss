@@ -1,0 +1,77 @@
+.sprite_background_store_list_1492838091000{background-size:1.72rem 1.26rem;background-image:url(../img/store_list/sprite_store_list_1492838090000.png);}
+
+#collect_list{
+  &.no-list{background-color: #F4F4F4;}
+  font-family:'PingFangSC-Regular';
+  input{padding: 0}
+  a{color: inherit;text-decoration: none !important;display: inline-block}
+  .pingfang{font-family:'PingFangSC-Medium';}
+  .pingfang-R{font-family:'PingFangSC-Regular';}
+  .clearfix {*zoom: 1;}
+  .clearfix:before,
+  .clearfix:after {display: table;line-height: 0;content: "";}
+  .clearfix:after {clear: both;}
+  i{display: inline-block;vertical-align: middle;background-repeat: no-repeat;
+    &:after{display: inline-block;vertical-align: middle;background-repeat: no-repeat;}
+  }
+  .store-list-header{height: 1.28rem;background-color: #fff;line-height: .88rem;position: relative;z-index: 99;padding-top: .4rem;
+    .back{width: 1.5rem;padding-left: .24rem;
+      i{background-position: 0 0;@extend .sprite_background_store_list_1492838091000;height: .48rem;width: .48rem;}
+    }
+    .head-option{width: 1.5rem;@extend .clearfix;  }
+    .search{line-height: .88rem;text-align: center;font-size: .34rem;color: #333;flex: 1;-webkit-flex: 1;
+    }
+
+  }
+  section{
+    .scroll-content{top:1.28rem;z-index: 5}
+  }
+  .store-items{background-color: #f4f4f4;
+    .item-box{background-color: #fff;padding: 0.24rem 0.2rem;position: relative;
+      .item-info{@extend .clearfix;background-color: #f4f4f4;border-radius: .08rem;
+        .img-box{width: 62% !important;height: 2.2rem !important;float: left;position: relative;border-radius: .08rem;overflow: hidden;
+          .bg{position: absolute;width: 100%;height: .95rem;z-index: 5;
+            background: -webkit-linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)); /* Firefox 3.6 - 15 */
+            background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)); /* 标准的语法 */
+          }
+          overflow: hidden;img{width: 100%;}
+          .title{font-size: .32rem;position: absolute;z-index: 9;top: .2rem;left: .2rem;color: #fff;@extend .pingfang;
+            text-shadow: 1px 1px 0 #000}
+        }
+        .info{width: 37%;float: left;padding-left: .2rem;color: #666;font-size: .28rem;overflow: hidden;
+          .distance{margin-top: .36rem;}
+          .type{margin-top: .2rem;height: .28rem;overflow: hidden}
+          .extra-item{margin-top: .2rem;
+            i{height: .28rem;width: .28rem;
+              &.po{background-position: -1.44rem -0.9rem;@extend .sprite_background_store_list_1492838091000;}
+              &.wf{background-position: -1.44rem 0;@extend .sprite_background_store_list_1492838091000;}
+              &.hs{background-position: -1.44rem -0.3rem;@extend .sprite_background_store_list_1492838091000;}
+              &.tc{background-position: -1.44rem -0.6rem;@extend .sprite_background_store_list_1492838091000;}
+            }
+          }
+        }
+      }
+      .extra-info{@extend .clearfix;margin-top: .2rem;padding-bottom: .2rem;
+        .evaluate{position: relative;display: inline-block;float: left;;
+          width: 1.50rem;height: .27rem;background: url("../img/start-small-d2.png") repeat-x;background-size: 1.5rem 0.24rem;
+          span{position: absolute; height: .27rem;background: url("../img/start-small2.png") repeat-x;background-size: 1.5rem 0.24rem;
+          }
+        }
+        .num-price{float: left;color: #666;font-size: .24rem;margin-left: .15rem;white-space:nowrap;}
+      }
+      .foucs-info{width: 2.4rem;height: .86rem;font-size: .32rem;@extend .pingfang;color: #fff;position: absolute;
+        right: 0.2rem;bottom: .2rem;
+        background: url("../img/store_list/icon_49.png");text-align: center;
+        background-size:2.4rem .86rem ;
+        p{line-height: .8rem;
+          .sale-rate{font-size: .4rem;} }
+      }
+    }
+  }
+  .cjc_nosearch_list{
+    width: 100%;height: 100%;
+    .cjc_nosearch_img{width: 4rem; height: 0.4rem;position: absolute;top: 50%;left: 50%;margin-left: -2rem;margin-top:-2rem; }
+  }
+}

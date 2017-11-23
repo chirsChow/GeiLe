@@ -1,0 +1,70 @@
+#payment_reward_finish {
+  background-color: #f3f3f3;
+  .cjc_title_bg {
+    background-image: linear-gradient(-180deg, #4FBDFF 0%, #17AAF4 100%);
+    width: 100%;
+    height: 2.88rem;
+    box-sizing: initial;
+    padding: 0.4rem 0 0 !important;
+    color: #333;
+    .cjc_back{
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+      width: .98rem;
+      text-align: center;
+    }
+    .cjc_title {
+      position: absolute;
+      top: 0.4rem;
+      left: 50%;
+      -webkit-transform: translate(-50%);
+      transform: translate(-50%);
+    }
+    .lh88 {
+      line-height: 0.88rem;
+    }
+    //返回箭头
+    a.header-back {
+      background-image: url(../img/tab/cjc_icon.png);
+      background-size: 1.32rem;
+      height: 0.48rem;
+      margin-top: 0.26rem;
+      display: block;
+      background-position: 0.3rem -1.7rem;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .finish-container {
+    text-align: center;
+    opacity: 0.96;
+    background: #FFFFFF;
+    box-shadow: 0 2px 20px 0 rgba(21,133,201,0.10);
+    border-radius: 8px;
+    position: absolute;
+    top: 10%;
+    margin: 0 .2rem;
+    .amt-label{
+      font-size: .5rem;
+      color: #4ED500;
+      letter-spacing: 4px;
+      line-height: .5rem;
+      font-weight: 500;
+    }
+    .finish-content {
+      color: #666666;
+      margin: .4rem .6rem;
+      text-align: left;
+      line-height: .4rem;
+    }
+    .cjc_btn {
+      height: .88rem;
+      line-height: .88rem;
+      margin: 1.8rem 0.3rem;
+      background: #29adfd;
+      border-radius: 1rem;
+      color: #fff;
+    }
+  }
+}

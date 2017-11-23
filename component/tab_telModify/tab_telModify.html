@@ -1,0 +1,33 @@
+<ion-view hide-tabs='false' id='tab_telModify' style="background:#f4f4f4;">
+<!-- 	<header class="header">
+		<div class="container">
+			<i class="fl arrow_left"></i>
+			<span class="title">新手机号校验</span>
+		</div>
+	</header> -->
+	<gl-header title="新手机号校验"></gl-header>
+	<section class="section">
+		<div class="container">
+			<p>现有手机号{{'135****5216'}}</p>
+			<span>修改现在手机号将同时改变您的用户名</span>
+		</div>
+	</section>
+	<div class="text">
+		<span>选择您的现在手机号状态</span>
+	</div>
+	<main class="main">
+		<div ng-click="chooseItem(1)">
+			<span>现手机号依然在使用</span>
+			<em class="fr" 
+				ng-class="{true:'selected',false:''}[use]"></em>
+		</div>
+		<div ng-click="chooseItem(2)">
+			<span>现手机号己经不使用</span>
+			<em class="fr" 
+				ng-class="{true:'selected',false:''}[unuse]"></em>
+		</div>
+	</main>
+	<footer class="footer" ng-click="complete()">
+		<a href="" class="btn_complete">完成</a>
+	</footer>
+</ion-view>

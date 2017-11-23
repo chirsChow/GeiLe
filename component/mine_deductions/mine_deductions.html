@@ -1,0 +1,32 @@
+<ion-view hide-tabs='true' id='mine_deductions'>
+   <!--  <header class="cjc_title_bg">
+        <div class="tc df">
+            <div class="cjc_search_back">
+                <a href="javascript:history.go(-1)" class="button-retrun ion-ios-arrow-left color33"></a>
+            </div>
+            <div class="df1 f34 lh88">扣款顺序</div>
+            <div class="lh88 f28 cjc_bank_add"></div>
+        </div>
+    </header> -->
+    <gl-header title="扣款顺序"></gl-header>
+    <section class="scrolltop88">
+        <ion-content overflow-scroll="false" overflow-scroll="false">
+            <div class="f28 color66 p0-24">
+                系统会根据下面银行卡排列顺序扣款
+            </div>
+            <div class="banklist">
+                <ion-radio ng-repeat="item in bankList"
+                           class="cjc_banklist f32 color33 bor-bot"
+                           ng-value="item.bankIndex"
+                           ng-click="serverSideChange(item)"
+                           ng-model="mybankCheck">
+                  <img ng-src="{{item.bankImg}}" alt="">
+                  <span>{{item.bankName}}</span>
+                  <span>{{item.cardType =='C' && '信用卡' || "储蓄卡"}}</span>
+                  <span>({{item.cardNo.substr(-4,4)}})</span>
+                </ion-radio>
+            </div>
+            
+        </ion-content>
+    </section>
+</ion-view>

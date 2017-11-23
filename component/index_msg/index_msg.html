@@ -1,0 +1,114 @@
+<ion-view hide-tabs='true' id='index_msg'>
+    <header>
+        <a ng-click='goBack()' class="button-retrun  back"><i class="retrun_1"></i></a>
+        <span class="f28 colorfe pressed" ng-class="{0:'pressed'}[navNum]" ng-click="press(0)">通知</span><span class="f28 colorfe" ng-class="{1:'pressed'}[navNum]" ng-click="press(1)">活动</span>
+        <a class="edit" ng-click="edit=!edit;closeOption()" ng-bind="edit==true?'取消':'编辑'" ng-show="(navNum==0 && sysLists.length>0)||(navNum==1 && actLists.length>0)"></a>
+    </header>
+    <section class="scrolltop138" ng-if='navNum===0'>
+        <ion-content overflow-scroll="true" ng-class="{'content-left':edit}" lazy-scroll>
+            <!-- 中间内容 -->
+            <ion-list can-swipe="canSwipe" class='sys-list'>
+                <ion-item ng-repeat="list in sysLists" class="sys-container" ng-click="setMessageHasRead(list)" attached>
+                    <div class="select-box">
+                        <label ng-class="{'selected':list.checked}">
+                            <input type="checkbox" ng-model="list.checked" ng-click="$event.stopPropagation();">
+                        </label>
+                    </div>
+                    <div class="sys-msg-box p0-24" ng-class="{'edit-left':edit}">
+                        <p ng-class="{'read':list.status==1}">
+                            {{list.title || '通知'}}<span ng-bind='list.systemType | msgDateFilter : list'></span>
+                        </p>
+                        <p ng-if="list.systemType == 'payment_app'"
+                           class="color66 bor-bot"
+                           ng-class="{'read':list.status==1}">{{list.merchant | ellipsisFilter:12}}
+                            <span style="float:right"
+                                  ng-if="list.orderType!=2 && list.orderType!=5">
+                                {{list.tranType==1000 || list.tranType==1100 ? '-' : ''}}{{list.totalAmt | moneyUnit}}元
+                            </span>
+                            <span style="float:right"
+                                  ng-if="(list.orderType==2 || list.orderType==5) && list.cashAmt > 0">
+                                {{list.tranType==1000 || list.tranType==1100 ? '-' : ''}}{{list.cashAmt | moneyUnit}}元
+                            </span>
+                            <span style="float:right;margin-right:0.2rem"
+                                  ng-if="(list.orderType==2 || list.orderType==5) && list.beanAmt > 0">
+                                {{list.tranType==1000 || list.tranType==1100 ? '-' : ''}}{{list.beanAmt | moneyUnit}}豆
+                            </span>
+                        </p>
+                        <p ng-if="list.systemType == 'system'" class="color66 bor-bot" ng-class="{'read':list.status==1}">
+                            {{list.content | ellipsisFilter:12}}
+                        </p>
+                        <p ng-if="list.systemType == 'monthly_bills'" class="color66 bor-bot" ng-class="{'read':list.status==1}">
+                            {{list.billDate+'月份账单'}}
+                        </p>
+                        <p>
+                            <span class="f24 coloraa"
+                                  ng-class="{'colorfe':list.commentStauts==0 || list.commentStauts==1}"
+                                  ng-click="linkComment($event,list)"
+                                  ng-if='list.systemType | msgBtnFilter1 : list'>
+                                立即打赏
+                            </span>
+                            <span class="f24 coloraa"
+                                  ng-if='list.systemType | msgBtnFilter2 : list'
+                                  ng-class="{'colorfe': list.status != 1}">立即查看</span>
+                        </p>
+                    </div>
+                    <ion-option-button class="option-button" ng-click="singleDel($index,sysLists,list.id,list.systemType)">
+                        删除
+                    </ion-option-button>
+                </ion-item>
+            </ion-list>
+            <div class="gap"></div>
+            <ion-infinite-scroll ng-if="noMoreSysMsg" on-infinite="loadMoreSys()" distance="5%"></ion-infinite-scroll>
+        </ion-content>
+    </section>
+    <section class="scrolltop138" ng-if='navNum===1'>
+        <ion-content overflow-scroll="true" lazy-scroll ng-class="{'content-left':edit}">
+            <ion-list can-swipe="canSwipe">
+                <ion-item ng-repeat="list in actLists" class="act-container">
+                    <div class="select-box">
+                        <label ng-class="{'selected':list.checked}">
+                            <input type="checkbox" ng-model="list.checked" ng-click="$event.stopPropagation();">
+                        </label>
+                    </div>
+                    <div class="act-msg-box" ng-class="{'edit-left':edit}">
+                        <div class="img-box">
+                            <img ng-src="img/banner.png" alt="">
+                        </div>
+                        <div class="desc-box">
+                            <p class="f32">今日推荐</p>
+                            <p class="f28 color66" ng-bind='list.content'>真功夫消费狂返豆25%</p>
+                            <p class="f22 coloraa" ng-bind="list.date| date : 'yy-MM-dd HH:mm:ss'"></p>
+                        </div>
+                        <ion-option-button class="option-button" ng-click="singleDel($index,actLists,list.id,'1')" ">
+                            删除
+                        </ion-option-button>
+                    </div>
+                </ion-item>
+            </ion-list>
+            <div class="gap "></div>
+            <ion-infinite-scroll ng-if="noMoreActMsg " on-infinite="loadMoreAct() " distance="5% "></ion-infinite-scroll>
+        </ion-content>
+    </section>
+    <div class="no-msg " ng-if='sysLists.length==0 && navNum==0 && sysFirstLoad==true'>
+        <img src="img/nomessage.png " alt=" ">
+        <p class="color97 f28 ">暂无收到任何消息</p>
+    </div>
+    <div class="no-msg " ng-if='actLists.length==0 && navNum==1'>
+        <img src="img/nomessage.png " alt=" ">
+        <p class="color97 f28 ">暂无收到任何消息</p>
+    </div>
+    <div class="delete-msg " ng-class="{ 'delete-block':edit} " ng-show='edit && navNum===0'>
+        <button class="button " ng-click="deleteSysLists() " ng-class="{ 'deleteblock1':deleteblock1} ">删除</button>
+        <label ng-class="{ 'selected':master1.all} ">
+            全选
+            <input type="checkbox" ng-model="master1.all" ng-click='checkAll(master1.all,sysLists);'>
+        </label>
+    </div>
+    <div class="delete-msg " ng-class="{ 'delete-block':edit} " ng-show='edit && navNum===1'>
+        <button class="button " ng-click="deleteActLists() " ng-class="{ 'deleteblock2':deleteblock2} ">删除</button>
+        <label ng-class="{ 'selected':master2.all} ">
+            全选
+            <input type="checkbox" ng-model="master2.all" ng-click='checkAll(master2.all,actLists);'>
+        </label>
+    </div>
+</ion-view>

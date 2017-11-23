@@ -1,0 +1,93 @@
+#my_certification{
+  font-family:PingFangSC-Regular;
+  .bj{  background-color:#f4f4f4;width:100%;height:100%; }
+  .pad40{padding-top:0.4rem;}
+  .mad20{margin:0.4rem 0 0 0.24rem ;}
+
+  a{text-decoration: none;color:#333;}
+  .backgroundImg{background: url(/img/hdqImg/hdqImg.png);background-size: 0.5rem 6rem;}
+  .bj{  background-color:#f4f4f4;width:100%;height:100%; }
+  //.pad40{padding-top:0.4rem;}
+  //.mad20{margin:0.4rem 0 0 0.24rem ;}
+  background-color: #f4f4f4;
+  .cjc_title_bg{background-color: #fff;width: 100%;height: 0.88rem;box-sizing: initial;line-height: 0.88rem;padding-top: 0.4rem;color: #333;
+    .lh88{line-height: 0.88rem;}
+    .ion-ios-arrow-left:before{color: #666;line-height: 0.88rem;width: 1.1rem;font-size:0.6rem;text-align:center;}
+    .cjc_bank_add{width: 1.2rem;text-align: center}
+  }
+
+  .ocr{
+    width:100%;height:2.78rem;text-align: center;background-color: #f4f4f4;}
+  .ocr_phone{
+
+    .img_box{
+      margin: 0.4rem 0;
+      width:1.2rem;
+      height:1.2rem;
+    }
+    .bp50{
+      display:block;
+
+    }
+  }
+    .ocr{width:100%;height:2.78rem;text-align: center;background-color: #f4f4f4;box-sizing:border-box;}
+    .ocr_phone{
+      .img_box{
+        margin-top: 0.49rem;
+        width:1.2rem;
+        height:1.2rem;
+      }
+    }
+  .box20{padding-top:0.2rem;}
+  .myForm{width:100%;height:2.28rem;padding:.024rem;
+    .pd24{padding:0.24rem;}
+    .pbt24{margin-bottom:0.24rem;}
+    .card_box{
+      display: inline-block;
+       width:2.22rem;height:0.44rem;
+       border:0.01rem solid #29adfd;
+      line-height: 0.4rem;
+      text-align: center;
+       border-radius: 0.05rem;
+       background-color: #ecf8ff;
+     }
+    li{
+      width:100%;
+      height:0.78rem;
+      line-height: 0.78rem;
+      margin-bottom:0.2rem ;
+      border-radius: 0.08rem;
+        border: 1px solid #ccc;
+      //padding-bottom: 0.3rem;
+      box-sizing: border-box;
+      position: relative;
+      input{
+        width:100%;
+        height:0.7rem;
+        line-height: 0.7rem;
+        padding-left:1.86rem;
+        padding-right:0.24rem;
+        font-size: 0.28rem;
+        color:#333;
+        vertical-align: middle;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+      }
+      span{position: absolute;left:0;top:0;margin-left: 0.24rem;line-height: 0.74rem;}
+    }
+
+  }
+  .btn{
+    width:100%;
+    padding: 0.8rem 0.3rem 0 0.3rem;
+    .xia_but{
+      width:6.9rem;
+      height:0.88rem;
+      border: 0;
+      background-color: #29adfd;
+      font-weight: 500;
+      border-radius: 0.45rem;
+    }
+  }
+
+}

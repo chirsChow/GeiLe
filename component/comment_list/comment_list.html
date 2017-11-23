@@ -1,0 +1,64 @@
+<ion-view  id='comment_list' hide-tabs=""  ng-class="{true:'no-list',false:''}[commentsItems.length<1]">
+    <gl-header title="我的评价"></gl-header>
+    <div class="title-totalCount" ng-if="!storeId && totalCount>0">
+        <span>共{{totalCount}}条</span>
+    </div>
+    <section class="" ng-class="{true:'isHasId',false:''}[storeId !='']">
+        <ion-content overflow-scroll="true" lazy-scroll>
+            <ion-refresher
+                    pulling-text="下拉刷新..."
+                    on-refresh="doRefresh()">
+            </ion-refresher>
+            <div class="store-evaluate">
+                <div class="eva-list" >
+                    <div  ng-click="goStoreInfo(item.merchantNo)"  ng-repeat="item in commentsItems track by $index" class="item-list bor" attached>
+                        <div class="img-info bor-bot" ng-if="!storeId">
+                            <div class="img-box">
+                                <img err-src="./img/store_list/icon_60.png" src="{{item.merchantImage||'./img/store_list/icon_60.png'}}" alt="">
+                            </div>
+                            <div class="name-info">
+                               <!--  <p class="name">{{item.shortName+'　'}}</p> -->
+                                <p class="des">{{item.shortName}}</p>
+                            </div>
+                        </div>
+                        <div class="img-info-s bor-bot" ng-if="storeId">
+                            <div class="img-box">
+                                <img err-src="./img/df-u-img.png" src="{{item.userImage||'./img/df-u-img.png'}}" alt="">
+                            </div>
+                            <div class="tel">
+                                <p ng-bind="item.name"></p>
+                            </div>
+                            <div class="time">
+                                <p ng-bind="item.createDateTime"></p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <span>打分</span>
+                            <p class="evaluate">
+                                <span style="width: {{item.grade*20 | gradeFilter}}%"></span>
+                            </p>
+                            <span class="f24 color66">{{item.grade}}分</span>
+                            <p class="tel" ng-if="!storeId">{{item.createDateTime? item.createDateTime: item.createTime}}</p>
+                        </div>
+                        <div class="eva-items">
+                            <span ng-repeat="val in item.labels" ng-if="val">{{val}}</span>
+                            <!--<span ng-repeat="val in item.labels">{{commonConfigsJson[val]}}</span>-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <ion-infinite-scroll
+                    ng-if="isHasMore"
+                    on-infinite="loadMore()"
+                    distance="5%">
+            </ion-infinite-scroll>
+        </ion-content>
+    </section>
+    <div class="cjc_nosearch_list" ng-if="commentsItems.length<1 &&!isHasMore">
+        <div class="cjc_nosearch_img">
+            <img src="img/store_list/icon_61.png" width="100%">
+            <div class="tc color97 f28">暂无任何评论 <a href="" ng-click="goNearby()" >去附近商家逛逛!</a></div>
+        </div>
+    </div>
+</ion-view>

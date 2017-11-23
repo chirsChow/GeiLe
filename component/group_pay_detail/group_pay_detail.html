@@ -1,0 +1,62 @@
+<ion-view hide-tabs='true' id='group_pay_detail'>
+    <gl-header title="乐抢单详情"></gl-header>
+    <section class="scrolltop88">
+        <ion-content>
+            <div class="money-box">
+                <p>
+                    <img ng-src="{{img || 'img/df-u-img.png'}}" err-src="img/u-img.png" alt="" style="border-radius: 50%"><span>{{shortName}}</span>
+                </p>
+                <p>
+                    <span>￥</span><span class="font">{{totalAmount | moneyUnit}}</span>
+                </p>
+                <p>支付成功</p>
+            </div>
+            <!---->
+            <div class="detail-wrapper" style="margin-top:0.2rem;">
+                <p class="bor-bot">
+                    支付订单号<span>{{orderNo}}</span>
+                </p>
+            </div>
+            <div class="detail-wrapper">
+                <p class="bor-bot">
+                    支付时间<span>{{payTime}}</span>
+                </p>
+            </div>
+            <div class="detail-wrapper">
+                <p class="bor-bot">
+                    交易总金额<span>￥{{totalAmount | moneyUnit}}</span>
+                </p>
+            </div>
+            <!---->
+            <div class="detail-wrapper" style="margin-top:0.2rem;">
+                <p class="bor-bot actor-wrapper title">
+                    <span>现金支付</span><span>乐豆支付</span><span>赠送乐豆</span>
+                </p>
+            </div>
+            <div class="detail-wrapper" ng-repeat="list in lists">
+                <div class="bor-bot actor-wrapper detail">
+                    <span>￥{{list.cashAmount.toFixed(2)}}</span><span>{{list.beanAmount.toFixed(2)}}豆</span><span>{{list.giftAmount.toFixed(2)}}豆</span>
+                    <img class="avatar" style="border-radius: 50%" ng-src="{{list.imgUrl  || 'img/df-u-img.png'}}" err-src="img/u-img.png" alt="">
+                    <!--<img class='rich' src="img/group_pay/tuhao.png" alt="" ng-if="list.tycoonFlag=='00'">-->
+                    <!--<img class="lucky" src="img/group_pay/xingyun2.png" ng-if="list.tycoonFlag=='02'">-->
+                </div>
+            </div>
+            <!---->
+            <div class="detail-wrapper" style="margin-top:0.2rem;">
+                <p class="bor-bot">
+                    摘要<span style="float:right">{{shortName}}</span><i class="flag">消费</i>
+                </p>
+            </div>
+            <div class="detail-wrapper" style="margin-top:0.2rem;" ng-click="linkComment()" ng-if="isCreate && isReward">
+                <p class="bor-bot">
+                    服务员星级评价<em></em>
+                </p>
+            </div>
+            <div class="detail-wrapper" ng-click="linkCreatComment()" ng-if="isCreate && isCommentStore">
+                <p class="bor-bot">
+                    商家评价<em></em>
+                </p>
+            </div>
+        </ion-content>
+    </section>
+</ion-view>

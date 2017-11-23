@@ -1,0 +1,78 @@
+<ion-view ng-style="keyboard_up_class" hide-tabs='true' id='payment_exceptional'>
+   <!--  <header class="cjc_title_bg bor-bot">
+        <div class="tc df">
+            <div class="cjc_search_back" ng-click="goBack()">
+                <a class="button-retrun ion-ios-arrow-left color33"></a>
+            </div>
+            <div class="df1 f34 lh88">打赏</div>
+            <div class="cjc_bank_add"></div>
+        </div>
+    </header> -->
+    <header id="gl_header"> 
+        <div class="tc df">
+            <div class="w124 lh88" ui-sref="tab.index">  
+                <a class="button-retrun header-back colorff"></a>
+            </div>    
+            <div class="df1 f34 colorff lh88">服务员评价</div>  
+            <div class="w124"></div> 
+        </div>
+    </header>
+    <ion-content overflow-scroll="false" class="cjc_exceptional">
+        <div class="cjc_content">
+            <div class="cjc_top_img">
+                <img ng-src='{{merchantImg||"img/df-u-img.png"}}' err-src="img/df-u-img.png">
+            </div>
+            <div style="height: 1rem;"></div>
+            <div class="df cjc_number">
+                <div class="f24 color33">工号：</div>
+                <div class="cjc_input df">
+                    <input type="tel" placeholder="请输入员工工号" ng-model="obj.operatorNo" ng-focus="changeBoo()">
+                    <img src="./img/scan.png" alt="" ng-click="gotoScan()">
+                </div>
+            </div>
+            <div class="cjc_margin tc">
+                <span class="f24 color33 fl">评分：</span>
+                <div class="cjc_start">
+                    <i class="icon icon0" ng-repeat="list in myArr" ng-class="{'true':'icon1'}[myScore > $index]" ng-click="setScore($index)"></i>
+                </div>
+            </div>
+            <div class="p0-24 ">
+                <div class="cjc_bottom">
+                    <div class="f24 color33 reward-label">打赏乐豆：</div>
+                    <div class="df cjc_dou">
+                        <div class="df1 font" ng-repeat="item in backRateArr track by $index" ng-class="{'{{$index}}':'active'}[backRateChage]">{{item}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="p0-24">
+                <div class="cjc_bottom">
+                    <div class="f24 color33 reward-label">打赏金额：</div>
+                    <div class="df">
+                        <div class="df1 font" ng-class="{'10':'active'}[money]" ng-click="moneyClick(10)"><span class="f24">￥</span>10</div>
+                        <div class="df1 font" ng-class="{'20':'active'}[money]" ng-click="moneyClick(20)"><span class="f24">￥</span>20</div>
+                        <div class="df1 font" ng-class="{'50':'active'}[money]" ng-click="moneyClick(50)"><span class="f24">￥</span>50</div>
+                        <div class="df1 font f24" ng-class="{'-1':'active'}[money]" ng-click="moneyClick(-1)">其他金额</div>
+                    </div>
+                    <div class="other-money-item" ng-if="showMoneyBoo">
+                        <!-- <span class="f24 color33 cjc_other">其它金额：</span> -->
+                        <div class="bor-bot flex1">
+                            <input type="{{obj.inputType}}" id="inputMoney" class="cjc_input font" ng-model="obj.otherMoney" placeholder="请输入其它金额" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tc">
+                <button class="cjc_excep_btn" ng-disabled="!staff.selected" ng-click="reward()">确认</button>
+            </div>
+        </div>
+        <div class="cjc_number_list" ng-show="showList">
+            <ion-content overflow-scroll="false">
+                <div class="bor-bot"></div>
+                <div class="bor-top-bot">
+                    <div class="tc bor-right" ng-repeat="item in items" ng-click="sure(item)" ng-bind="item.operatorNo"></div>
+                </div>
+            </ion-content>
+        </div>
+        
+    </ion-content>
+</ion-view>

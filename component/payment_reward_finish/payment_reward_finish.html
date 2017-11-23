@@ -1,0 +1,12 @@
+<ion-view hide-tabs='true' id='payment_reward_finish'>
+    <header class="cjc_title_bg pr">
+        <div class="w124 lh88 cjc_back" ng-click="gotoBack()"><a class="button-retrun header-back colorff"></a></div>
+        <div class="f34 lh88 colorff cjc_title">完成{{myType == 1 ? '评分' : '打赏'}}</div>
+    </header>
+    <div class="finish-container">
+        <img style="width: 2rem;margin-top: .4rem;" src="img/index/true_1.png" />
+        <div ng-hide="myType == 1" class="amt-label"><span class="f24">￥</span><span>{{money.toFixed(2)}}</span></div>
+        <div class="f28 finish-content">已成功{{myType == 1 ? '评分' : '打赏'}}，感谢您对我们服务的支持，期待下次光临。</div>
+        <div class="cjc_btn" ui-sref="tab.index">返回首页</div>
+    </div>
+</ion-view>

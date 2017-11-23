@@ -1,0 +1,23 @@
+<ion-view hide-tabs='true' id='tab_oldTelCheck' style="background: #f4f4f4">
+	<gl-header title="原手机号校验"></gl-header>
+	<div class="text">
+		<span>短信验证己发送到你原手机{{information.mobilePhone|phoneHide}}上，有效时间为10分钟，请及时查收。</span>
+	</div>
+
+	<section class="section">
+		<ul>
+			<li>
+				<span>验证码</span>
+				<input  type="text" 
+						maxlength="6" 
+						placeholder="请输入验证码" 
+						ng-model="checkCode">
+				<span class="fr code f26 coloraa" ng-click="sendCode()"
+				ng-class="{true:'coloraa',false:'color29'}[isCounting]">{{secondLeft}}</span>
+			</li>
+		</ul>
+	</section>
+	<footer class="footer">
+		<a href="" class="btn_complete" ng-click="complete()">完成</a>
+	</footer>
+</ion-view>

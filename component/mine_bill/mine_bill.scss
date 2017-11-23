@@ -1,0 +1,219 @@
+$blue:#29adfd;
+#mine_bill {
+    background-color: $blue;
+    header {
+        height: 1.28rem;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+        line-height: 1.68rem;
+        background-color: $blue;
+        color: #fff;
+        .button-retrun{
+            display: block;
+            position: absolute;
+            font-size: .56rem;
+            left: 0;
+            bottom: 0;
+            padding-right: 1rem;
+            padding-left: 0.4rem;
+            height: 1rem;
+            line-height: 1.1rem;
+            color: #fff;
+        }
+        .return_4{
+            display:inline-block;
+            width:0.48rem;
+            height:0.48rem;
+            background:url('../img/tab_store/back-satreo.png') no-repeat;
+            background-size:0.48rem;
+            margin-top:0.4rem; 
+        }
+    }
+    .month-bar {
+        height: 3.3rem;
+        background-color: $blue;
+        padding: 0 .2rem;
+        color: #333;
+        .nav-bar {
+            height: .9rem;
+            background-color: #fff;
+            border-top-left-radius: .1rem;
+            border-top-right-radius: .1rem;
+            padding-top: .28rem;
+            div {
+                line-height: .6rem;
+                text-align: center
+            }
+            div:first-child,
+            div:nth-child(2) {
+                width: .6rem;
+                height: .6rem;
+                border-radius: 50%;
+                background-color: rgb(83, 189, 253);
+            }
+            div:first-child {
+                float: left;
+                background: url("../img/msg/pre-month.png") no-repeat center;
+                background-size: 100% 100%;
+                margin-left: .2rem;
+            }
+            div:first-child.pre-pressed {
+                background: url("../img/msg/pre-month-press.png") no-repeat center;
+                background-size: 100% 100%;
+                margin-left: .2rem;
+            }
+            div:nth-child(2) {
+                float: right;
+                background: url("../img/msg/next-month.png") no-repeat center;
+                background-size: 100% 100%;
+                margin-right: .2rem;
+            }
+            div:nth-child(2).next-pressed {
+                background: url("../img/msg/next-month-press.png") no-repeat center;
+                background-size: 100% 100%;
+                margin-right: .2rem;
+            }
+        }
+        .slider {
+            background-color: #fff;
+            border-bottom-left-radius: .1rem;
+            border-bottom-right-radius: .1rem;
+            transform: translateY(-1px);
+            -webkit-transform: translateY(-1px);
+            padding-top:0.4rem;
+        }
+        .df.tc {
+            padding: 0 0.3rem 0.38rem;
+            text-align: left;
+            .fb {
+                margin-bottom: 0.2rem;
+            }
+            .df1 {
+                margin-right: 0.3rem;
+                background: orange;
+                height: 1.6rem;
+                padding-top: 0.24rem;
+                padding-left: 0.2rem;
+                border-radius: 0.14rem;
+                .font {
+                    font-size: 0.34rem;
+                    color: #fff;
+                    margin-bottom: 0.44rem;
+                }
+                .ls2 {
+                    color: #fff
+                }
+                .circle {
+                    width: 0.1rem;
+                    height: 0.1rem;
+                    position: absolute;
+                    right: 0.14rem;
+                    top: 0.14rem;
+                    background: url('../img/mine/circle.png') no-repeat center;
+                    background-size:100% 100%;
+                }
+                &:first-child {
+                    background: rgb(77, 183, 247);
+                    box-shadow: 0 0 0.3rem rgba(77, 183, 247, 0.5);
+                }
+                &:nth-child(2) {
+                    background: rgb(108, 111, 255);
+                    box-shadow: 0 0 0.3rem rgba(108, 111, 255, 0.5);
+                }
+                &:last-child {
+                    margin-right: 0;
+                    background: rgb(78, 213, 0);
+                    box-shadow: 0 0 0.3rem rgba(78, 213, 0, 0.5);
+                }
+            }
+        }
+    }
+    .info-bar {
+        text-align: center;
+        padding-top: .46rem;
+        div {
+            p:first-child {
+                line-height: .45rem;
+                font-weight: bold;
+            }
+            p:last-child {
+                height: .5rem;
+                line-height: .5rem;
+                width: 1.4rem;
+                margin: 0 auto;
+                font-size: .22rem;
+            }
+        }
+    }
+    .scrollTop418 > .scroll-content {
+        top: 4.65rem;
+        bottom:0.2rem;
+        border-radius: 0.1rem;
+        background: #f4f4f4;
+        margin:0 0.2rem;
+    }
+    .bill-box {
+        background: #fff;
+        &:nth-child(even) {
+            background:#f4f4f4;
+        }
+    }
+    .bill-list {
+        width: 7.02rem;
+        margin: 0 auto;
+        height: 1.6rem;
+        padding:0 0.2rem;
+        p:first-child {
+            font-size: .28rem;
+            color: #666;
+            padding: .3rem 0 .33rem;
+            position:relative;
+            .money {
+                float: right;
+            }
+            span {
+                font-size: .34rem;
+                color: $blue;
+            }
+        }
+        p:last-child {
+            font-size: .28rem;
+            height: .5rem;
+            line-height: .5rem;
+            color:#aaa;
+            span:nth-child(2) {
+                font-size: .5rem;
+            }
+            .sub {
+                color: #ff2121;
+            }
+            span:nth-child(2).sub {
+                color: #ff2121;
+            }
+            span:last-child {
+                display: block;
+                height: .4rem;
+                width: 1.2rem;
+                border-radius: 1rem;
+                border: 1px solid $blue;
+                float: right;
+                color: $blue;
+                font-size: .24rem;
+                text-align: center;
+                line-height: .36rem;
+                background-color:#f4fbff;
+            }
+        }
+    }
+    .no-msg {
+        margin-top: .8rem;
+        img {
+            width: 4rem;
+            height: 3.1rem;
+        }
+    }
+    .scroll {
+        height: auto;
+    }
+}

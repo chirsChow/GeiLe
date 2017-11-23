@@ -1,0 +1,104 @@
+<ion-view id='store_nearby_2' ng-class="{true:'no-list',false:''}[storeListItems.length<1]">
+    <div class="header-box" style="position: relative;z-index: 10000">
+        <div class="store-menu-top">
+            <p ng-class="{true:'active',false:''}[selectClassifiesId == 0]" ng-click="selectClassifies(0)"><a href="">美食</a></p>
+            <p ng-class="{true:'active',false:''}[selectClassifiesId == 2]" ng-click="selectClassifies(2)"><a href="">娱乐</a></p>
+            <p ng-class="{true:'active',false:''}[selectClassifiesId == 1]" ng-click="selectClassifies(1)"><a href="">购物</a></p>
+            <p ng-class="{true:'active',false:''}[selectClassifiesId == null]" ng-click="selectClassifies(null)"><a href="">全部</a></p>
+            <p ng-class="{true:'active',false:''}[selectClassifiesId == 3]" ng-click="selectClassifies(3)"><a href="">收藏</a></p>
+        </div>
+        <div style="height: .24rem;" ng-if="selectClassifiesId == null || selectClassifiesId == 3"></div>
+       <div style="position: relative" ng-if="selectClassifiesId != null && selectClassifiesId != 3">
+           <div class="hot-list-box"  >
+               <!--<ion-scroll direction="x"  scrollbar-x="false">-->
+               <div class="hot-list" style="overflow: hidden;height: .8rem;position: relative">
+                   <p ng-if="showSubChooseList" style="position: absolute;width: 100%;height: 100%;z-index: 5;font-size:.22rem;color: #FFFFFF;
+                   line-height: .8rem;padding-left: .2rem;background-color: #29ADFD">
+                       <span ng-if="selectClassifiesId == 0">点击你要找的美食分类</span>
+                       <span ng-if="selectClassifiesId == 2">点击你要找的娱乐分类</span>
+                       <span ng-if="selectClassifiesId == 1">点击你要找的购物分类</span>
+                   </p>
+                   <!--<div class="hot-list" style="width: {{(selectClassifiesItem.length+1)*1.3+.5+'rem'}}">-->
+                   <a href=""
+                      ng-if="selectClassifiesItem.length>0"
+                      ng-click="reloadList(0,'')"
+                      ng-class="{true:'active',false:''}[selectClassifiesItemId == 0]">热门</a>
+                   <a href="" ng-click="reloadList(item.id,item.name)"
+                      ng-class="{true:'active',false:''}[selectClassifiesItemId == item.id]"
+                      ng-repeat="item in selectClassifiesItem">{{item.name}}</a>
+               </div>
+
+               <!--</ion-scroll>-->
+           </div>
+           <div ng-click="showSubChoose(!showSubChooseList)"
+                ng-if="selectClassifiesItem.length>6"
+                class="itcon-down" style="height: .8rem;width: 1rem;position: absolute;right: 0;top: 0"><i></i></div>
+           <div style="clear: both"></div>
+       </div>
+        <div class="list-head" ng-if="showSubChooseList">
+            <a href=""
+               ng-if="selectClassifiesItem.length>0"
+               ng-click="reloadList(0,'')"
+               ng-class="{true:'active',false:''}[selectClassifiesItemId == 0]">热门</a>
+            <a href="" ng-click="reloadList(item.id,item.name)"
+               ng-class="{true:'active',false:''}[selectClassifiesItemId == item.id]"
+               ng-repeat="item in selectClassifiesItem">{{item.name}}</a>
+        </div>
+    </div>
+    <div ng-if="$root.hideTabsBg" ng-click="showSubChoose(false)" style="background: rgba(0,0,0,0.40);position: fixed;width: 100%;height: 100%;left: 0;top: 0;z-index: 998"></div>
+    <div class="store-list-header df ">
+        <!--<p class="back" ui-check-sref="tab.index_location({title:''})"><a href="" ><i></i></a>{{currentPosition.streetName | ellipsisFilter:4}}</p>-->
+        <div class="search bor-bot" ui-sref="tab.index_search"><a href=""><i></i>请输入商家名称</a></div>
+    </div>
+    <section  ng-class="{true:'hide-hot-list',false:''}[selectClassifiesId == null || selectClassifiesId==3]" >
+        <ion-content delegate-handle="hot-list-box" overflow-scroll="true" lazy-scroll >
+            <!--<ion-refresher-->
+                    <!--pulling-text="下拉刷新..."-->
+                    <!--on-refresh="doRefresh()">-->
+            <!--</ion-refresher>-->
+            <div class="store-list-item-n">
+                <div class="item-box-n bor-bot"
+                     ui-check-sref="tab.tab_store({id:item.merchantNo,num:item.paymentCount})"
+                     ng-repeat="item in storeListItems track by $index" attached>
+                    <store-item item="item" style="display: flex;display: -webkit-flex;width: 100%"></store-item>
+                    <!--<div class="img-box" tile-img="1" tile-src="{{item.images||'./img/store_list/icon_60.png'}}">-->
+                        <!--<img err-src="./img/store_list/icon_60.png" src="{{item.images||'./img/store_list/icon_60.png'}}" alt="">-->
+                    <!--</div>-->
+                    <!--<div class="info-box">-->
+                        <!--<p class="title">{{item.shortName}}</p>-->
+                        <!--<div  style="overflow: hidden">-->
+                            <!--<div class="start">-->
+                                <!--<p class="no"><span></span><span></span><span></span><span></span><span></span></p>-->
+                                <!--<p class="yes"><span ng-if="item.commentGrade>0"></span><span ng-if="item.commentGrade>1"></span><span ng-if="item.commentGrade>2"></span><span ng-if="item.commentGrade>3"></span><span ng-if="item.commentGrade>4"></span></p>-->
+                            <!--</div>-->
+                            <!--<p class="fen">{{item.commentGrade}}分　{{item.paymentCount | personNumberFilter}}人已消费 </p>-->
+                        <!--</div>-->
+                        <!--<p class="types">老街·粤菜 <span ng-if="item.perCapita">|  ¥{{item.perCapita}}元/人</span>-->
+                            <!--<span style="color: #A4A9AD;font-size: .22rem;">＜{{item.distance | distanceFilter}}m</span></p>-->
+                        <!--<div class="extra-item">-->
+                            <!--<i ng-if="item.specialService.indexOf(3) != -1" class="po"></i>-->
+                            <!--<i ng-if="item.specialService.indexOf(1) != -1" class="wf"></i>-->
+                            <!--<i ng-if="item.specialService.indexOf(2) != -1" class="tc"></i>-->
+                            <!--<i ng-if="item.specialService.indexOf(4) != -1" class="hs"></i>-->
+                        <!--</div>-->
+                        <!--<div class="foucs-info">-->
+                            <!--<p><span class="font">{{item.saleRate}}%</span></p>-->
+                            <!--<span>赠豆</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <ion-infinite-scroll
+                    ng-if="isHasMore"
+                    on-infinite="loadMore()"
+                    distance="5%">
+            </ion-infinite-scroll>
+        </ion-content>
+    </section>
+    <div class="cjc_nosearch_list" ng-if="noItem">
+        <div class="cjc_nosearch_img">
+            <img src="img/index/nogoods.png" width="100%">
+            <div class="tc color97 f28">暂无结果！</div>
+        </div>
+    </div>
+</ion-view>

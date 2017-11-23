@@ -1,0 +1,61 @@
+#my_security {
+  font-family:PingFangSC-Regular;
+  .bj{  background-color:#f4f4f4;width:100%;height:100%; }
+  .backgroundImg {
+    background: url(/img/hdqImg/hdqImg.png);
+    background-size: 0.5rem 6rem;
+  }
+  background-color: #f4f4f4;
+  .cjc_title_bg{background-color: #fff;width: 100%;height: 0.88rem;box-sizing: initial;line-height: 0.88rem;padding-top: 0.4rem;color: #333;
+    .lh88{line-height: 0.88rem;}
+    .ion-ios-arrow-left:before{color: #666;line-height: 0.88rem;width: 1.1rem;font-size:0.6rem;text-align:center;}
+    .cjc_bank_add{width: 1.2rem;text-align: center}
+  }
+  .pd20{padding-top:0.2rem;}
+  .icon{
+    font-size: 0.33rem;
+    color:#cdcdcd;
+  }
+  .list_box{
+    width:100%;
+    height:1.3rem;
+    padding:0.24rem;
+    background-color: #fff;
+    position: relative;
+    .ion{
+      width:1.5rem;
+      height:1.3rem;
+      text-align: right;
+      position: absolute;
+      top:0;
+      right:0;
+      padding-right:0.24rem;
+      padding-top: 0.5rem;
+      //border:0.01rem solid red;
+    }
+
+    .account{
+      font-size:0.3rem;
+      color:#333333;
+      text-align:left;
+      padding-bottom: 0.22rem;
+    }
+    .open_vo{
+      font-size:0.28rem;
+      color:#999999;
+      text-align:left;
+    }
+  }
+  .btn{
+    width:100%;
+    padding: 0.8rem 0.3rem 0 0.3rem;
+    .xia_but{
+      width:6.9rem;
+      height:0.88rem;
+      border: 0;
+      background-color: #29adfd;
+      font-weight: 400;
+      border-radius: 0.08rem;
+    }
+  }
+}

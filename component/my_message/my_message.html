@@ -1,0 +1,38 @@
+<ion-view hide-tabs='true' id='my_message'>
+	<gl-header title="消息通知提醒"></gl-header>
+	<section class="section">
+		<div class="container">
+			<ul class="main">
+			 	<li class="bot">
+                    <div class="f30 message_text">支付消息</div>
+                    <div class="f28 message_color">包含支付、打赏等系统服务和资金变动</div>
+                    <div class="toggleBox" ng-click="payCheck()">
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-checked="isPay">
+                            <a class="track">
+                                <div class="handle"></div>
+                            </a>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="f30 message_text">帐单消息</div>
+                    <div class="f28 message_color">用户账单消息</div>
+                    <div class="toggleBox" ng-click="billu()">
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-checked="isChecked">
+                            <a class="track">
+                                <div class="handle"></div>
+                            </a>
+                        </label>
+                    </div>
+                </li>
+                 
+			</ul>
+			<div class="message_top">
+                    <div class="f30 message_text">系统公告</div>
+                    <div class="f28 message_color">系统通知公告</div>
+            </dvi>
+		</div>
+	</section>
+</ion-view>

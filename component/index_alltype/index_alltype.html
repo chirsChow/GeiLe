@@ -1,0 +1,30 @@
+<ion-view hide-tabs='true' id='index_alltype'>
+    <!--title:标题
+        back：跳转地址/不填返回上一步
+        right:右侧文字/header_rgiht(css样式控制)
+        on-click:右侧点击事件-->
+    <gl-header title="全部分类"></gl-header>
+    <section class="scrolltop88">
+        <ion-content overflow-scroll="false">
+            <div class="cjc_alltype">
+                <div ng-repeat="item in classificationlist">
+                    <div class="cjc_list df cb">
+                        <div class="df_width bor-right" ng-click="gotoStore(item.name)">
+                            <i class="cjc_icon" style="background-image: url({{subUrl}}{{item.id}}.png);"></i>
+                            <div class="f28 color66 cjc_list_type" ng-bind="item.name"></div>
+                        </div>
+                        <div class="df1 bor-right " ng-repeat="list in item.sub | limitTo:3" ng-bind="list.name" ng-click="gotoStore(item.name,list.name)"></div>
+                        <dvi class="cjc_more icon ion-chevron-down" ng-class="{'true':'ion-chevron-up'}[item.show]" ng-click="changeShow($index)"></dvi>
+                    </div>
+                    <div class="cjc_all_list bor-top-bot" ng-if="item.show">
+                        <ul>
+                            <li ng-repeat="list in item.sub" ng-bind="list.name" ng-if="$index>2" ng-click="gotoStore(item.name,list.name)"></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+
+        </ion-content>
+    </section>
+</ion-view>

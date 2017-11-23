@@ -1,0 +1,46 @@
+@keyframes myfirstLoaction
+ {
+     from{  transform: rotate(0deg);  }
+     to{ transform: rotate(360deg);}
+ }
+
+@-webkit-keyframes myfirstLoaction /* Safari 和 Chrome */
+{
+    from{  -webkit-transform: rotate(0deg);  }
+    to{ -webkit-transform: rotate(360deg);}
+}
+#index_location{
+    .cjc_title_search{
+        position: relative;
+        s{display: inline-block;height: .31rem;width: .31rem;background: url("../img/clear_local.png") no-repeat;background-size: .3rem .3rem;
+            position: absolute;right: .3rem;top: .13rem;display: none;
+            &.show{display: inline-block}
+        }
+    }
+    .cjc_location_add{
+        height: 0.94rem;background-color: #fff;
+        div{line-height: 0.94rem;}
+        .cjc_reposition{color: #fe8103;}
+    }
+    .cjc_location_content{
+        background-color: #fff;
+        .mb12{margin-bottom: 0.12rem}
+    }
+    .colorfe{
+        &.active{
+            .cjc_icon0:after{opacity: 1}
+        }
+    }
+    .cjc_icon:after{content:"";background-image: url(../img/index/icon.png);background-size: 5rem;display: block;  }
+    .cjc_icon0:after{width: 0.32rem;height: 0.28rem;background-position: -1rem -4rem; display: inline-block !important;margin:-0.04rem 0.04rem 0 0;
+        position: relative;top: -.04rem;opacity: 0;
+        vertical-align: middle;
+        animation: myfirstLoaction 1s;
+        -webkit-animation: myfirstLoaction 1s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+}
+

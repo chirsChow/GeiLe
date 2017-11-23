@@ -1,0 +1,76 @@
+<ion-view hide-tabs='true' id='group_pay_start' can-swipe-back='false'>
+    <gl-header title="乐抢单" back="function" on-back="gotoOut()" right="{{{true:'撤销',false:'退出'}[myGroup.userType == 0]}}" on-click="gotoOut()"></gl-header>
+    <div ng-if="setshowGuiZes" class="guize-box" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.40);z-index: 999;">
+        <div style="position: absolute;top: .85rem;bottom:1.5rem;left: .2rem;right: .2rem;background: #fff;border-radius: .1rem;overflow: scroll">
+            <p class="title">乐抢单规则</p>
+            <div class="cont" >
+                <p>1、乐抢单由一人发起，先选择商家设置乐抢单金额或扫描商家收款码，确认后发起乐抢单，其他人扫描乐抢单二维码参与。</p>
+                <p>2、乐抢单人数最少2人，若发起人认领金额后则至少需要3人。</p>
+                <p>3、乐抢单由发起者设置金额，金额不能低于10元。</p>
+                <p>4、发起者可以设置乐抢单的认领金额，其中认领金额不低于乐抢单金额的11%，不高于90%。</p>
+                <p>5、乐抢单的发起者点击“随机抽签”后所有人进入到随机抽签界面，系统按参与人数随机生成个人买单金额，乐抢单人员点击“欢乐逗地主”匹配相应的金额，若没有在60s内操作，则系统默认对人员和金额匹配。</p>
+                <p>6、乐抢单的随机抽签匹配金额最高者获得“地主”称号，匹配金额最低者获得“幸运之星”称号。</p>
+                <p>7、参与乐抢单的所有人与抽签金额相匹配后，发起者就可进行乐抢单支付，若有参与者未支付则由发起者补足参与者未支付的金额完成乐抢单。</p>
+                <p>8、中途退出乐抢单后，若未进入随机抽签，参与者则可重新扫码加入；发起者可通过点击首页“未完成的乐抢单”重新进入。若已进入随机抽签，则发起者或参与者（使用给乐生活APP）都可通过点击首页“未完成的乐抢单”重新进入，或通过乐抢单记录重新进入；若参与者使用微信参与的乐抢单，可通过扫描其他人页面的二维码继续参与到乐抢单。</p>
+                <p>9、乐抢单支持微信支付、乐豆支付，若个人买单金额小于1元时则不支持乐豆支付，若乐豆余额大于买单金额时则微信支付金额必须大于等于1元。</p>
+                <p>10、乐抢单所有人支付后都可获得赠送乐豆，支付金额越大赠送乐豆越多，乐豆可在给乐生活联盟商家使用。</p>
+                <p>11、乐抢单所有人支付后都可获得赠送乐豆，支付金额越大赠送乐豆越多，乐豆可在给乐生活联盟商家使用。</p>
+                <p>&nbsp;&nbsp;（1）乐抢单完成之前由发起者发起，若参与者未付款，则乐抢单解散；若参与者正在支付或者支付完成时，则支付金额会在1-3个工作日返回到所使用支付账户。</p>
+                <p>&nbsp;&nbsp;（2）乐抢单完成后，如要撤单，则需和商家协商后由商家发起撤单。</p>
+                <p>12、若在乐抢单过程中遇到无法解决的问题，可联系给乐工作人员解决，24小时服务热线4000200365。</p>
+            </div>
+            <p class="bot">乐抢单最终解释权归深圳给乐信息科技有限公司所有</p>
+        </div>
+        <p style="text-align: center;width: 100%;position: absolute;bottom: .4rem;left: 0;">
+            <img ng-click="setshowGuiZe()" style="display:inline-block;width:  .8rem;" src="./img/group_pay/pop_close.png" alt=""></p>
+    </div>
+    <ion-content>
+        <div style="height: .2rem;"></div>
+        <div class="content-box">
+            <div class="items">
+                <div class="df">
+                    <div class="img"><img ng-src="{{myGroup.merchantImgUrl || 'img/df-u-img.png'}}" alt=""></div>
+                    <div class="info">
+                        <p ng-bind="myGroup.merchantName"></p>
+                        <span>发起人:{{myGroup.userName}}</span>
+                    </div>
+                    <div class="qrcode2" ng-click="setshowGuiZe()">
+                        <p style="color: #29ADFD;font-size: .2rem;">乐抢单规则 <i></i></p>
+                    </div>
+                    <div class="status"></div>
+                </div>
+            </div>
+            <div class="pay_num" ng-if="myGroup.rlAmount<1">
+                <p class="num"><span>￥</span>{{myGroup.totalAmount | moneyUnit}}</p>
+                <p class="info"> 乐抢单总金额</p>
+            </div>
+            <div class="pay_num_box" style="margin:  0 .3rem;overflow: hidden" ng-if="myGroup.rlAmount>0">
+                <div style="float: left;width: 50%">
+                    <div class="pay_num">
+                        <p class="num font"><span>￥</span>{{myGroup.totalAmount | moneyUnit}}</p>
+                        <p class="info"> 乐抢单总金额</p>
+                    </div>
+                </div>
+                <div style="float: left;width: 50%">
+                    <div class="pay_num">
+                        <p class="num font" style="color:#33D000;"><span>￥</span>{{myGroup.rlAmount | moneyUnit}}</p>
+                        <p class="info"> 已认领金额</p>
+                    </div>
+                </div>
+            </div>
+            <div class="code-box">
+                <p>扫一扫参与乐抢单</p>
+                <div id="qrcode" class="qrcode"></div>
+            </div>
+            <div class="add-list">
+                <p ng-repeat="items in groupImgArr.memberInfo">
+                    <img ng-src="{{items.imgUrl || 'img/group_pay/avatarDefault.png'}}" alt="">
+                    <span style="display: block;margin: 0 -.15rem;">{{items.userName.length>3?items.userName.slice(0,3):items.userName}}</span>
+                </p>
+            </div>
+            <div class="add-num">（{{groupImgArr.memberInfo.length || 0}}人参与）</div>
+        </div>
+        <div class="btd" ng-click="gotoPay()" ng-if="myGroup.userType == 0"><span>随机抽签</span></div>
+        <div class="f28 tc colorff cjc_list" ui-sref="tab.group_sponsor">乐抢单记录</div>
+    </ion-content>
+</ion-view>

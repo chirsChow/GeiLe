@@ -1,0 +1,553 @@
+{
+    "result": 0,
+    "description": null,
+    "data": {
+        "id": null,
+        "name": null,
+        "sub": [
+            {
+                "id": 101,
+                "name": "美食",
+                "sub": [
+                    {
+                        "id": 10101,
+                        "name": "粤菜",
+                        "sub": null
+                    },
+                    {
+                        "id": 10102,
+                        "name": "浙江菜",
+                        "sub": null
+                    },
+                    {
+                        "id": 10103,
+                        "name": "川菜",
+                        "sub": null
+                    },
+                    {
+                        "id": 10104,
+                        "name": "湘菜",
+                        "sub": null
+                    },
+                    {
+                        "id": 10105,
+                        "name": "东北菜",
+                        "sub": null
+                    },
+                    {
+                        "id": 10106,
+                        "name": "西北菜",
+                        "sub": null
+                    },
+                    {
+                        "id": 10107,
+                        "name": "新疆/清真",
+                        "sub": null
+                    },
+                    {
+                        "id": 10108,
+                        "name": "烧烤",
+                        "sub": null
+                    },
+                    {
+                        "id": 10109,
+                        "name": "火锅",
+                        "sub": null
+                    },
+                    {
+                        "id": 10110,
+                        "name": "小吃快餐",
+                        "sub": null
+                    },
+                    {
+                        "id": 10111,
+                        "name": "日本料理",
+                        "sub": null
+                    },
+                    {
+                        "id": 10112,
+                        "name": "韩国料理",
+                        "sub": null
+                    },
+                    {
+                        "id": 10113,
+                        "name": "东南亚菜",
+                        "sub": null
+                    },
+                    {
+                        "id": 10114,
+                        "name": "西餐",
+                        "sub": null
+                    },
+                    {
+                        "id": 10115,
+                        "name": "自助餐",
+                        "sub": null
+                    },
+                    {
+                        "id": 10116,
+                        "name": "面包甜点",
+                        "sub": null
+                    },
+                    {
+                        "id": 10117,
+                        "name": "其他美食",
+                        "sub": null
+                    },
+                    {
+                        "id": 10118,
+                        "name": "海鲜",
+                        "sub": null
+                    },
+                    {
+                        "id": 10119,
+                        "name": "潮州菜",
+                        "sub": null
+                    }
+                ]
+            },
+            {
+                "id": 102,
+                "name": "购物中心",
+                "sub": [
+                    {
+                        "id": 10201,
+                        "name": "综合体",
+                        "sub": null
+                    },
+                    {
+                        "id": 10202,
+                        "name": "百货",
+                        "sub": null
+                    },
+                    {
+                        "id": 10203,
+                        "name": "商超",
+                        "sub": null
+                    }
+                ]
+            },
+            {
+                "id": 103,
+                "name": "休闲娱乐",
+                "sub": [
+                    {
+                        "id": 10301,
+                        "name": "KTV",
+                        "sub": null
+                    },
+                    {
+                        "id": 10302,
+                        "name": "电影",
+                        "sub": null
+                    },
+                    {
+                        "id": 10303,
+                        "name": "饮品",
+                        "sub": null
+                    },
+                    {
+                        "id": 10304,
+                        "name": "咖啡厅",
+                        "sub": null
+                    },
+                    {
+                        "id": 10305,
+                        "name": "酒吧",
+                        "sub": null
+                    },
+                    {
+                        "id": 10306,
+                        "name": "茶馆",
+                        "sub": null
+                    },
+                    {
+                        "id": 10307,
+                        "name": "足疗按摩",
+                        "sub": null
+                    },
+                    {
+                        "id": 10308,
+                        "name": "桑拿水会",
+                        "sub": null
+                    },
+                    {
+                        "id": 10309,
+                        "name": "游乐游艺",
+                        "sub": null
+                    },
+                    {
+                        "id": 10310,
+                        "name": "桌面游戏",
+                        "sub": null
+                    },
+                    {
+                        "id": 10312,
+                        "name": "养生",
+                        "sub": null
+                    }
+                ]
+            },
+            {
+                "id": 104,
+                "name": "丽人",
+                "sub": [
+                    {
+                        "id": 10401,
+                        "name": "美发",
+                        "sub": null
+                    },
+                    {
+                        "id": 10402,
+                        "name": "美容/SPA",
+                        "sub": null
+                    },
+                    {
+                        "id": 10403,
+                        "name": "化妆品",
+                        "sub": null
+                    },
+                    {
+                        "id": 10404,
+                        "name": "瘦身纤体",
+                        "sub": null
+                    },
+                    {
+                        "id": 10405,
+                        "name": "美甲",
+                        "sub": null
+                    },
+                    {
+                        "id": 10406,
+                        "name": "彩妆造型",
+                        "sub": null
+                    },
+                    {
+                        "id": 10409,
+                        "name": "整形",
+                        "sub": null
+                    }
+                ]
+            },
+            {
+                "id": 105,
+                "name": "酒店旅游",
+                "sub": [
+                    {
+                        "id": 10501,
+                        "name": "五星级酒店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10502,
+                        "name": "四星级酒店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10503,
+                        "name": "三星级酒店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10504,
+                        "name": "经济型酒店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10505,
+                        "name": "公寓式酒店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10506,
+                        "name": "度假村",
+                        "sub": null
+                    },
+                    {
+                        "id": 10507,
+                        "name": "旅行社",
+                        "sub": null
+                    },
+                    {
+                        "id": 10508,
+                        "name": "景点郊游",
+                        "sub": null
+                    },
+                    {
+                        "id": 10509,
+                        "name": "婚宴酒店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10510,
+                        "name": "机票车票门票",
+                        "sub": null
+                    }
+                ]
+            },
+            {
+                "id": 106,
+                "name": "便民服务",
+                "sub": [
+                    {
+                        "id": 10600,
+                        "name": "自动售卖机",
+                        "sub": null
+                    },
+                    {
+                        "id": 10601,
+                        "name": "便利店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10602,
+                        "name": "家具家居建材",
+                        "sub": null
+                    },
+                    {
+                        "id": 10603,
+                        "name": "水暖/照明/五金",
+                        "sub": null
+                    },
+                    {
+                        "id": 10604,
+                        "name": "花店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10605,
+                        "name": "办公/文化用品",
+                        "sub": null
+                    },
+                    {
+                        "id": 10606,
+                        "name": "杂货批发",
+                        "sub": null
+                    },
+                    {
+                        "id": 10607,
+                        "name": "芯片数码配件",
+                        "sub": null
+                    },
+                    {
+                        "id": 10608,
+                        "name": "食品茶酒烟",
+                        "sub": null
+                    },
+                    {
+                        "id": 10609,
+                        "name": "电信服务",
+                        "sub": null
+                    },
+                    {
+                        "id": 10610,
+                        "name": "洗衣店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10611,
+                        "name": "快照/冲印",
+                        "sub": null
+                    },
+                    {
+                        "id": 10612,
+                        "name": "宠物",
+                        "sub": null
+                    },
+                    {
+                        "id": 10613,
+                        "name": "药店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10614,
+                        "name": "齿科",
+                        "sub": null
+                    },
+                    {
+                        "id": 10615,
+                        "name": "医院",
+                        "sub": null
+                    }
+                ]
+            },
+            {
+                "id": 107,
+                "name": "运动健身",
+                "sub": [
+                    {
+                        "id": 10701,
+                        "name": "篮球场",
+                        "sub": null
+                    },
+                    {
+                        "id": 10702,
+                        "name": "健身中心",
+                        "sub": null
+                    },
+                    {
+                        "id": 10703,
+                        "name": "游泳馆",
+                        "sub": null
+                    },
+                    {
+                        "id": 10704,
+                        "name": "运动户外",
+                        "sub": null
+                    },
+                    {
+                        "id": 10705,
+                        "name": "羽毛球馆",
+                        "sub": null
+                    },
+                    {
+                        "id": 10706,
+                        "name": "乒乓球馆",
+                        "sub": null
+                    },
+                    {
+                        "id": 10707,
+                        "name": "网球场",
+                        "sub": null
+                    },
+                    {
+                        "id": 10709,
+                        "name": "足球场",
+                        "sub": null
+                    },
+                    {
+                        "id": 10710,
+                        "name": "高尔夫场",
+                        "sub": null
+                    },
+                    {
+                        "id": 10711,
+                        "name": "保龄球馆",
+                        "sub": null
+                    },
+                    {
+                        "id": 10712,
+                        "name": "桌球室 ",
+                        "sub": null
+                    },
+                    {
+                        "id": 10713,
+                        "name": "武术场馆",
+                        "sub": null
+                    },
+                    {
+                        "id": 10714,
+                        "name": "体育场馆",
+                        "sub": null
+                    }
+                ]
+            },
+            {
+                "id": 108,
+                "name": "其它",
+                "sub": [
+                    {
+                        "id": 10801,
+                        "name": "汽车服务",
+                        "sub": null
+                    },
+                    {
+                        "id": 10802,
+                        "name": "婚纱摄影",
+                        "sub": null
+                    },
+                    {
+                        "id": 10803,
+                        "name": "儿童摄影",
+                        "sub": null
+                    },
+                    {
+                        "id": 10804,
+                        "name": "艺术写真",
+                        "sub": null
+                    },
+                    {
+                        "id": 10805,
+                        "name": "舞蹈",
+                        "sub": null
+                    },
+                    {
+                        "id": 10806,
+                        "name": "驾校",
+                        "sub": null
+                    },
+                    {
+                        "id": 10807,
+                        "name": "居家维修",
+                        "sub": null
+                    },
+                    {
+                        "id": 10808,
+                        "name": "装潢/装修",
+                        "sub": null
+                    },
+                    {
+                        "id": 10809,
+                        "name": "培训/教育",
+                        "sub": null
+                    },
+                    {
+                        "id": 10810,
+                        "name": "咨询服务",
+                        "sub": null
+                    },
+                    {
+                        "id": 10811,
+                        "name": "婚庆公司",
+                        "sub": null
+                    },
+                    {
+                        "id": 10812,
+                        "name": "服饰鞋包",
+                        "sub": null
+                    },
+                    {
+                        "id": 10813,
+                        "name": "眼镜店",
+                        "sub": null
+                    },
+                    {
+                        "id": 10814,
+                        "name": "婚纱礼服",
+                        "sub": null
+                    },
+                    {
+                        "id": 10815,
+                        "name": "母婴儿童",
+                        "sub": null
+                    },
+                    {
+                        "id": 10816,
+                        "name": "数码家电",
+                        "sub": null
+                    },
+                    {
+                        "id": 10817,
+                        "name": "珠宝饰品",
+                        "sub": null
+                    },
+                    {
+                        "id": 10818,
+                        "name": "婚戒首饰",
+                        "sub": null
+                    },
+                    {
+                        "id": 10819,
+                        "name": "DIY手工坊",
+                        "sub": null
+                    },
+                    {
+                        "id": 10820,
+                        "name": "其它类别",
+                        "sub": null
+                    }
+                ]
+            }
+        ]
+    }
+}
